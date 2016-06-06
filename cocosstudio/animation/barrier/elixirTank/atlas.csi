@@ -1,0 +1,15 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="aa44e23f-59d1-4025-ba7e-db9dbaef8e1a" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_01.png" />
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_02.png" />
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_03.png" />
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_05.png" />
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_06.png" />
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_10.png" />
+      <FilePathData Path="animation/barrier/elixirTank/elixir_tank_04.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

@@ -1,0 +1,45 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="fc583db3-20c4-4c11-b81a-fced74fd2417" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/barrier/cannon/cannon_stand.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon01.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon02.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon03.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon04.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon05.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon06.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon07.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon08.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon09.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon10.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon11.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon12.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon13.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon14.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon15.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon16.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon17.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon18.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon19.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon20.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon21.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon22.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon23.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon24.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon25.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon26.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon27.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon28.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon29.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon30.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon31.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon32.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon33.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon34.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon35.png" />
+      <FilePathData Path="animation/barrier/cannon/cnannon36.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

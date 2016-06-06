@@ -1,0 +1,10 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="fcf3877d-5259-4517-83bb-8d8745564290" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="scene/logo/layer/logo_dummy/logo_dummy.png" />
+      <FilePathData Path="scene/logo/layer/logo_dummy/logo_ray.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

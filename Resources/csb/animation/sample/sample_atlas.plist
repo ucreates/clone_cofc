@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>animation/sample/barbarian1.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{183,0},{50,66}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{50,66}</string>
+			</dict>
+			<key>animation/sample/barbarian2.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,60},{48,59}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{48,59}</string>
+			</dict>
+			<key>animation/sample/barbarian3.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{183,50},{52,55}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{52,55}</string>
+			</dict>
+			<key>animation/sample/barbarian4.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{123,0},{60,60}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{60,60}</string>
+			</dict>
+			<key>animation/sample/barbarian5.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{62,60}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{62,60}</string>
+			</dict>
+			<key>animation/sample/barbarian6.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{62,0},{60,61}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{60,61}</string>
+			</dict>
+			<key>animation/sample/barbarian7.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{249,0},{51,59}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{51,59}</string>
+			</dict>
+			<key>animation/sample/barbarian8.0.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{59,60},{44,59}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{44,59}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>sample_atlas.png</string>
+			<key>realTextureFileName</key>
+			<string>sample_atlas.png</string>
+			<key>size</key>
+			<string>{512,128}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>512</integer>
+			<key>height</key>
+			<integer>128</integer>
+		</dict>
+	</dict>
+</plist>

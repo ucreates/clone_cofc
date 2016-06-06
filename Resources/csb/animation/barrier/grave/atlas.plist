@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>animation/barrier/grave/grave.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,121},{34,37}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{34,37}</string>
+			</dict>
+			<key>animation/barrier/grave/bone.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,57},{40,64}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{40,64}</string>
+			</dict>
+			<key>animation/barrier/grave/bone_ray.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{50,57}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{50,57}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>atlas.png</string>
+			<key>realTextureFileName</key>
+			<string>atlas.png</string>
+			<key>size</key>
+			<string>{64,256}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>64</integer>
+			<key>height</key>
+			<integer>256</integer>
+		</dict>
+	</dict>
+</plist>

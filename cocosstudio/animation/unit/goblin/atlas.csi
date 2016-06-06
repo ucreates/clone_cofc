@@ -1,0 +1,48 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="d3a57306-d278-4e8a-81da-eecbd8140726" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/unit/goblin/goblin_side_attack_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_attack_02.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_attack_03.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_attack_04.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_attack_05.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_02.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_03.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_04.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_05.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_06.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_08.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_walk_09.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_side_win_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_attack_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_attack_02.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_attack_03.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_attack_04.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_02.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_03.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_04.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_05.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_06.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_07.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_walk_08.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_under_win_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_attack_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_attack_02.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_attack_03.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_attack_04.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_01.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_02.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_03.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_04.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_05.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_06.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_07.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_walk_08.png" />
+      <FilePathData Path="animation/unit/goblin/goblin_upper_win_01.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

@@ -1,0 +1,811 @@
+<Solution>
+  <PropertyGroup Name="clone_cofc" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="animation">
+          <Folder Name="barrier">
+            <Folder Name="cannon">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="cannon_stand.png" />
+              <Image Name="cnannon01.png" />
+              <Image Name="cnannon02.png" />
+              <Image Name="cnannon03.png" />
+              <Image Name="cnannon04.png" />
+              <Image Name="cnannon05.png" />
+              <Image Name="cnannon06.png" />
+              <Image Name="cnannon07.png" />
+              <Image Name="cnannon08.png" />
+              <Image Name="cnannon09.png" />
+              <Image Name="cnannon10.png" />
+              <Image Name="cnannon11.png" />
+              <Image Name="cnannon12.png" />
+              <Image Name="cnannon13.png" />
+              <Image Name="cnannon14.png" />
+              <Image Name="cnannon15.png" />
+              <Image Name="cnannon16.png" />
+              <Image Name="cnannon17.png" />
+              <Image Name="cnannon18.png" />
+              <Image Name="cnannon19.png" />
+              <Image Name="cnannon20.png" />
+              <Image Name="cnannon21.png" />
+              <Image Name="cnannon22.png" />
+              <Image Name="cnannon23.png" />
+              <Image Name="cnannon24.png" />
+              <Image Name="cnannon25.png" />
+              <Image Name="cnannon26.png" />
+              <Image Name="cnannon27.png" />
+              <Image Name="cnannon28.png" />
+              <Image Name="cnannon29.png" />
+              <Image Name="cnannon30.png" />
+              <Image Name="cnannon31.png" />
+              <Image Name="cnannon32.png" />
+              <Image Name="cnannon33.png" />
+              <Image Name="cnannon34.png" />
+              <Image Name="cnannon35.png" />
+              <Image Name="cnannon36.png" />
+            </Folder>
+            <Folder Name="dummyBarrier">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="dummy_barrier.png" />
+            </Folder>
+            <Folder Name="dummyNode">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="unit_map1.png" />
+              <Image Name="unit_map2.png" />
+              <Image Name="unit_map3.png" />
+              <Image Name="unit_map4.png" />
+              <Image Name="unit_map5.png" />
+            </Folder>
+            <Folder Name="elixirTank">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="elixir_tank_01.png" />
+              <Image Name="elixir_tank_02.png" />
+              <Image Name="elixir_tank_03.png" />
+              <Image Name="elixir_tank_04.png" />
+              <Image Name="elixir_tank_05.png" />
+              <Image Name="elixir_tank_06.png" />
+              <Image Name="elixir_tank_10.png" />
+            </Folder>
+            <Folder Name="goldStrage">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="gold_stage_01.png" />
+              <Image Name="gold_stage_02.png" />
+              <Image Name="gold_stage_03.png" />
+              <Image Name="gold_stage_04.png" />
+              <Image Name="gold_stage_05.png" />
+            </Folder>
+            <Folder Name="grave">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="bone.png" />
+              <Image Name="bone_ray.png" />
+              <Image Name="grave.png" />
+            </Folder>
+            <Folder Name="mortar">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="motar_01.png" />
+              <Image Name="motar_02.png" />
+              <Image Name="motar_03.png" />
+              <Image Name="motar_04.png" />
+              <Image Name="motar_05.png" />
+              <Image Name="motar_06.png" />
+              <Image Name="motar_07.png" />
+              <Image Name="motar_08.png" />
+            </Folder>
+            <Folder Name="turret">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="turret.png" />
+            </Folder>
+            <Folder Name="woodFence">
+              <Folder Name="horizon">
+                <Project Name="anime.csd" Type="Skeleton" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="woodfence_h.png" />
+              </Folder>
+              <Folder Name="vertical">
+                <Project Name="anime.csd" Type="Skeleton" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="woodfence_v.png" />
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="effect">
+            <Folder Name="beacon">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <Image Name="beacon.png" />
+            </Folder>
+            <Folder Name="cloud">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <Image Name="cloud1.png" />
+              <Image Name="cloud2.png" />
+              <Image Name="cloud3.png" />
+            </Folder>
+            <Folder Name="ray">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <Image Name="ray.png" />
+            </Folder>
+          </Folder>
+          <Folder Name="sample">
+            <Image Name="barbarian1.0.png" />
+            <Image Name="barbarian2.0.png" />
+            <Image Name="barbarian3.0.png" />
+            <Image Name="barbarian4.0.png" />
+            <Image Name="barbarian5.0.png" />
+            <Image Name="barbarian6.0.png" />
+            <Image Name="barbarian7.0.png" />
+            <Image Name="barbarian8.0.png" />
+            <Project Name="sample_anim.csd" Type="Skeleton" />
+            <PlistInfo Name="sample_atlas.csi" Type="Plist" />
+          </Folder>
+          <Folder Name="test">
+            <Folder Name="sample1">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="barbarian1.0.png" />
+              <Image Name="barbarian2.0.png" />
+              <Image Name="barbarian3.0.png" />
+              <Image Name="barbarian4.0.png" />
+              <Image Name="barbarian5.0.png" />
+              <Image Name="barbarian6.0.png" />
+              <Image Name="barbarian7.0.png" />
+              <Image Name="barbarian8.0.png" />
+            </Folder>
+            <Folder Name="sample2">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <Image Name="archer1.0.png" />
+              <Image Name="archer2.0.png" />
+              <Image Name="archer3.0.png" />
+              <Image Name="archer4.0.png" />
+              <Image Name="archer5.0.png" />
+              <Image Name="archer6.0.png" />
+              <Image Name="archer7.0.png" />
+              <Image Name="archer8.0.png" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+            </Folder>
+          </Folder>
+          <Folder Name="ui">
+            <Folder Name="lifeGuage">
+              <Folder Name="barrier">
+                <Project Name="anime.csd" Type="Skeleton" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="building_life_bar.png" />
+                <Image Name="building_life_frame.png" />
+              </Folder>
+              <Folder Name="unit">
+                <Project Name="anime.csd" Type="Skeleton" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="unit_life_bar.png" />
+                <Image Name="unit_life_bar_crisis.png" />
+                <Image Name="unit_life_frame.png" />
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="unit">
+            <Folder Name="archer">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <Image Name="archer_side_attack_01.png" />
+              <Image Name="archer_side_attack_02.png" />
+              <Image Name="archer_side_attack_03.png" />
+              <Image Name="archer_side_attack_04.png" />
+              <Image Name="archer_side_attack_05.png" />
+              <Image Name="archer_side_attack_06.png" />
+              <Image Name="archer_side_attack_07.png" />
+              <Image Name="archer_side_attack_08.png" />
+              <Image Name="archer_side_attack_09.png" />
+              <Image Name="archer_side_attack_10.png" />
+              <Image Name="archer_side_walk_01.png" />
+              <Image Name="archer_side_walk_02.png" />
+              <Image Name="archer_side_walk_03.png" />
+              <Image Name="archer_side_walk_04.png" />
+              <Image Name="archer_side_walk_05.png" />
+              <Image Name="archer_side_walk_06.png" />
+              <Image Name="archer_side_walk_07.png" />
+              <Image Name="archer_side_walk_08.png" />
+              <Image Name="archer_under_attack_01.png" />
+              <Image Name="archer_under_attack_02.png" />
+              <Image Name="archer_under_attack_03.png" />
+              <Image Name="archer_under_attack_04.png" />
+              <Image Name="archer_under_attack_05.png" />
+              <Image Name="archer_under_attack_06.png" />
+              <Image Name="archer_under_attack_07.png" />
+              <Image Name="archer_under_attack_08.png" />
+              <Image Name="archer_under_attack_09.png" />
+              <Image Name="archer_under_walk_01.png" />
+              <Image Name="archer_under_walk_02.png" />
+              <Image Name="archer_under_walk_03.png" />
+              <Image Name="archer_under_walk_04.png" />
+              <Image Name="archer_under_walk_05.png" />
+              <Image Name="archer_under_walk_06.png" />
+              <Image Name="archer_under_walk_07.png" />
+              <Image Name="archer_under_walk_08.png" />
+              <Image Name="archer_upper_attack_01.png" />
+              <Image Name="archer_upper_attack_02.png" />
+              <Image Name="archer_upper_attack_03.png" />
+              <Image Name="archer_upper_attack_04.png" />
+              <Image Name="archer_upper_attack_05.png" />
+              <Image Name="archer_upper_attack_06.png" />
+              <Image Name="archer_upper_attack_07.png" />
+              <Image Name="archer_upper_attack_08.png" />
+              <Image Name="archer_upper_attack_09.png" />
+              <Image Name="archer_upper_walk_01.png" />
+              <Image Name="archer_upper_walk_02.png" />
+              <Image Name="archer_upper_walk_03.png" />
+              <Image Name="archer_upper_walk_04.png" />
+              <Image Name="archer_upper_walk_05.png" />
+              <Image Name="archer_upper_walk_06.png" />
+              <Image Name="archer_upper_walk_07.png" />
+              <Image Name="archer_upper_walk_08.png" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+            </Folder>
+            <Folder Name="barbarian">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="barbarian_side_attack_01.png" />
+              <Image Name="barbarian_side_attack_02.png" />
+              <Image Name="barbarian_side_attack_03.png" />
+              <Image Name="barbarian_side_attack_04.png" />
+              <Image Name="barbarian_side_attack_05.png" />
+              <Image Name="barbarian_side_attack_06.png" />
+              <Image Name="barbarian_side_attack_07.png" />
+              <Image Name="barbarian_side_attack_08.png" />
+              <Image Name="barbarian_side_attack_09.png" />
+              <Image Name="barbarian_side_attack_10.png" />
+              <Image Name="barbarian_side_attack_11.png" />
+              <Image Name="barbarian_side_attack_12.png" />
+              <Image Name="barbarian_side_attack_13.png" />
+              <Image Name="barbarian_side_attack_14.png" />
+              <Image Name="barbarian_side_attack_15.png" />
+              <Image Name="barbarian_side_attack_16.png" />
+              <Image Name="barbarian_side_attack_17.png" />
+              <Image Name="barbarian_side_attack_18.png" />
+              <Image Name="barbarian_side_attack_19.png" />
+              <Image Name="barbarian_side_attack_20.png" />
+              <Image Name="barbarian_side_walk_01.png" />
+              <Image Name="barbarian_side_walk_02.png" />
+              <Image Name="barbarian_side_walk_03.png" />
+              <Image Name="barbarian_side_walk_04.png" />
+              <Image Name="barbarian_side_walk_05.png" />
+              <Image Name="barbarian_side_walk_06.png" />
+              <Image Name="barbarian_side_walk_07.png" />
+              <Image Name="barbarian_side_walk_08.png" />
+              <Image Name="barbarian_side_win_01.png" />
+              <Image Name="barbarian_side_win_02.png" />
+              <Image Name="barbarian_side_win_03.png" />
+              <Image Name="barbarian_side_win_04.png" />
+              <Image Name="barbarian_under_attack_01.png" />
+              <Image Name="barbarian_under_attack_02.png" />
+              <Image Name="barbarian_under_attack_03.png" />
+              <Image Name="barbarian_under_attack_04.png" />
+              <Image Name="barbarian_under_attack_05.png" />
+              <Image Name="barbarian_under_attack_06.png" />
+              <Image Name="barbarian_under_attack_07.png" />
+              <Image Name="barbarian_under_attack_08.png" />
+              <Image Name="barbarian_under_attack_09.png" />
+              <Image Name="barbarian_under_attack_10.png" />
+              <Image Name="barbarian_under_attack_11.png" />
+              <Image Name="barbarian_under_attack_12.png" />
+              <Image Name="barbarian_under_attack_13.png" />
+              <Image Name="barbarian_under_attack_14.png" />
+              <Image Name="barbarian_under_attack_15.png" />
+              <Image Name="barbarian_under_attack_16.png" />
+              <Image Name="barbarian_under_attack_17.png" />
+              <Image Name="barbarian_under_attack_18.png" />
+              <Image Name="barbarian_under_attack_19.png" />
+              <Image Name="barbarian_under_attack_20.png" />
+              <Image Name="barbarian_under_walk_01.png" />
+              <Image Name="barbarian_under_walk_02.png" />
+              <Image Name="barbarian_under_walk_03.png" />
+              <Image Name="barbarian_under_walk_04.png" />
+              <Image Name="barbarian_under_walk_05.png" />
+              <Image Name="barbarian_under_walk_06.png" />
+              <Image Name="barbarian_under_walk_07.png" />
+              <Image Name="barbarian_under_walk_08.png" />
+              <Image Name="barbarian_under_win_01.png" />
+              <Image Name="barbarian_under_win_02.png" />
+              <Image Name="barbarian_under_win_03.png" />
+              <Image Name="barbarian_under_win_04.png" />
+              <Image Name="barbarian_upper_attack_01.png" />
+              <Image Name="barbarian_upper_attack_02.png" />
+              <Image Name="barbarian_upper_attack_03.png" />
+              <Image Name="barbarian_upper_attack_04.png" />
+              <Image Name="barbarian_upper_attack_05.png" />
+              <Image Name="barbarian_upper_attack_06.png" />
+              <Image Name="barbarian_upper_attack_07.png" />
+              <Image Name="barbarian_upper_attack_08.png" />
+              <Image Name="barbarian_upper_attack_09.png" />
+              <Image Name="barbarian_upper_attack_10.png" />
+              <Image Name="barbarian_upper_attack_11.png" />
+              <Image Name="barbarian_upper_attack_12.png" />
+              <Image Name="barbarian_upper_attack_13.png" />
+              <Image Name="barbarian_upper_attack_14.png" />
+              <Image Name="barbarian_upper_attack_15.png" />
+              <Image Name="barbarian_upper_attack_16.png" />
+              <Image Name="barbarian_upper_attack_17.png" />
+              <Image Name="barbarian_upper_attack_18.png" />
+              <Image Name="barbarian_upper_attack_19.png" />
+              <Image Name="barbarian_upper_attack_20.png" />
+              <Image Name="barbarian_upper_walk_01.png" />
+              <Image Name="barbarian_upper_walk_02.png" />
+              <Image Name="barbarian_upper_walk_03.png" />
+              <Image Name="barbarian_upper_walk_04.png" />
+              <Image Name="barbarian_upper_walk_05.png" />
+              <Image Name="barbarian_upper_walk_06.png" />
+              <Image Name="barbarian_upper_walk_07.png" />
+              <Image Name="barbarian_upper_walk_08.png" />
+              <Image Name="barbarian_upper_win_01.png" />
+              <Image Name="barbarian_upper_win_02.png" />
+              <Image Name="barbarian_upper_win_03.png" />
+              <Image Name="barbarian_upper_win_04.png" />
+            </Folder>
+            <Folder Name="dummyUnit">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="dummy_unit.png" />
+            </Folder>
+            <Folder Name="giant">
+              <Folder Name="animation">
+                <Folder Name="unit">
+                  <Folder Name="giant">
+                    <PlistImageFolder Image="atlas.png" PListFile="atlas.plist" Name=".atlas_PList.Dir">
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_01.png" Key="animation/unit/giant/giant_side_attack_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_02.png" Key="animation/unit/giant/giant_side_attack_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_03.png" Key="animation/unit/giant/giant_side_attack_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_04.png" Key="animation/unit/giant/giant_side_attack_04.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_05.png" Key="animation/unit/giant/giant_side_attack_05.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_06.png" Key="animation/unit/giant/giant_side_attack_06.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_07.png" Key="animation/unit/giant/giant_side_attack_07.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_08.png" Key="animation/unit/giant/giant_side_attack_08.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_09.png" Key="animation/unit/giant/giant_side_attack_09.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_10.png" Key="animation/unit/giant/giant_side_attack_10.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_11.png" Key="animation/unit/giant/giant_side_attack_11.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_12.png" Key="animation/unit/giant/giant_side_attack_12.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_13.png" Key="animation/unit/giant/giant_side_attack_13.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_14.png" Key="animation/unit/giant/giant_side_attack_14.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_15.png" Key="animation/unit/giant/giant_side_attack_15.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_16.png" Key="animation/unit/giant/giant_side_attack_16.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_17.png" Key="animation/unit/giant/giant_side_attack_17.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_attack_18.png" Key="animation/unit/giant/giant_side_attack_18.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_01.png" Key="animation/unit/giant/giant_side_walk_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_02.png" Key="animation/unit/giant/giant_side_walk_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_03.png" Key="animation/unit/giant/giant_side_walk_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_04.png" Key="animation/unit/giant/giant_side_walk_04.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_05.png" Key="animation/unit/giant/giant_side_walk_05.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_06.png" Key="animation/unit/giant/giant_side_walk_06.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_07.png" Key="animation/unit/giant/giant_side_walk_07.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_08.png" Key="animation/unit/giant/giant_side_walk_08.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_09.png" Key="animation/unit/giant/giant_side_walk_09.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_10.png" Key="animation/unit/giant/giant_side_walk_10.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_11.png" Key="animation/unit/giant/giant_side_walk_11.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_walk_12.png" Key="animation/unit/giant/giant_side_walk_12.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_win_01.png" Key="animation/unit/giant/giant_side_win_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_win_02.png" Key="animation/unit/giant/giant_side_win_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_side_win_03.png" Key="animation/unit/giant/giant_side_win_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_01.png" Key="animation/unit/giant/giant_under_attack_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_02.png" Key="animation/unit/giant/giant_under_attack_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_03.png" Key="animation/unit/giant/giant_under_attack_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_04.png" Key="animation/unit/giant/giant_under_attack_04.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_05.png" Key="animation/unit/giant/giant_under_attack_05.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_06.png" Key="animation/unit/giant/giant_under_attack_06.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_07.png" Key="animation/unit/giant/giant_under_attack_07.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_08.png" Key="animation/unit/giant/giant_under_attack_08.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_09.png" Key="animation/unit/giant/giant_under_attack_09.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_10.png" Key="animation/unit/giant/giant_under_attack_10.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_11.png" Key="animation/unit/giant/giant_under_attack_11.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_12.png" Key="animation/unit/giant/giant_under_attack_12.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_13.png" Key="animation/unit/giant/giant_under_attack_13.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_14.png" Key="animation/unit/giant/giant_under_attack_14.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_15.png" Key="animation/unit/giant/giant_under_attack_15.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_16.png" Key="animation/unit/giant/giant_under_attack_16.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_17.png" Key="animation/unit/giant/giant_under_attack_17.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_attack_18.png" Key="animation/unit/giant/giant_under_attack_18.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_01.png" Key="animation/unit/giant/giant_under_walk_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_02.png" Key="animation/unit/giant/giant_under_walk_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_03.png" Key="animation/unit/giant/giant_under_walk_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_04.png" Key="animation/unit/giant/giant_under_walk_04.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_05.png" Key="animation/unit/giant/giant_under_walk_05.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_06.png" Key="animation/unit/giant/giant_under_walk_06.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_08.png" Key="animation/unit/giant/giant_under_walk_08.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_09.png" Key="animation/unit/giant/giant_under_walk_09.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_10.png" Key="animation/unit/giant/giant_under_walk_10.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_11.png" Key="animation/unit/giant/giant_under_walk_11.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_12.png" Key="animation/unit/giant/giant_under_walk_12.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_walk_13.png" Key="animation/unit/giant/giant_under_walk_13.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_win_01.png" Key="animation/unit/giant/giant_under_win_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_win_02.png" Key="animation/unit/giant/giant_under_win_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_under_win_03.png" Key="animation/unit/giant/giant_under_win_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_01.png" Key="animation/unit/giant/giant_upper_attack_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_02.png" Key="animation/unit/giant/giant_upper_attack_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_03.png" Key="animation/unit/giant/giant_upper_attack_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_04.png" Key="animation/unit/giant/giant_upper_attack_04.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_05.png" Key="animation/unit/giant/giant_upper_attack_05.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_06.png" Key="animation/unit/giant/giant_upper_attack_06.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_07.png" Key="animation/unit/giant/giant_upper_attack_07.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_08.png" Key="animation/unit/giant/giant_upper_attack_08.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_09.png" Key="animation/unit/giant/giant_upper_attack_09.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_10.png" Key="animation/unit/giant/giant_upper_attack_10.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_11.png" Key="animation/unit/giant/giant_upper_attack_11.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_12.png" Key="animation/unit/giant/giant_upper_attack_12.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_13.png" Key="animation/unit/giant/giant_upper_attack_13.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_14.png" Key="animation/unit/giant/giant_upper_attack_14.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_15.png" Key="animation/unit/giant/giant_upper_attack_15.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_attack_16.png" Key="animation/unit/giant/giant_upper_attack_16.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_01.png" Key="animation/unit/giant/giant_upper_walk_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_02.png" Key="animation/unit/giant/giant_upper_walk_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_03.png" Key="animation/unit/giant/giant_upper_walk_03.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_04.png" Key="animation/unit/giant/giant_upper_walk_04.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_05.png" Key="animation/unit/giant/giant_upper_walk_05.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_06.png" Key="animation/unit/giant/giant_upper_walk_06.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_07.png" Key="animation/unit/giant/giant_upper_walk_07.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_08.png" Key="animation/unit/giant/giant_upper_walk_08.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_09.png" Key="animation/unit/giant/giant_upper_walk_09.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_10.png" Key="animation/unit/giant/giant_upper_walk_10.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_11.png" Key="animation/unit/giant/giant_upper_walk_11.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_walk_12.png" Key="animation/unit/giant/giant_upper_walk_12.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_win_01.png" Key="animation/unit/giant/giant_upper_win_01.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_win_02.png" Key="animation/unit/giant/giant_upper_win_02.png" />
+                      <PlistImageFile Name="animation_unit_giant_giant_upper_win_03.png" Key="animation/unit/giant/giant_upper_win_03.png" />
+                    </PlistImageFolder>
+                  </Folder>
+                </Folder>
+              </Folder>
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="giant_side_attack_01.png" />
+              <Image Name="giant_side_attack_02.png" />
+              <Image Name="giant_side_attack_03.png" />
+              <Image Name="giant_side_attack_04.png" />
+              <Image Name="giant_side_attack_05.png" />
+              <Image Name="giant_side_attack_06.png" />
+              <Image Name="giant_side_attack_07.png" />
+              <Image Name="giant_side_attack_08.png" />
+              <Image Name="giant_side_attack_09.png" />
+              <Image Name="giant_side_attack_10.png" />
+              <Image Name="giant_side_attack_11.png" />
+              <Image Name="giant_side_attack_12.png" />
+              <Image Name="giant_side_attack_13.png" />
+              <Image Name="giant_side_attack_14.png" />
+              <Image Name="giant_side_attack_15.png" />
+              <Image Name="giant_side_attack_16.png" />
+              <Image Name="giant_side_attack_17.png" />
+              <Image Name="giant_side_attack_18.png" />
+              <Image Name="giant_side_walk_01.png" />
+              <Image Name="giant_side_walk_02.png" />
+              <Image Name="giant_side_walk_03.png" />
+              <Image Name="giant_side_walk_04.png" />
+              <Image Name="giant_side_walk_05.png" />
+              <Image Name="giant_side_walk_06.png" />
+              <Image Name="giant_side_walk_07.png" />
+              <Image Name="giant_side_walk_08.png" />
+              <Image Name="giant_side_walk_09.png" />
+              <Image Name="giant_side_walk_10.png" />
+              <Image Name="giant_side_walk_11.png" />
+              <Image Name="giant_side_walk_12.png" />
+              <Image Name="giant_side_win_01.png" />
+              <Image Name="giant_side_win_02.png" />
+              <Image Name="giant_side_win_03.png" />
+              <Image Name="giant_under_attack_01.png" />
+              <Image Name="giant_under_attack_02.png" />
+              <Image Name="giant_under_attack_03.png" />
+              <Image Name="giant_under_attack_04.png" />
+              <Image Name="giant_under_attack_05.png" />
+              <Image Name="giant_under_attack_06.png" />
+              <Image Name="giant_under_attack_07.png" />
+              <Image Name="giant_under_attack_08.png" />
+              <Image Name="giant_under_attack_09.png" />
+              <Image Name="giant_under_attack_10.png" />
+              <Image Name="giant_under_attack_11.png" />
+              <Image Name="giant_under_attack_12.png" />
+              <Image Name="giant_under_attack_13.png" />
+              <Image Name="giant_under_attack_14.png" />
+              <Image Name="giant_under_attack_15.png" />
+              <Image Name="giant_under_attack_16.png" />
+              <Image Name="giant_under_attack_17.png" />
+              <Image Name="giant_under_attack_18.png" />
+              <Image Name="giant_under_walk_01.png" />
+              <Image Name="giant_under_walk_02.png" />
+              <Image Name="giant_under_walk_03.png" />
+              <Image Name="giant_under_walk_04.png" />
+              <Image Name="giant_under_walk_05.png" />
+              <Image Name="giant_under_walk_06.png" />
+              <Image Name="giant_under_walk_08.png" />
+              <Image Name="giant_under_walk_09.png" />
+              <Image Name="giant_under_walk_10.png" />
+              <Image Name="giant_under_walk_11.png" />
+              <Image Name="giant_under_walk_12.png" />
+              <Image Name="giant_under_walk_13.png" />
+              <Image Name="giant_under_win_01.png" />
+              <Image Name="giant_under_win_02.png" />
+              <Image Name="giant_under_win_03.png" />
+              <Image Name="giant_upper_attack_01.png" />
+              <Image Name="giant_upper_attack_02.png" />
+              <Image Name="giant_upper_attack_03.png" />
+              <Image Name="giant_upper_attack_04.png" />
+              <Image Name="giant_upper_attack_05.png" />
+              <Image Name="giant_upper_attack_06.png" />
+              <Image Name="giant_upper_attack_07.png" />
+              <Image Name="giant_upper_attack_08.png" />
+              <Image Name="giant_upper_attack_09.png" />
+              <Image Name="giant_upper_attack_10.png" />
+              <Image Name="giant_upper_attack_11.png" />
+              <Image Name="giant_upper_attack_12.png" />
+              <Image Name="giant_upper_attack_13.png" />
+              <Image Name="giant_upper_attack_14.png" />
+              <Image Name="giant_upper_attack_15.png" />
+              <Image Name="giant_upper_attack_16.png" />
+              <Image Name="giant_upper_walk_01.png" />
+              <Image Name="giant_upper_walk_02.png" />
+              <Image Name="giant_upper_walk_03.png" />
+              <Image Name="giant_upper_walk_04.png" />
+              <Image Name="giant_upper_walk_05.png" />
+              <Image Name="giant_upper_walk_06.png" />
+              <Image Name="giant_upper_walk_07.png" />
+              <Image Name="giant_upper_walk_08.png" />
+              <Image Name="giant_upper_walk_09.png" />
+              <Image Name="giant_upper_walk_10.png" />
+              <Image Name="giant_upper_walk_11.png" />
+              <Image Name="giant_upper_walk_12.png" />
+              <Image Name="giant_upper_win_01.png" />
+              <Image Name="giant_upper_win_02.png" />
+              <Image Name="giant_upper_win_03.png" />
+            </Folder>
+            <Folder Name="goblin">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="goblin_side_attack_01.png" />
+              <Image Name="goblin_side_attack_02.png" />
+              <Image Name="goblin_side_attack_03.png" />
+              <Image Name="goblin_side_attack_04.png" />
+              <Image Name="goblin_side_attack_05.png" />
+              <Image Name="goblin_side_walk_01.png" />
+              <Image Name="goblin_side_walk_02.png" />
+              <Image Name="goblin_side_walk_03.png" />
+              <Image Name="goblin_side_walk_04.png" />
+              <Image Name="goblin_side_walk_05.png" />
+              <Image Name="goblin_side_walk_06.png" />
+              <Image Name="goblin_side_walk_08.png" />
+              <Image Name="goblin_side_walk_09.png" />
+              <Image Name="goblin_side_win_01.png" />
+              <Image Name="goblin_under_attack_01.png" />
+              <Image Name="goblin_under_attack_02.png" />
+              <Image Name="goblin_under_attack_03.png" />
+              <Image Name="goblin_under_attack_04.png" />
+              <Image Name="goblin_under_walk_01.png" />
+              <Image Name="goblin_under_walk_02.png" />
+              <Image Name="goblin_under_walk_03.png" />
+              <Image Name="goblin_under_walk_04.png" />
+              <Image Name="goblin_under_walk_05.png" />
+              <Image Name="goblin_under_walk_06.png" />
+              <Image Name="goblin_under_walk_07.png" />
+              <Image Name="goblin_under_walk_08.png" />
+              <Image Name="goblin_under_win_01.png" />
+              <Image Name="goblin_upper_attack_01.png" />
+              <Image Name="goblin_upper_attack_02.png" />
+              <Image Name="goblin_upper_attack_03.png" />
+              <Image Name="goblin_upper_attack_04.png" />
+              <Image Name="goblin_upper_walk_01.png" />
+              <Image Name="goblin_upper_walk_02.png" />
+              <Image Name="goblin_upper_walk_03.png" />
+              <Image Name="goblin_upper_walk_04.png" />
+              <Image Name="goblin_upper_walk_05.png" />
+              <Image Name="goblin_upper_walk_06.png" />
+              <Image Name="goblin_upper_walk_07.png" />
+              <Image Name="goblin_upper_walk_08.png" />
+              <Image Name="goblin_upper_win_01.png" />
+            </Folder>
+            <Folder Name="wall_breaker">
+              <Project Name="anime.csd" Type="Skeleton" />
+              <PlistInfo Name="atlas.csi" Type="Plist" />
+              <Image Name="wall_breaker_bomb_01.png" />
+              <Image Name="wall_breaker_bomb_02.png" />
+              <Image Name="wall_breaker_bomb_03.png" />
+              <Image Name="wall_breaker_bomb_04.png" />
+              <Image Name="wall_breaker_bomb_05.png" />
+              <Image Name="wall_breaker_bomb_06.png" />
+              <Image Name="wall_breaker_side_attack_01.png" />
+              <Image Name="wall_breaker_side_attack_02.png" />
+              <Image Name="wall_breaker_side_attack_03.png" />
+              <Image Name="wall_breaker_side_attack_04.png" />
+              <Image Name="wall_breaker_side_attack_05.png" />
+              <Image Name="wall_breaker_side_attack_06.png" />
+              <Image Name="wall_breaker_side_attack_07.png" />
+              <Image Name="wall_breaker_side_attack_08.png" />
+              <Image Name="wall_breaker_side_attack_09.png" />
+              <Image Name="wall_breaker_side_attack_10.png" />
+              <Image Name="wall_breaker_side_walk_01.png" />
+              <Image Name="wall_breaker_side_walk_02.png" />
+              <Image Name="wall_breaker_side_walk_03.png" />
+              <Image Name="wall_breaker_side_walk_04.png" />
+              <Image Name="wall_breaker_side_walk_05.png" />
+              <Image Name="wall_breaker_side_walk_06.png" />
+              <Image Name="wall_breaker_side_walk_07.png" />
+              <Image Name="wall_breaker_side_walk_08.png" />
+              <Image Name="wall_breaker_under_attack_01.png" />
+              <Image Name="wall_breaker_under_attack_02.png" />
+              <Image Name="wall_breaker_under_attack_03.png" />
+              <Image Name="wall_breaker_under_attack_04.png" />
+              <Image Name="wall_breaker_under_attack_05.png" />
+              <Image Name="wall_breaker_under_attack_07.png" />
+              <Image Name="wall_breaker_under_attack_08.png" />
+              <Image Name="wall_breaker_under_attack_09.png" />
+              <Image Name="wall_breaker_under_attack_10.png" />
+              <Image Name="wall_breaker_under_attack_11.png" />
+              <Image Name="wall_breaker_under_walk_01.png" />
+              <Image Name="wall_breaker_under_walk_02.png" />
+              <Image Name="wall_breaker_under_walk_03.png" />
+              <Image Name="wall_breaker_under_walk_04.png" />
+              <Image Name="wall_breaker_under_walk_05.png" />
+              <Image Name="wall_breaker_under_walk_06.png" />
+              <Image Name="wall_breaker_under_walk_09.png" />
+              <Image Name="wall_breaker_under_walk_10.png" />
+              <Image Name="wall_breaker_upper_attack_01.png" />
+              <Image Name="wall_breaker_upper_attack_02.png" />
+              <Image Name="wall_breaker_upper_attack_03.png" />
+              <Image Name="wall_breaker_upper_attack_04.png" />
+              <Image Name="wall_breaker_upper_attack_05.png" />
+              <Image Name="wall_breaker_upper_attack_06.png" />
+              <Image Name="wall_breaker_upper_attack_07.png" />
+              <Image Name="wall_breaker_upper_attack_08.png" />
+              <Image Name="wall_breaker_upper_attack_09.png" />
+              <Image Name="wall_breaker_upper_attack_10.png" />
+              <Image Name="wall_breaker_upper_walk_01.png" />
+              <Image Name="wall_breaker_upper_walk_02.png" />
+              <Image Name="wall_breaker_upper_walk_03.png" />
+              <Image Name="wall_breaker_upper_walk_04.png" />
+              <Image Name="wall_breaker_upper_walk_05.png" />
+              <Image Name="wall_breaker_upper_walk_06.png" />
+              <Image Name="wall_breaker_upper_walk_07.png" />
+              <Image Name="wall_breaker_upper_walk_08.png" />
+            </Folder>
+          </Folder>
+        </Folder>
+        <Folder Name="scene">
+          <Folder Name="battle">
+            <Folder Name="layer">
+              <Folder Name="battle">
+                <Project Name="anime.csd" Type="Layer" />
+                <Image Name="archer_select_button_active.png" />
+                <Image Name="archer_select_button_disable.png" />
+                <Image Name="archer_select_button_normal.png" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="back.png" />
+                <Image Name="barbarian_select_button_active.png" />
+                <Image Name="barbarian_select_button_disable.png" />
+                <Image Name="barbarian_select_button_normal.png" />
+                <Image Name="battle_empty_icon.png" />
+                <Image Name="battle_icon_back.png" />
+                <Image Name="emerald_guage.png" />
+                <Image Name="emerald_guage_frame.png" />
+                <Image Name="emerald_icon.png" />
+                <Image Name="end_battle_button.png" />
+                <Image Name="food_guage.png" />
+                <Image Name="food_icon.png" />
+                <Image Name="food_icon2.png" />
+                <Image Name="giant_select_button_active.png" />
+                <Image Name="giant_select_button_disable.png" />
+                <Image Name="giant_select_button_normal.png" />
+                <Image Name="goblin_select_button_active.png" />
+                <Image Name="goblin_select_button_disable.png" />
+                <Image Name="goblin_select_button_normal.png" />
+                <Image Name="gold_guage.png" />
+                <Image Name="gold_icon.png" />
+                <Image Name="over_all_back.png" />
+                <Image Name="over_all_bg.png" />
+                <Image Name="resource_guage.png" />
+                <Image Name="unit_select_background.png" />
+                <Image Name="victory_star.png" />
+                <Image Name="wallbreaker_select_button_active.png" />
+                <Image Name="wallbreaker_select_button_disable.png" />
+                <Image Name="wallbreaker_select_button_normal.png" />
+              </Folder>
+              <Folder Name="result">
+                <Project Name="anime.csd" Type="Layer" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="back.png" />
+                <Image Name="back_ground.png" />
+                <Image Name="curtain.png" />
+                <Image Name="dead_archer_icon.png" />
+                <Image Name="dead_barbarian_icon.png" />
+                <Image Name="dead_blank_card.png" />
+                <Image Name="dead_giant_icon.png" />
+                <Image Name="dead_goblin_icon.png" />
+                <Image Name="dead_unit_card.png" />
+                <Image Name="dead_wall_breaker_icon.png" />
+                <Image Name="emerald_icon.png" />
+                <Image Name="food_icon.png" />
+                <Image Name="food_icon2.png" />
+                <Image Name="gold_icon.png" />
+                <Image Name="result_ray.png" />
+                <Image Name="return_button.png" />
+                <Image Name="ruled_line.png" />
+                <Image Name="victory_ribbon.png" />
+                <Image Name="victory_star.png" />
+                <Image Name="victory_star_bg.png" />
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="loading">
+            <Folder Name="layer">
+              <Folder Name="loading">
+                <Project Name="anime.csd" Type="Layer" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="download_gage.png" />
+                <Image Name="download_gage_frame.png" />
+                <Image Name="loading_back_ground.png" />
+                <Image Name="loading_message_background.png" />
+                <Image Name="title_logo.png" />
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="logo">
+            <Folder Name="layer">
+              <Folder Name="logo">
+                <Project Name="anime.csd" Type="Layer" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="logo.png" />
+                <Image Name="logo_ray.png" />
+              </Folder>
+              <Folder Name="logo_dummy">
+                <Project Name="anime.csd" Type="Layer" />
+                <PlistInfo Name="atlas.csi" Type="Plist" />
+                <Image Name="logo_dummy.png" />
+                <Image Name="logo_ray.png" />
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="test">
+            <Folder Name="layer">
+              <Folder Name="behaviour">
+                <Folder Name="weapon">
+                  <Folder Name="arrow">
+                    <Project Name="anime.csd" Type="Layer" />
+                  </Folder>
+                </Folder>
+              </Folder>
+              <Folder Name="component">
+                <Folder Name="route">
+                  <Folder Name="astar">
+                    <Folder Name="tester">
+                      <Project Name="anime.csd" Type="Layer" />
+                    </Folder>
+                    <Folder Name="viewer">
+                      <Project Name="anime.csd" Type="Layer" />
+                    </Folder>
+                  </Folder>
+                  <Folder Name="dijkstra">
+                    <Folder Name="tester">
+                      <Project Name="anime.csd" Type="Layer" />
+                    </Folder>
+                    <Folder Name="viewer">
+                      <Project Name="anime.csd" Type="Layer" />
+                    </Folder>
+                  </Folder>
+                </Folder>
+              </Folder>
+              <Folder Name="geography">
+                <Project Name="anime.csd" Type="Layer" />
+              </Folder>
+            </Folder>
+          </Folder>
+          <Folder Name="tool">
+            <Folder Name="editor">
+              <Folder Name="geography">
+                <Project Name="anime.csd" Type="Layer" />
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+        <Image Name="HelloWorld.png" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <TTF Name="Supercell-Magic_5.ttf" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

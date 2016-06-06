@@ -1,0 +1,39 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="5a0a0818-5552-4b38-aa28-e047a105fbad" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="scene/battle/layer/battle/battle_empty_icon.png" />
+      <FilePathData Path="scene/battle/layer/battle/battle_icon_back.png" />
+      <FilePathData Path="scene/battle/layer/battle/end_battle_button.png" />
+      <FilePathData Path="scene/battle/layer/battle/over_all_back.png" />
+      <FilePathData Path="scene/battle/layer/battle/unit_select_background.png" />
+      <FilePathData Path="scene/battle/layer/battle/barbarian_select_button_active.png" />
+      <FilePathData Path="scene/battle/layer/battle/barbarian_select_button_disable.png" />
+      <FilePathData Path="scene/battle/layer/battle/barbarian_select_button_normal.png" />
+      <FilePathData Path="scene/battle/layer/battle/giant_select_button_active.png" />
+      <FilePathData Path="scene/battle/layer/battle/giant_select_button_disable.png" />
+      <FilePathData Path="scene/battle/layer/battle/giant_select_button_normal.png" />
+      <FilePathData Path="scene/battle/layer/battle/goblin_select_button_active.png" />
+      <FilePathData Path="scene/battle/layer/battle/goblin_select_button_disable.png" />
+      <FilePathData Path="scene/battle/layer/battle/goblin_select_button_normal.png" />
+      <FilePathData Path="scene/battle/layer/battle/wallbreaker_select_button_active.png" />
+      <FilePathData Path="scene/battle/layer/battle/wallbreaker_select_button_disable.png" />
+      <FilePathData Path="scene/battle/layer/battle/wallbreaker_select_button_normal.png" />
+      <FilePathData Path="scene/battle/layer/battle/archer_select_button_active.png" />
+      <FilePathData Path="scene/battle/layer/battle/archer_select_button_disable.png" />
+      <FilePathData Path="scene/battle/layer/battle/archer_select_button_normal.png" />
+      <FilePathData Path="scene/battle/layer/battle/emerald_guage.png" />
+      <FilePathData Path="scene/battle/layer/battle/emerald_guage_frame.png" />
+      <FilePathData Path="scene/battle/layer/battle/emerald_icon.png" />
+      <FilePathData Path="scene/battle/layer/battle/food_icon.png" />
+      <FilePathData Path="scene/battle/layer/battle/food_icon2.png" />
+      <FilePathData Path="scene/battle/layer/battle/gold_icon.png" />
+      <FilePathData Path="scene/battle/layer/battle/over_all_bg.png" />
+      <FilePathData Path="scene/battle/layer/battle/resource_guage.png" />
+      <FilePathData Path="scene/battle/layer/battle/victory_star.png" />
+      <FilePathData Path="scene/battle/layer/battle/food_guage.png" />
+      <FilePathData Path="scene/battle/layer/battle/gold_guage.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

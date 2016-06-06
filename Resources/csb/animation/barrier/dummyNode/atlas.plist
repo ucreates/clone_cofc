@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>animation/barrier/dummyNode/unit_map1.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{56,42}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{56,42}</string>
+			</dict>
+			<key>animation/barrier/dummyNode/unit_map2.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{56,0},{56,42}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{56,42}</string>
+			</dict>
+			<key>animation/barrier/dummyNode/unit_map3.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{112,0},{56,42}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{56,42}</string>
+			</dict>
+			<key>animation/barrier/dummyNode/unit_map4.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{168,0},{56,42}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{56,42}</string>
+			</dict>
+			<key>animation/barrier/dummyNode/unit_map5.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{224,0},{56,42}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{56,42}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>atlas.png</string>
+			<key>realTextureFileName</key>
+			<string>atlas.png</string>
+			<key>size</key>
+			<string>{512,64}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>512</integer>
+			<key>height</key>
+			<integer>64</integer>
+		</dict>
+	</dict>
+</plist>

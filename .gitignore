@@ -1,0 +1,10 @@
+proj.ios_mac/Test/Info.plist
+proj.ios_mac/clone_cofc.xcodeproj/*
+proj.android/.d
+proj.android/assets/
+proj.android/gen/
+proj.android/libs/armeabi/
+proj.android/local.properties
+proj.android/obj/
+.DS_Store
+bin/

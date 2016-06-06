@@ -1,0 +1,11 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="68bf3c10-ce01-4f50-870d-0d60565aa0ca" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/ui/lifeGuage/unit/unit_life_bar.png" />
+      <FilePathData Path="animation/ui/lifeGuage/unit/unit_life_bar_crisis.png" />
+      <FilePathData Path="animation/ui/lifeGuage/unit/unit_life_frame.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

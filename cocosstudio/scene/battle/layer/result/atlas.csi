@@ -1,0 +1,25 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="c2a56f35-2b18-4e39-8588-cfd94a065ea4" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="scene/battle/layer/result/dead_archer_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/dead_barbarian_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/dead_giant_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/dead_goblin_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/dead_unit_card.png" />
+      <FilePathData Path="scene/battle/layer/result/dead_wall_breaker_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/food_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/gold_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/result_ray.png" />
+      <FilePathData Path="scene/battle/layer/result/return_button.png" />
+      <FilePathData Path="scene/battle/layer/result/ruled_line.png" />
+      <FilePathData Path="scene/battle/layer/result/victory_star.png" />
+      <FilePathData Path="scene/battle/layer/result/victory_ribbon.png" />
+      <FilePathData Path="scene/battle/layer/result/food_icon2.png" />
+      <FilePathData Path="scene/battle/layer/result/emerald_icon.png" />
+      <FilePathData Path="scene/battle/layer/result/victory_star_bg.png" />
+      <FilePathData Path="scene/battle/layer/result/dead_blank_card.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

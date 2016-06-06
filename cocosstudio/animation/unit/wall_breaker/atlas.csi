@@ -1,0 +1,68 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="dfd12601-f2c8-41e9-a746-345986e4d001" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_bomb_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_bomb_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_bomb_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_bomb_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_bomb_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_bomb_06.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_06.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_07.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_08.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_09.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_attack_10.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_06.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_07.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_side_walk_08.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_07.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_08.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_09.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_10.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_attack_11.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_06.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_09.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_under_walk_10.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_06.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_07.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_08.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_09.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_attack_10.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_01.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_02.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_03.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_04.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_05.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_06.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_07.png" />
+      <FilePathData Path="animation/unit/wall_breaker/wall_breaker_upper_walk_08.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

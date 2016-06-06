@@ -1,0 +1,60 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="52950384-5120-4488-9846-6df5b88333ea" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+      <FilePathData />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

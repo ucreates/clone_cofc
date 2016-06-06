@@ -1,0 +1,16 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="37e47237-7333-459b-81e8-4b3fa9064a55" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/barrier/mortar/motar_02.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_01.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_03.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_04.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_05.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_06.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_07.png" />
+      <FilePathData Path="animation/barrier/mortar/motar_08.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>

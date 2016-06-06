@@ -1,0 +1,3 @@
+[submodule "Resources"]
+	path = Resources
+	url = git@git.gree-dev.net:kotaro-masamoto/coc-assets.git

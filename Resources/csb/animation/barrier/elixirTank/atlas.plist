@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>frames</key>
+		<dict>
+			<key>animation/barrier/elixirTank/elixir_tank_01.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,153},{144,154}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{144,154}</string>
+			</dict>
+			<key>animation/barrier/elixirTank/elixir_tank_02.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,0},{145,153}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{145,153}</string>
+			</dict>
+			<key>animation/barrier/elixirTank/elixir_tank_03.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{145,0},{145,149}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{145,149}</string>
+			</dict>
+			<key>animation/barrier/elixirTank/elixir_tank_05.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{144,153},{145,151}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{145,151}</string>
+			</dict>
+			<key>animation/barrier/elixirTank/elixir_tank_06.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,633},{151,91}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{151,91}</string>
+			</dict>
+			<key>animation/barrier/elixirTank/elixir_tank_10.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,459},{174,107}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<true />
+				<key>sourceSize</key>
+				<string>{174,107}</string>
+			</dict>
+			<key>animation/barrier/elixirTank/elixir_tank_04.png</key>
+			<dict>
+				<key>frame</key>
+				<string>{{0,307},{145,152}}</string>
+				<key>offset</key>
+				<string>{0,0}</string>
+				<key>rotated</key>
+				<false />
+				<key>sourceSize</key>
+				<string>{145,152}</string>
+			</dict>
+		</dict>
+		<key>metadata</key>
+		<dict>
+			<key>format</key>
+			<integer>2</integer>
+			<key>textureFileName</key>
+			<string>atlas.png</string>
+			<key>realTextureFileName</key>
+			<string>atlas.png</string>
+			<key>size</key>
+			<string>{512,1024}</string>
+		</dict>
+		<key>texture</key>
+		<dict>
+			<key>width</key>
+			<integer>512</integer>
+			<key>height</key>
+			<integer>1024</integer>
+		</dict>
+	</dict>
+</plist>

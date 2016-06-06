@@ -1,0 +1,13 @@
+<PlistInfoProjectFile>
+  <PropertyGroup Name="atlas" Type="Plist" ID="ae44fcf5-9856-46f5-b627-51e11d408f52" Version="3.10.0.0" />
+  <Content ExportType="Png" SortAlgorithm="MaxRects" PicturePadding="0" AllowRotation="True" AllowAnySize="False" AllowTrim="False" ctype="PlistInfoData">
+    <ImageFiles>
+      <FilePathData Path="animation/barrier/goldStrage/gold_stage_01.png" />
+      <FilePathData Path="animation/barrier/goldStrage/gold_stage_02.png" />
+      <FilePathData Path="animation/barrier/goldStrage/gold_stage_03.png" />
+      <FilePathData Path="animation/barrier/goldStrage/gold_stage_04.png" />
+      <FilePathData Path="animation/barrier/goldStrage/gold_stage_05.png" />
+    </ImageFiles>
+    <MaxSize Width="1024" Height="1024" />
+  </Content>
+</PlistInfoProjectFile>
