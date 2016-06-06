@@ -3,7 +3,7 @@
     <Item Key="CocosRecentOperation">
       <Value ctype="CocosRecentOperation">
         <LastPublishType Value="Resource" />
-        <IsLastPublish Value="False" />
+        <IsLastPublish Value="True" />
         <LastRunType Value="Android" />
       </Value>
     </Item>
@@ -26,6 +26,14 @@
         <KeystoreAliasPassword Value="" />
         <EnableSourceMap Value="False" />
         <EnableHTML5Advanced Value="False" />
+      </Value>
+    </Item>
+    <Item Key="TabsParamsKey">
+      <Value ctype="TabsInfo">
+        <OpenedDocuments>
+          <FilePathData Path="animation/unit/archer/anime.csd" />
+        </OpenedDocuments>
+        <ActiveDocument Path="animation/unit/archer/anime.csd" />
       </Value>
     </Item>
   </Properties>
