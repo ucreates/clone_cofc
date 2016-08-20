@@ -7,19 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // math
 #include "Range.h"
-
 // validator
 #include "LayerRangeValidator.h"
-
 using namespace cocos2d;
-
 LayerRangeValidator::LayerRangeValidator() {}
-
 LayerRangeValidator::~LayerRangeValidator() {}
-
 bool LayerRangeValidator::isValid() {
     float layerScale = this->layer->getScale();
     float scale = 1.0f / layerScale;
@@ -29,7 +23,6 @@ bool LayerRangeValidator::isValid() {
     }
     return false;
 }
-
 void LayerRangeValidator::setProperty(Position position, cocos2d::Layer* layer) {
     this->position = position;
     this->layer = layer;

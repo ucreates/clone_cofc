@@ -7,45 +7,34 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CannonDestroyState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 #include "DestroyEffectBehaviour.h"
 #include "BehaviourMapper.h"
 #include "SoundEffectAsset.h"
-
 #include "ServiceGateway.h"
 #include "TOverAllTable.h"
 #include "Position.h"
 #include "BarrierBehaviourType.h"
 CannonDestroyState::CannonDestroyState() { this->destroyStrategy = ServiceGateway::getInstance()->request("service://barrier/destroy"); }
-
 CannonDestroyState::~CannonDestroyState() {}
-
 void CannonDestroyState::create() {
     this->complete = true;
     BaseRenderAsset* asset = (BaseRenderAsset*)this->owner->getAsset("anime");
     asset->hide();
-
     asset = (BaseRenderAsset*)this->owner->getAsset("texture");
     asset->hide();
-
     Transform transform = asset->getTransform();
     Position pos = transform.getPosition();
     DestroyEffectBehaviour effect(this->owner->property);
     effect.onCreate(this->owner->getLayer(), pos);
-
     GeographicNode* node = this->owner->getGeographicNode();
     node->type = BarrierBehaviourType::None;
-
     int id = this->owner->getProperty()->getId();
     std::string barrierName = this->owner->getProperty()->getName();
     Parameter parameter;

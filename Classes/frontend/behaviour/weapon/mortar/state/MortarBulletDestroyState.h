@@ -7,19 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef MortarBulletDestroyState_h
 #define MortarBulletDestroyState_h
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "MortarBulletBehaviour.h"
-
 // asset
 #include "BaseRenderAsset.h"
-
 class MortarBulletBehaviour;
 class MortarBulletDestroyState : public FiniteState<MortarBulletBehaviour> {
    public:
@@ -27,5 +22,4 @@ class MortarBulletDestroyState : public FiniteState<MortarBulletBehaviour> {
     virtual ~MortarBulletDestroyState();
     void create() override;
 };
-
 #endif

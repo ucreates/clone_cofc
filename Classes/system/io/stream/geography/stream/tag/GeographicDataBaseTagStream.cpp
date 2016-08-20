@@ -7,10 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // stream
 #include "GeographicDataBaseTagStream.h"
-
 GeographicDataBaseTagStream::GeographicDataBaseTagStream() {}
-
 GeographicDataBaseTagStream::~GeographicDataBaseTagStream() {}

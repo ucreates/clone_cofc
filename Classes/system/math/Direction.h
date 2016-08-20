@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Direction_h
 #define Direction_h
-
 class Direction {
    public:
     enum DIRECT {
@@ -24,5 +22,4 @@ class Direction {
     };
     static DIRECT getDirection(float degree);
 };
-
 #endif

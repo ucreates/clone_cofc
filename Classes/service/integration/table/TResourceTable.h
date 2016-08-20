@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TResourceTable_h
 #define TResourceTable_h
-
 // service
 #include "BaseTable.h"
-
 class TResourceTable : public BaseTable {
    public:
     bool isEnemy;
@@ -29,5 +26,4 @@ class TResourceTable : public BaseTable {
     TResourceTable();
     void build() override;
 };
-
 #endif

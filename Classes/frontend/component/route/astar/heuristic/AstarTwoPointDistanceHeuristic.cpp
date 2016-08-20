@@ -7,14 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "AstarTwoPointDistanceHeuristic.h"
 #include "Distance.h"
-
 AstarTwoPointDistanceHeuristic::AstarTwoPointDistanceHeuristic() {}
-
 AstarTwoPointDistanceHeuristic::~AstarTwoPointDistanceHeuristic() {}
-
 int AstarTwoPointDistanceHeuristic::getEstimateDistance() {
     int distanceOfNextToGoal = Distance::create(this->start->address, this->goal->address);
     return distanceOfNextToGoal;

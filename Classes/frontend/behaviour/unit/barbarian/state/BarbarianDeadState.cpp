@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarbarianDeadState.h"
-
 BarbarianDeadState::BarbarianDeadState() {}
-
 BarbarianDeadState::~BarbarianDeadState() {}
-
 void BarbarianDeadState::create() {
     this->dead(this->owner);
     return;

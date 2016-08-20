@@ -7,19 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LogoUIBehaviour_h
 #define LogoUIBehaviour_h
 #include "BaseBehaviour.h"
 #include "IFiniteStateMachine.h"
 #include "LoadingUILoadingState.h"
 #include "INotify.h"
-
 class LoadingUILoadingState;
-
 class LoadingUIBehaviour : public BaseBehaviour, public IFiniteStateMachine<LoadingUIBehaviour>, public INotify {
     friend LoadingUILoadingState;
-
    public:
     LoadingUIBehaviour();
     virtual ~LoadingUIBehaviour();
@@ -27,5 +23,4 @@ class LoadingUIBehaviour : public BaseBehaviour, public IFiniteStateMachine<Load
     void onUpdate(float time = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

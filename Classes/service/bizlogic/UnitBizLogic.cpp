@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "UnitBehaviourType.h"
-
 // math
 #include "Random.h"
-
 // service
 #include "ConditionExpression.h"
 #include "Dao.h"
@@ -22,9 +19,7 @@
 #include "ResourceBizLogic.h"
 #include "TUnitTable.h"
 #include "UnitBizLogic.h"
-
 UnitBizLogic::UnitBizLogic() {}
-
 void UnitBizLogic::create() {
     DataBase* db = DataBase::getInstance();
     Dao<MUnitTable>* dao = db->findBy<MUnitTable>();
@@ -36,7 +31,6 @@ void UnitBizLogic::create() {
         this->addUnitMaster(UnitBehaviourType::WallBreaker, "wallbreaker", 30, 1);
     }
 }
-
 TUnitTable UnitBizLogic::findByUnitId(int unitId) {
     DataBase* db = DataBase::getInstance();
     Dao<TUnitTable>* dao = db->findBy<TUnitTable>();
@@ -49,7 +43,6 @@ TUnitTable UnitBizLogic::findByUnitId(int unitId) {
     }
     return recordVector.at(0);
 }
-
 bool UnitBizLogic::addUnitMaster(int type, std::string name, int hp, int power) {
     DataBase* db = DataBase::getInstance();
     Dao<MUnitTable>* dao = db->findBy<MUnitTable>();
@@ -60,11 +53,9 @@ bool UnitBizLogic::addUnitMaster(int type, std::string name, int hp, int power) 
     record.power = power;
     return dao->save(record);
 }
-
 bool UnitBizLogic::addUnit(int id, int type) {
     DataBase* db = DataBase::getInstance();
     Dao<TUnitTable>* dao = db->findBy<TUnitTable>();
-
     FieldSchema<int> field(id);
     ConditionExpression cep = ConditionExpression("unitId", "==", &field);
     std::vector<TUnitTable> recordVector = dao->findBy(&cep);
@@ -79,10 +70,8 @@ bool UnitBizLogic::addUnit(int id, int type) {
         record.power = Random::create(master.power - powerDiff, master.power + powerDiff);
         return dao->save(record);
     }
-
     return false;
 }
-
 MUnitTable UnitBizLogic::findMasterByType(int type) {
     DataBase* db = DataBase::getInstance();
     Dao<MUnitTable>* dao = db->findBy<MUnitTable>();
@@ -91,7 +80,6 @@ MUnitTable UnitBizLogic::findMasterByType(int type) {
     std::vector<MUnitTable> recordVector = dao->findBy(&cep);
     return recordVector[0];
 }
-
 int UnitBizLogic::addDamage(int unitId, int point) {
     DataBase* db = DataBase::getInstance();
     Dao<TUnitTable>* dao = db->findBy<TUnitTable>();
@@ -111,7 +99,6 @@ int UnitBizLogic::addDamage(int unitId, int point) {
     }
     return 0;
 }
-
 int UnitBizLogic::getHp(int id) {
     DataBase* db = DataBase::getInstance();
     Dao<TUnitTable>* dao = db->findBy<TUnitTable>();
@@ -124,7 +111,6 @@ int UnitBizLogic::getHp(int id) {
     TUnitTable record = recordVector[0];
     return record.hp;
 }
-
 float UnitBizLogic::getHpPercent(int id) {
     DataBase* db = DataBase::getInstance();
     Dao<TUnitTable>* dao = db->findBy<TUnitTable>();
@@ -136,7 +122,6 @@ float UnitBizLogic::getHpPercent(int id) {
     float percentage = (float)transaction.hp / master.hp * 100.0f;
     return percentage;
 }
-
 void UnitBizLogic::clear() {
     DataBase* db = DataBase::getInstance();
     Dao<TUnitTable>* dao = db->findBy<TUnitTable>();

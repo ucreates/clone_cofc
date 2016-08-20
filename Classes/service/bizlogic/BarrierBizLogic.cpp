@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "BarrierBehaviourType.h"
-
 // service
 #include "BarrierBizLogic.h"
 #include "ConditionExpression.h"
@@ -18,9 +16,7 @@
 #include "Dao.h"
 #include "FieldSchema.h"
 #include "UnitOfWork.h"
-
 BarrierBizLogic::BarrierBizLogic() {}
-
 TBarrierTable BarrierBizLogic::findByBarrierId(int barrierId) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -33,7 +29,6 @@ TBarrierTable BarrierBizLogic::findByBarrierId(int barrierId) {
     }
     return recordVector.at(0);
 }
-
 bool BarrierBizLogic::addBarrier(int id, int type) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -49,10 +44,8 @@ bool BarrierBizLogic::addBarrier(int id, int type) {
         record.power = master.power;
         return dao->save(record);
     }
-
     return false;
 }
-
 MBarrierTable BarrierBizLogic::findMasterByType(int type) {
     DataBase* db = DataBase::getInstance();
     Dao<MBarrierTable>* dao = db->findBy<MBarrierTable>();
@@ -61,7 +54,6 @@ MBarrierTable BarrierBizLogic::findMasterByType(int type) {
     std::vector<MBarrierTable> recordVector = dao->findBy(&condition);
     return recordVector[0];
 }
-
 void BarrierBizLogic::create() {
     DataBase* db = DataBase::getInstance();
     Dao<MBarrierTable>* dao = db->findBy<MBarrierTable>();
@@ -75,7 +67,6 @@ void BarrierBizLogic::create() {
         this->addBarrierMaster(BarrierBehaviourType::WoodFenceH, "wallH", 50, 0);
     }
 }
-
 bool BarrierBizLogic::addBarrierMaster(int type, std::string name, int hp, int power) {
     DataBase* db = DataBase::getInstance();
     Dao<MBarrierTable>* dao = db->findBy<MBarrierTable>();
@@ -86,7 +77,6 @@ bool BarrierBizLogic::addBarrierMaster(int type, std::string name, int hp, int p
     table.power = power;
     return dao->save(table);
 }
-
 int BarrierBizLogic::addDamage(int id, int point) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -106,7 +96,6 @@ int BarrierBizLogic::addDamage(int id, int point) {
     }
     return 0;
 }
-
 int BarrierBizLogic::getHp(int id) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -119,7 +108,6 @@ int BarrierBizLogic::getHp(int id) {
     TBarrierTable transaction = recordVector[0];
     return transaction.hp;
 }
-
 float BarrierBizLogic::getHpPercent(int id) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -129,13 +117,11 @@ float BarrierBizLogic::getHpPercent(int id) {
     if (0 == recordVector.size()) {
         return 0.0f;
     }
-
     TBarrierTable transaction = recordVector[0];
     MBarrierTable master = this->findMasterByType(transaction.type);
     float percentage = (float)transaction.hp / master.hp * 100.0f;
     return percentage;
 }
-
 bool BarrierBizLogic::destroy(int id) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -148,7 +134,6 @@ bool BarrierBizLogic::destroy(int id) {
     TBarrierTable transaction = recordVector[0];
     return dao->remove(transaction);
 }
-
 bool BarrierBizLogic::destroy(std::vector<int> destroyIdVector) {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();
@@ -160,7 +145,6 @@ bool BarrierBizLogic::destroy(std::vector<int> destroyIdVector) {
         if (0 == recordVector.size()) {
             continue;
         }
-
         TBarrierTable transaction = recordVector[0];
         transaction.hp = 0;
         bool ret = dao->update(transaction);
@@ -170,7 +154,6 @@ bool BarrierBizLogic::destroy(std::vector<int> destroyIdVector) {
     }
     return true;
 }
-
 void BarrierBizLogic::clear() {
     DataBase* db = DataBase::getInstance();
     Dao<TBarrierTable>* dao = db->findBy<TBarrierTable>();

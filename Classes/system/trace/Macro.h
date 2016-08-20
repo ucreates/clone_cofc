@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Macro_h
 #define Macro_h
-
 #include <typeinfo>
 #define ENTER printf("ENTER::%s::%s, at %d ,in %s\n", typeid(this).name(), __FUNCTION__, __LINE__, __FILE__)
 #define LEAVE printf("LEAVE::%s::%s, at %d ,in %s\n", typeid(this).name(), __FUNCTION__, __LINE__, __FILE__)

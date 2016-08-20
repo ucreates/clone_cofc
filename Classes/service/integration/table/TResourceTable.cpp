@@ -7,11 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "TResourceTable.h"
 #include "FieldSchema.h"
-
 TResourceTable::TResourceTable() {
     this->isEnemy = false;
     this->gold = 0;
@@ -24,7 +22,6 @@ TResourceTable::TResourceTable() {
     this->emerald = 0;
     this->selectUnitType = 0;
 }
-
 void TResourceTable::build() {
     this->primaryKey.set("id", this->id);
     this->compareFieldIterator.set("isEnemy", new FieldSchema<bool>(this->isEnemy));

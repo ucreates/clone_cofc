@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef WallBreakerDeadState_h
 #define WallBreakerDeadState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitDeadState.h"
-
 // behaviour
 #include "WallBreakerBehaviour.h"
-
 class WallBreakerBehaviour;
 class WallBreakerDeadState : public FiniteState<WallBreakerBehaviour>, UnitDeadState<WallBreakerBehaviour> {
    public:
@@ -25,5 +21,4 @@ class WallBreakerDeadState : public FiniteState<WallBreakerBehaviour>, UnitDeadS
     virtual ~WallBreakerDeadState();
     void create() override;
 };
-
 #endif

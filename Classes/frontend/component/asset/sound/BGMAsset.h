@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BGMAsset_h
 #define BGMAsset_h
-
 // sound
 #include "BaseSoundAsset.h"
-
 class BGMAsset : public BaseSoundAsset {
    public:
     BGMAsset(std::string assetFileName);
@@ -21,9 +18,7 @@ class BGMAsset : public BaseSoundAsset {
     void play(bool loop) override;
     void pause() override;
     void stop() override;
-
    private:
     bool isPause;
 };
-
 #endif

@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarrierDestroyStrategy_h
 #define BarrierDestroyStrategy_h
-
 // service
 #include "BaseStrategy.h"
-
 class BarrierDestroyStrategy : public BaseStrategy {
    public:
     BarrierDestroyStrategy();
@@ -21,5 +18,4 @@ class BarrierDestroyStrategy : public BaseStrategy {
     Response update(Parameter* parameter = NULL) override;
     Response clear(Parameter* parameter = NULL) override;
 };
-
 #endif

@@ -7,17 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "MortarPauseState.h"
-
 #include "BehaviourCollection.h"
 #include "Distance.h"
 #include "Position.h"
-
 MortarPauseState::MortarPauseState() {}
-
 MortarPauseState::~MortarPauseState() {}
-
 void MortarPauseState::create() {
     this->asset = (AnimatorAsset*)this->owner->getAsset("anime");
     BaseUnitBehaviour* unit = this->search();
@@ -34,18 +29,15 @@ void MortarPauseState::create() {
         this->enableSearch = false;
         return;
     }
-
     this->frame->reset();
     this->enableSearch = true;
     return;
 }
-
 void MortarPauseState::update(float delta) {
     if (false == this->enableSearch) {
         this->owner->getStateMachine()->change("pause");
         return;
     }
-
     if (MortarPauseState::SHOT_TIME < this->frame->getFrameTime() && NULL != this->targetNode) {
         Parameter parameter;
         parameter.set<GeographicNode*>("targetNode", this->targetNode);
@@ -55,7 +47,6 @@ void MortarPauseState::update(float delta) {
     this->frame->setFrameTime(delta);
     return;
 }
-
 BaseUnitBehaviour* MortarPauseState::search() {
     BaseUnitBehaviour* ret = NULL;
     Transform ctrfm = this->asset->getTransform();

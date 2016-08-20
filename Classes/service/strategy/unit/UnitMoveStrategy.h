@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UnitMoveStrategy_h
 #define UnitMoveStrategy_h
-
 // service
 #include "BaseStrategy.h"
-
 class UnitMoveStrategy : public BaseStrategy {
    public:
     UnitMoveStrategy();

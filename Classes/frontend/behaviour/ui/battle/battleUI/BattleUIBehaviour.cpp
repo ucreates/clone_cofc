@@ -7,13 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include <cstddef>
 #include "GeographicDepth.h"
 #include "BattleUIBehaviour.h"
 #include "BehaviourIdGenerator.h"
 #include "UnitBehaviourType.h"
-
 #include "BattleUIBehaviour.h"
 #include "UIProperty.h"
 #include "Notifier.h"
@@ -22,9 +20,7 @@
 #include "Screen.h"
 #include "Parameter.h"
 #include "ServiceGateway.h"
-
 using namespace cocos2d;
-
 BattleUIBehaviour::BattleUIBehaviour() {
     int id = BehaviourIdGenerator::getInstance()->getId();
     this->asset->add("battle", new UIAsset("csb/scene/battle/layer/battle"));
@@ -39,17 +35,13 @@ BattleUIBehaviour::BattleUIBehaviour() {
     this->stateMachine->stop();
     Notifier::getInstance()->add(this, this->property);
 }
-
 BattleUIBehaviour::~BattleUIBehaviour() { Notifier::getInstance()->erase(this->property->getId()); }
-
 void BattleUIBehaviour::onCreate(Layer* layer) {
     this->onCreate(layer, GeographicDepth::UI_DEPTH);
     return;
 }
-
 void BattleUIBehaviour::onCreate(Layer* layer, int depth) {
     this->layer = layer;
-
     UIAsset* asset = (UIAsset*)this->getAsset("battle");
     asset->play();
     asset->addLayer(layer, depth);
@@ -59,20 +51,16 @@ void BattleUIBehaviour::onCreate(Layer* layer, int depth) {
     asset->findByName<ui::Button*>("giantSelectButton")->addTouchEventListener(CC_CALLBACK_2(BattleUIBehaviour::onPushUnitSelectButton, this));
     asset->findByName<ui::Button*>("goblinSelectButton")->addTouchEventListener(CC_CALLBACK_2(BattleUIBehaviour::onPushUnitSelectButton, this));
     asset->findByName<ui::Button*>("wallBreakerSelectButton")->addTouchEventListener(CC_CALLBACK_2(BattleUIBehaviour::onPushUnitSelectButton, this));
-
     asset = (UIAsset*)this->getAsset("result");
     asset->findByName<ui::Button*>("returnHomeButton")->addTouchEventListener(CC_CALLBACK_2(BattleUIBehaviour::onEndBattleButton, this));
-
     this->stateMachine->change("battle");
     this->stateMachine->stop();
     return;
 }
-
 void BattleUIBehaviour::onUpdate(float time) {
     this->stateMachine->update(time);
     return;
 }
-
 void BattleUIBehaviour::onNotify(NotifyMessage notifyMessage, Parameter* parameter) {
     if (notifyMessage == NotifyMessage::Battle_Scene_Win_State || notifyMessage == NotifyMessage::Battle_Scene_Lose_State) {
         this->stateMachine->change("result");
@@ -100,18 +88,15 @@ void BattleUIBehaviour::onNotify(NotifyMessage notifyMessage, Parameter* paramet
     }
     return;
 }
-
 void BattleUIBehaviour::onEndBattleButton(Ref* pSender, ui::Widget::TouchEventType type) {
     if (type != ui::Widget::TouchEventType::BEGAN) {
         return;
     }
     Notifier::getInstance()->notify(NotifyMessage::Battle_Scene_Complete_State);
 }
-
 void BattleUIBehaviour::onPushUnitSelectButton(Ref* pSender, ui::Widget::TouchEventType type) {
     std::string buttonList[5] = {"archerSelectButton", "barbarianSelectButton", "giantSelectButton", "goblinSelectButton", "wallBreakerSelectButton"};
     ui::Button* button = dynamic_cast<ui::Button*>(pSender);
-
     for (int i = 0; i < 5; i++) {
         std::string buttonName = buttonList[i];
         if (buttonName == button->getName()) {
@@ -122,7 +107,6 @@ void BattleUIBehaviour::onPushUnitSelectButton(Ref* pSender, ui::Widget::TouchEv
         }
     }
 }
-
 void BattleUIBehaviour::setNormalButtonTexture(std::string buttonName) {
     UIAsset* asset = (UIAsset*)this->getAsset("battle");
     ui::Button* button = asset->findByName<ui::Button*>(buttonName);
@@ -140,7 +124,6 @@ void BattleUIBehaviour::setNormalButtonTexture(std::string buttonName) {
     }
     button->loadTextureNormal(textureName, ui::Widget::TextureResType::LOCAL);
 }
-
 void BattleUIBehaviour::setActiveButtonTexture(std::string buttonName) {
     UIAsset* asset = (UIAsset*)this->getAsset("battle");
     ui::Button* button = asset->findByName<ui::Button*>(buttonName);
@@ -158,7 +141,6 @@ void BattleUIBehaviour::setActiveButtonTexture(std::string buttonName) {
     }
     button->loadTextureNormal(textureName, ui::Widget::TextureResType::LOCAL);
 }
-
 void BattleUIBehaviour::updateActiveUnit(std::string buttonName) {
     int unitId = 0;
     if ("archerSelectButton" == buttonName) {

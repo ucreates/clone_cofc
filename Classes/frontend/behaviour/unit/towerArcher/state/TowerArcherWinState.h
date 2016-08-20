@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TowerArcherWinState_h
 #define TowerArcherWinState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitWinState.h"
-
 // behaviour
 #include "TowerArcherBehaviour.h"
-
 class TowerArcherBehaviour;
 class TowerArcherWinState : public FiniteState<TowerArcherBehaviour>, UnitWinState<TowerArcherBehaviour> {
    public:
@@ -25,5 +21,4 @@ class TowerArcherWinState : public FiniteState<TowerArcherBehaviour>, UnitWinSta
     virtual ~TowerArcherWinState();
     void create() override;
 };
-
 #endif

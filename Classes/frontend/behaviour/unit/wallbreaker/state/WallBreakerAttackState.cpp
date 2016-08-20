@@ -7,51 +7,37 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WallBreakerAttackState.h"
-
 // behaviour
 #include "BaseOrnamentBehaviour.h"
 #include "BehaviourCollection.h"
-
 // utility
 #include "Degree.h"
-
 // math
 #include "Random.h"
-
 // geography
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
 #include "Parameter.h"
-
 // asset
 #include "AnimatorAsset.h"
 #include "SoundEffectAsset.h"
-
 #include "ServiceGateway.h"
 #include "Parameter.h"
 #include "Response.h"
 #include "Direction.h"
-
 using namespace cocos2d;
-
 WallBreakerAttackState::WallBreakerAttackState() {}
-
 WallBreakerAttackState::~WallBreakerAttackState() {}
-
 void WallBreakerAttackState::create(Parameter* parameter) {
     this->barrierNode = parameter->get<GeographicNode*>("barrier");
     this->changeDirection();
     this->frame->reset();
     return;
 }
-
 void WallBreakerAttackState::update(float delta) {
-
     if (WallBreakerAttackState::WAIT_TIME < this->frame->getFrameTime() && false == this->complete) {
         std::vector<int> barrierIdVector;
         std::vector<BaseOrnamentBehaviour*> barrierVector = BehaviourCollection::getInstance()->findBarrierByAddress(5, this->barrierNode->address);
@@ -69,7 +55,6 @@ void WallBreakerAttackState::update(float delta) {
     }
     return;
 }
-
 void WallBreakerAttackState::changeDirection() {
     AnimatorAsset* asset = (AnimatorAsset*)this->owner->getAsset("anime");
     Transform entity = asset->getTransform();
@@ -90,13 +75,11 @@ void WallBreakerAttackState::changeDirection() {
         this->selectAttackAnimation("under_attack", true);
     }
 }
-
 void WallBreakerAttackState::selectAttackAnimation(std::string animationName, bool transform) {
     AnimatorAsset* asset = (AnimatorAsset*)this->owner->getAsset("anime");
     asset->stop();
     asset->play(animationName, false);
     asset->transform(transform);
-
     int threshold = Random::create(10);
     std::string seName = "se1";
     if (0 == threshold % 2) {

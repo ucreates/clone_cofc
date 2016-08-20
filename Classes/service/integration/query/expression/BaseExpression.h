@@ -7,21 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseExpression_h
 #define BaseExpression_h
-
 // stl
 #include <string>
-
 class BaseExpression {
    public:
     BaseExpression();
     virtual ~BaseExpression();
     std::string getExpressionType();
-
    protected:
     std::string expressiontType;
 };
-
 #endif

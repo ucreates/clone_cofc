@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ArcherBehaviour_h
 #define ArcherBehaviour_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseUnitBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "ArcherMoveState.h"
@@ -28,19 +24,16 @@
 #include "UnitDeadState.h"
 #include "UnitWinState.h"
 #include "UnitLoseState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
 #include "IFiniteStateMachine.h"
-
 class ArcherMoveState;
 class ArcherAttackState;
 class ArcherWinState;
 class ArcherLoseState;
 class ArcherDeadState;
-
 class ArcherBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<ArcherBehaviour>, public INotify {
     friend UnitMoveState<ArcherBehaviour>;
     friend UnitDeadState<ArcherBehaviour>;
@@ -51,7 +44,6 @@ class ArcherBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<Arc
     friend ArcherWinState;
     friend ArcherLoseState;
     friend ArcherDeadState;
-
    public:
     ArcherBehaviour();
     virtual ~ArcherBehaviour();
@@ -59,5 +51,4 @@ class ArcherBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<Arc
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

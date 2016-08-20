@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include <math.h>
 #include "Exponential.h"
-
 float Exponential::easeIn(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     float diff = end - start;
@@ -19,7 +17,6 @@ float Exponential::easeIn(float currentTime, float start, float end, float total
     }
     return diff * powf(2, 10.0f * (rate - 1.0f)) + start;
 }
-
 float Exponential::easeOut(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     float diff = end - start;
@@ -28,7 +25,6 @@ float Exponential::easeOut(float currentTime, float start, float end, float tota
     }
     return diff * (-1.0f * powf(2.0f, -10.0f * rate) + 1.0f) + start;
 }
-
 float Exponential::easeInOut(float currentTime, float start, float end, float totalTime) {
     bool switchType = currentTime / totalTime >= 0.5f;
     if (false == switchType) {

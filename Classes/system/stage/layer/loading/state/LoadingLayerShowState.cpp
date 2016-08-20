@@ -7,31 +7,22 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // cocos2d
 #include "SimpleAudioEngine.h"
-
 // behaviour
 #include "BehaviourCollection.h"
-
 // command
 #include "CommandGateway.h"
 #include "BaseCommand.h"
-
 // state
 #include "LoadingLayerShowState.h"
-
 using namespace CocosDenshion;
-
 LoadingLayerShowState::LoadingLayerShowState() {}
-
 LoadingLayerShowState::~LoadingLayerShowState() {}
-
 void LoadingLayerShowState::create() {
     SimpleAudioEngine::getInstance()->playEffect("loading_screen_jingle.mp3");
     return;
 }
-
 void LoadingLayerShowState::update(float delta) {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     std::vector<BaseBehaviour*>* behaviourVector = collection->getBehaviourVector("ui");

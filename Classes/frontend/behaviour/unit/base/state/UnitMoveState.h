@@ -7,26 +7,20 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UnitMoveState_h
 #define UnitMoveState_h
-
 // state
 #include "FiniteState.h"
-
 // route
 #include "BaseRouteSearch.h"
-
 // asset
 #include "AnimatorAsset.h"
 #include "GeographicNode.h"
-
 template <class T>
 class UnitMoveState {
    public:
     UnitMoveState();
     virtual ~UnitMoveState();
-
    protected:
     T* unit;
     const int MOST_NEAR_DISTANCE = 1;

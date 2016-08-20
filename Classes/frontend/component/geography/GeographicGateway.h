@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Map_h
 #define Map_h
-
 #include <vector>
 #include <map>
 #include "GeographicNode.h"
@@ -28,7 +26,6 @@ class GeographicGateway {
     GeographicNode* findByAddress(int x, int y, int z);
     GeographicNode* findByPosition(cocos2d::Vec2 position);
     GeographicNode* findByPosition(float x, float y);
-
     std::vector<GeographicNode*> find2x2ByAddress(Address address);
     std::vector<GeographicNode*> find2x2ByAddress(int x, int y);
     std::vector<GeographicNode*> find3x3ByAddress(Address address);
@@ -36,14 +33,12 @@ class GeographicGateway {
     std::vector<GeographicNode*> find4x4ByAddress(Address address);
     std::vector<GeographicNode*> find4x4ByAddress(int x, int y);
     std::vector<GeographicNode*> findBarrierByAddress(int x, int y, int width, int height);
-
     GeographicSize* getSize();
     GeographicSlope* getSlope();
     void update();
     bool isClean();
     void clear();
     static void destroy();
-
    private:
     GeographicSize* size;
     GeographicSlope* slope;
@@ -51,5 +46,4 @@ class GeographicGateway {
     GeographicGateway(std::map<int, GeographicDataBaseTag*>* mapDataFormatMap = NULL);
     static GeographicGateway* instance;
 };
-
 #endif

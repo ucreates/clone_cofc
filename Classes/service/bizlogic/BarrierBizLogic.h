@@ -7,18 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarrierBizLogic_h
 #define BarrierBizLogic_h
-
 // stl
 #include <vector>
-
 // service
 #include "BaseBizLogic.h"
 #include "TBarrierTable.h"
 #include "MBarrierTable.h"
-
 class BarrierBizLogic : public BaseBizLogic {
    public:
     BarrierBizLogic();
@@ -34,5 +30,4 @@ class BarrierBizLogic : public BaseBizLogic {
     bool destroy(std::vector<int> destroyIdVector);
     void clear() override;
 };
-
 #endif

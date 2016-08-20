@@ -7,19 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // math
 #include "Random.h"
-
 // state
 #include "BattleShakeState.h"
-
 using namespace cocos2d;
-
 BattleShakeState::BattleShakeState() {}
-
 BattleShakeState::~BattleShakeState() {}
-
 void BattleShakeState::create() {
     Layer* unitLayer = (Layer*)this->owner->getChildByTag(BaseLayer::NODE_LAYER_TAG);
     this->defaultLayerScale = unitLayer->getScale();
@@ -27,7 +21,6 @@ void BattleShakeState::create() {
     this->bouncy.setVerocity(BattleShakeState::SHAKE_SEED);
     this->bouncy.initialize();
 }
-
 void BattleShakeState::update(float delta) {
     Layer* unitLayer = (Layer*)this->owner->getChildByTag(BaseLayer::NODE_LAYER_TAG);
     float bound = bouncy.execute();
@@ -38,7 +31,6 @@ void BattleShakeState::update(float delta) {
     if (0 == xthld % 2) {
         x *= -1.0f;
     }
-
     if (0 == ythld % 2) {
         y *= -1.0f;
     }

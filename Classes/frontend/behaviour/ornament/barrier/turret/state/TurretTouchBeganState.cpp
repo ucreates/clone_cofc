@@ -7,31 +7,23 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "TurretTouchBeganState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
 #include "GeographicDepth.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // utility
 #include "Degree.h"
 #include "Figure.h"
 #include "Vector2D.h"
 #include "Random.h"
 #include "Alpha.h"
-
 using namespace cocos2d;
-
 TurretTouchBeganState::TurretTouchBeganState() {}
-
 TurretTouchBeganState::~TurretTouchBeganState() {}
-
 void TurretTouchBeganState::create(Parameter* parameter) {
     Vec2 pos = parameter->get<Vec2>("touchPosition");
     bool reset = parameter->get<bool>("reset");
@@ -42,9 +34,7 @@ void TurretTouchBeganState::create(Parameter* parameter) {
     } else {
         node = gateway->findByPosition(pos);
     }
-
     this->owner->clearGeographicNodeVector();
-
     if (NULL != node) {
         pos = node->position;
         std::vector<GeographicNode*> nodeVector = gateway->find2x2ByAddress(node->address);
@@ -57,14 +47,11 @@ void TurretTouchBeganState::create(Parameter* parameter) {
         parameter.set<std::vector<int>>("parameter", idVector);
         Notifier::getInstance()->notify(NotifyMessage::Route_Search_Test_Viewer_Node);
         Notifier::getInstance()->notify(NotifyMessage::Route_Search_Test_Viewer_Start, &parameter);
-
         GLubyte alpha = Alpha::HALF_ALPHA;
-
         AnimatorAsset* anime = (AnimatorAsset*)this->owner->getAsset("anime");
         anime->transform(pos, (OrnamentProperty*)this->owner->getProperty());
         anime->transform(GeographicDepth::ORNAMENT_TOUCH_DEPTH);
         anime->transform(alpha);
     }
-
     return;
 }

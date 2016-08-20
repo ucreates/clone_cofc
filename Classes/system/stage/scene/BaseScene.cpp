@@ -7,11 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BaseScene.h"
-
 BaseScene::BaseScene() {}
-
 BaseScene::~BaseScene() {}
-
 cocos2d::Scene* BaseScene::create() { return NULL; }

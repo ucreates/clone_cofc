@@ -7,15 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "UnitMoveStrategy.h"
 #include "RouteBizLogic.h"
-
 UnitMoveStrategy::UnitMoveStrategy() {}
-
 UnitMoveStrategy::~UnitMoveStrategy() {}
-
 Response UnitMoveStrategy::get(Parameter* parameter) {
     unsigned int startGeographicId = parameter->get<int>("startGeographicId");
     unsigned int goalGeographicId = parameter->get<int>("goalGeographicId");
@@ -25,7 +21,6 @@ Response UnitMoveStrategy::get(Parameter* parameter) {
     res.set<std::vector<GeographicNode*>>("routeCacheVector", routeCacheVector);
     return res;
 }
-
 Response UnitMoveStrategy::update(Parameter* parameter) {
     unsigned int startGeographicId = parameter->get<int>("startGeographicId");
     unsigned int goalGeographicId = parameter->get<int>("goalGeographicId");
@@ -38,7 +33,6 @@ Response UnitMoveStrategy::update(Parameter* parameter) {
     }
     return res;
 }
-
 Response UnitMoveStrategy::clear(Parameter* parameter) {
     unsigned int startGeographicId = parameter->get<int>("startGeographicId");
     unsigned int goalGeographicId = parameter->get<int>("goalGeographicId");

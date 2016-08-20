@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "GoblinWinState.h"
-
 GoblinWinState::GoblinWinState() {}
-
 GoblinWinState::~GoblinWinState() {}
-
 void GoblinWinState::create() {
     this->changeDirection(this->owner);
     return;

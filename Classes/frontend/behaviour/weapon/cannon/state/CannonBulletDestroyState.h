@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef CannonBulletDestroyState_h
 #define CannonBulletDestroyState_h
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "CannonBulletBehaviour.h"
-
 class CannonBulletBehaviour;
 class CannonBulletDestroyState : public FiniteState<CannonBulletBehaviour> {
    public:
@@ -24,5 +20,4 @@ class CannonBulletDestroyState : public FiniteState<CannonBulletBehaviour> {
     virtual ~CannonBulletDestroyState();
     void create() override;
 };
-
 #endif

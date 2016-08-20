@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataStream_h
 #define GeographicDataStream_h
-
 // stl
 #include <map>
-
 // stream
 #include "GeographicDataBaseTag.h"
-
 class GeographicDataStream {
    public:
     GeographicDataStream();
@@ -24,5 +20,4 @@ class GeographicDataStream {
     std::map<int, GeographicDataBaseTag*> read(std::string filePath);
     bool write(std::string filePath);
 };
-
 #endif

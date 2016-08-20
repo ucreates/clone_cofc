@@ -7,11 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "UnitBehaviourType.h"
 #include "BehaviourCollection.h"
-
 // service
 #include "ConditionExpression.h"
 #include "Dao.h"
@@ -19,9 +17,7 @@
 #include "FieldSchema.h"
 #include "ResourceBizLogic.h"
 #include "MResourceTable.h"
-
 ResourceBizLogic::ResourceBizLogic() {}
-
 void ResourceBizLogic::create() {
     DataBase* db = DataBase::getInstance();
     Dao<MResourceTable>* mdao = db->findBy<MResourceTable>();
@@ -38,7 +34,6 @@ void ResourceBizLogic::create() {
         mrt.elixir = totalElixir;
         mdao->save(mrt);
     }
-
     if (0 == tdao->count()) {
         TResourceTable prt;
         prt.isEnemy = false;
@@ -51,7 +46,6 @@ void ResourceBizLogic::create() {
         prt.goblin = 12;
         prt.wallbreaker = 12;
         tdao->save(prt);
-
         TResourceTable ert;
         ert.isEnemy = true;
         ert.gold = totalGold;
@@ -65,7 +59,6 @@ void ResourceBizLogic::create() {
         tdao->save(ert);
     }
 }
-
 bool ResourceBizLogic::selectUnit(int unitId) {
     DataBase* db = DataBase::getInstance();
     Dao<TResourceTable>* dao = db->findBy<TResourceTable>();
@@ -75,13 +68,11 @@ bool ResourceBizLogic::selectUnit(int unitId) {
     if (0 == recordVector.size()) {
         return false;
     }
-
     TResourceTable record = recordVector[0];
     record.selectUnitType = unitId;
     dao->update(record);
     return true;
 }
-
 bool ResourceBizLogic::updateUnit(int unitId, int number) {
     DataBase* db = DataBase::getInstance();
     Dao<TResourceTable>* dao = db->findBy<TResourceTable>();
@@ -91,7 +82,6 @@ bool ResourceBizLogic::updateUnit(int unitId, int number) {
     if (0 == recordVector.size()) {
         return false;
     }
-
     TResourceTable record = recordVector[0];
     if (UnitBehaviourType::Archer == unitId) {
         record.archer -= number;
@@ -119,10 +109,8 @@ bool ResourceBizLogic::updateUnit(int unitId, int number) {
             record.wallbreaker = 0;
         }
     }
-
     return dao->update(record);
 }
-
 bool ResourceBizLogic::updateGold(bool isEnemy) {
     DataBase* db = DataBase::getInstance();
     Dao<TResourceTable>* dao = db->findBy<TResourceTable>();
@@ -137,7 +125,6 @@ bool ResourceBizLogic::updateGold(bool isEnemy) {
     }
     return dao->update(record);
 }
-
 bool ResourceBizLogic::updateElixir(bool isEnemy) {
     DataBase* db = DataBase::getInstance();
     Dao<TResourceTable>* dao = db->findBy<TResourceTable>();
@@ -152,7 +139,6 @@ bool ResourceBizLogic::updateElixir(bool isEnemy) {
     }
     return dao->update(record);
 }
-
 bool ResourceBizLogic::updateEmerald(bool isEnemy) {
     DataBase* db = DataBase::getInstance();
     Dao<TResourceTable>* dao = db->findBy<TResourceTable>();
@@ -167,19 +153,15 @@ bool ResourceBizLogic::updateEmerald(bool isEnemy) {
     }
     return dao->update(record);
 }
-
 int ResourceBizLogic::getEnemyResourceCount(int resourceId) {
     DataBase* db = DataBase::getInstance();
-
     Dao<MResourceTable>* mdao = db->findBy<MResourceTable>();
     MResourceTable master = mdao->findFirst();
-
     Dao<TResourceTable>* tdao = db->findBy<TResourceTable>();
     FieldSchema<bool> field(true);
     ConditionExpression condition = ConditionExpression("isEnemy", "==", &field);
     std::vector<TResourceTable> recordVector = tdao->findBy(&condition);
     TResourceTable transaction = recordVector[0];
-
     int ret = 0;
     if (ResourceBizLogic::RESOURCE_EMERALD == resourceId) {
         ret = transaction.emerald * ResourceBizLogic::RESOURCE_EMERALD_UNIT;
@@ -190,19 +172,15 @@ int ResourceBizLogic::getEnemyResourceCount(int resourceId) {
     }
     return ret;
 }
-
 float ResourceBizLogic::getPlayerResourcePercent(int resourceId) {
     DataBase* db = DataBase::getInstance();
-
     Dao<MResourceTable>* mdao = db->findBy<MResourceTable>();
     MResourceTable master = mdao->findFirst();
-
     Dao<TResourceTable>* tdao = db->findBy<TResourceTable>();
     FieldSchema<bool> field(false);
     ConditionExpression condition = ConditionExpression("isEnemy", "==", &field);
     std::vector<TResourceTable> recordVector = tdao->findBy(&condition);
     TResourceTable transaction = recordVector[0];
-
     float rate = 0.0f;
     if (ResourceBizLogic::RESOURCE_EMERALD == resourceId) {
         rate = (float)transaction.emerald / (float)master.emerald;
@@ -213,7 +191,6 @@ float ResourceBizLogic::getPlayerResourcePercent(int resourceId) {
     }
     return rate * 100.0f;
 }
-
 TResourceTable ResourceBizLogic::getPlayerResourceInfo() {
     DataBase* db = DataBase::getInstance();
     Dao<TResourceTable>* dao = db->findBy<TResourceTable>();
@@ -226,7 +203,6 @@ TResourceTable ResourceBizLogic::getPlayerResourceInfo() {
     transaction.gold *= ResourceBizLogic::RESOURCE_GOLD_UNIT;
     return transaction;
 }
-
 MResourceTable ResourceBizLogic::getMaxResourceInfo() {
     DataBase* db = DataBase::getInstance();
     Dao<MResourceTable>* dao = db->findBy<MResourceTable>();
@@ -236,7 +212,6 @@ MResourceTable ResourceBizLogic::getMaxResourceInfo() {
     record.gold *= ResourceBizLogic::RESOURCE_GOLD_UNIT;
     return record;
 }
-
 void ResourceBizLogic::clear() {
     DataBase* db = DataBase::getInstance();
     Dao<MResourceTable>* mdao = db->findBy<MResourceTable>();

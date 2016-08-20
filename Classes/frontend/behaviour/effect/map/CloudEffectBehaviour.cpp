@@ -7,30 +7,22 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CloudEffectBehaviour.h"
 #include "cocostudio/CocoStudio.h"
-
 #include "BehaviourIdGenerator.h"
-
 // peroperty
 #include "EffectProperty.h"
 #include "GeographicDepth.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 #include "Screen.h"
 #include "Response.h"
 #include "ServiceGateway.h"
-
 using namespace cocos2d;
 using namespace cocostudio::timeline;
-
 CloudEffectBehaviour::CloudEffectBehaviour() {
     int id = BehaviourIdGenerator::getInstance()->getId();
     this->asset->add("anime", new AnimatorAsset("csb/animation/effect/cloud", id));
@@ -38,9 +30,7 @@ CloudEffectBehaviour::CloudEffectBehaviour() {
     this->frame = new TimeLine();
     this->property = new EffectProperty("cloud", id);
 }
-
 CloudEffectBehaviour::~CloudEffectBehaviour() { CC_SAFE_DELETE(this->frame); }
-
 void CloudEffectBehaviour::onCreate(Layer* layer) {
     // asset
     AnimatorAsset* anime = (AnimatorAsset*)this->getAsset("anime");
@@ -49,7 +39,6 @@ void CloudEffectBehaviour::onCreate(Layer* layer) {
     anime->addLayer(layer, GeographicDepth::EFFECT_DEPTH_RELATIVE_TO_NODE);
     anime->pause();
 }
-
 void CloudEffectBehaviour::onUpdate(float delta) {
     float time = this->frame->getFrameTime();
     if (1.0f < time && false == this->complete) {

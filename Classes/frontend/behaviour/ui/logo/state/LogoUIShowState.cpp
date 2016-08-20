@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "LogoUIShowState.h"
 #include "SoundEffectAsset.h"
 #include "UIAsset.h"
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 LogoUIShowState::LogoUIShowState() {}
-
 LogoUIShowState::~LogoUIShowState() {}
-
 void LogoUIShowState::create() {
     SoundEffectAsset* se = (SoundEffectAsset*)this->owner->getAsset("jingle");
     se->play();

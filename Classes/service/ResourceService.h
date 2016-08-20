@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ResourceService_h
 #define ResourceService_h
-
 // service
 #include "BaseService.h"
-
 class ResourceService : public BaseService {
    public:
     ResourceService();
     virtual ~ResourceService();
 };
-
 #endif

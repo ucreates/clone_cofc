@@ -7,9 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "Liner.h"
-
 float Liner::easeIn(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     float diff = end - start;
@@ -18,7 +16,6 @@ float Liner::easeIn(float currentTime, float start, float end, float totalTime) 
     }
     return diff * rate + start;
 }
-
 float Liner::easeOut(float currentTime, float start, float end, float totalTime) {
     float rate = 1.0f - (currentTime / totalTime);
     float diff = end - start;
@@ -27,7 +24,6 @@ float Liner::easeOut(float currentTime, float start, float end, float totalTime)
     }
     return diff * rate + start;
 }
-
 float Liner::easeInOut(float currentTime, float start, float end, float totalTime) {
     bool switchType = currentTime / totalTime >= 0.5f;
     if (false == switchType) {

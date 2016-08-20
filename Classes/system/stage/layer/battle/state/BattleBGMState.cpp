@@ -7,23 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // cocos2d
 #include "cocos2d.h"
-
 // state
 #include "BattleBGMState.h"
-
 // sound
 #include "BaseSoundAsset.h"
 #include "SoundAssetCollection.h"
-
 using namespace cocos2d;
-
 BattleBGMState::BattleBGMState() {}
-
 BattleBGMState::~BattleBGMState() {}
-
 void BattleBGMState::create(Parameter* parameter) {
     NotifyMessage notifyMessage = parameter->get<NotifyMessage>("message");
     BaseSoundAsset* bgm = NULL;
@@ -57,11 +50,9 @@ void BattleBGMState::create(Parameter* parameter) {
         replay = false;
         this->complete = true;
     }
-
     if (NULL != bgm) {
         bgm->stop();
         bgm->play(replay);
     }
 }
-
 void BattleBGMState::update(float delta) { this->owner->getStateMachine()->change("default"); }

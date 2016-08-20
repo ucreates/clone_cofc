@@ -7,11 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "AstarHeuristicFactory.h"
 #include "AstarManhattanHeuristic.h"
 #include "AstarTwoPointDistanceHeuristic.h"
-
 BaseAstarHeuristic* AstarHeuristicFactory::factoryMethod(int heuristicId) {
     BaseAstarHeuristic* heuristic = NULL;
     switch (heuristicId) {

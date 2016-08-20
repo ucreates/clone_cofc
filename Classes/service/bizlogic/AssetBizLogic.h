@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AssetBizLogic_h
 #define AssetBizLogic_h
-
 #include <string>
 #include <vector>
 #include "BaseBizLogic.h"
 #include "BaseStream.h"
-
 class AssetBizLogic : public BaseBizLogic {
    public:
     static const std::string ASSET_DMAIN;
@@ -32,9 +29,7 @@ class AssetBizLogic : public BaseBizLogic {
     bool getEmitDownloadAsset();
     std::string getDownloadMessage();
     void clear() override;
-
    private:
     BaseStream* stream;
 };
-
 #endif

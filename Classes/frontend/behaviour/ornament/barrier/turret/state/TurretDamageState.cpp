@@ -7,29 +7,21 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "TurretDamageState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 #include "BehaviourMapper.h"
 #include "ServiceGateway.h"
 #include "Response.h"
 #include "Position.h"
-
 TurretDamageState::TurretDamageState() { this->damageStrategy = ServiceGateway::getInstance()->request("service://barrier/damage"); }
-
 TurretDamageState::~TurretDamageState() {}
-
 void TurretDamageState::create(Parameter* parameter) {
     Response res = this->damageStrategy->update(parameter);
     if (ServiceStatus::SUCCESS != res.getStatus()) {

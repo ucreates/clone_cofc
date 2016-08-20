@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "SceneFactory.h"
 #include "BaseScene.h"
 #include "LoadingScene.h"
 #include "LogoScene.h"
 #include "BattleScene.h"
-
 using namespace cocos2d;
-
 Scene* SceneFactory::factoryMethod(int sceneId) {
     BaseScene* scene = NULL;
     switch (sceneId) {
@@ -31,11 +28,9 @@ Scene* SceneFactory::factoryMethod(int sceneId) {
         default:
             break;
     }
-
     if (NULL == scene) {
         return NULL;
     }
-
     Scene* cocosScene = scene->create();
     delete scene;
     return cocosScene;

@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BattlePreparationStrategy_h
 #define BattlePreparationStrategy_h
-
 // service
 #include "BaseStrategy.h"
-
 class BattlePreparationStrategy : public BaseStrategy {
    public:
     BattlePreparationStrategy();
@@ -21,5 +18,4 @@ class BattlePreparationStrategy : public BaseStrategy {
     Response get(Parameter* parameter = NULL) override;
     Response update(Parameter* parameter = NULL) override;
 };
-
 #endif

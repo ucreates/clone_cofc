@@ -7,21 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BehaviourCollection_h
 #define BehaviourCollection_h
-
 // stl
 #include <vector>
-
 // behaviour
 #include "BaseBehaviour.h"
 #include "BaseOrnamentBehaviour.h"
 #include "BaseUnitBehaviour.h"
-
 // address
 #include "Address.h"
-
 class BehaviourCollection {
    public:
     ~BehaviourCollection();
@@ -40,10 +35,8 @@ class BehaviourCollection {
     std::vector<std::string> getBehaviourTypeVector();
     GeographicNode* findBarrierByPosition(GeographicNode* startNode, bool ignoreNotBarrier);
     GeographicNode* findBarrierByOrnamentType(GeographicNode* startNode, std::string ornamentType);
-
     void clear();
     static void destroy();
-
    private:
     std::vector<BaseBehaviour*> unitCacheBehaviourVector;
     std::vector<BaseBehaviour*>* unitBehaviourVector;
@@ -58,5 +51,4 @@ class BehaviourCollection {
     BehaviourCollection();
     void clear(std::vector<BaseBehaviour*>* behaviourVector);
 };
-
 #endif

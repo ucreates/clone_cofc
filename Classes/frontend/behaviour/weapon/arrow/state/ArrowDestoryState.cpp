@@ -7,16 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "ArrowDestroyState.h"
-
 // behaviour
 #include "BehaviourStatus.h"
-
 ArrowDestroyState::ArrowDestroyState() {}
-
 ArrowDestroyState::~ArrowDestroyState() {}
-
 void ArrowDestroyState::create() {
     BaseRenderAsset* asset = (BaseRenderAsset*)this->owner->getAsset("anime");
     asset->hide();

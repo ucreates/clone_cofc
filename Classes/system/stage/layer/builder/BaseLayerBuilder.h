@@ -7,29 +7,21 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseLayerBuilder_h
 #define BaseLayerBuilder_h
-
 // stl
 #include <string>
 #include <map>
 #include <vector>
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseBehaviour.h"
-
 // layer
 #include "BaseLayer.h"
-
 // touch
 #include "BaseTouch.h"
-
 class BaseLayer;
-
 class BaseLayerBuilder {
    public:
     BaseLayerBuilder();
@@ -46,7 +38,6 @@ class BaseLayerBuilder {
     BaseLayerBuilder* setTouch(std::string touchName, BaseTouch* touch);
     BaseLayerBuilder* setTouchHandler(std::string handlerName, std::function<void(const std::vector<cocos2d::Touch*>&, cocos2d::Event*)> touchCallBack);
     virtual void build();
-
    protected:
     float fov;
     BaseLayer* rootLayer;
@@ -54,5 +45,4 @@ class BaseLayerBuilder {
     bool enableDepthView;
     std::map<std::string, std::function<void(const std::vector<cocos2d::Touch*>&, cocos2d::Event*)>> touchEventHandlerMap;
 };
-
 #endif

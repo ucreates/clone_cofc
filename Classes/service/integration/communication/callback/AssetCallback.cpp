@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "AssetCallback.h"
 #include "AssetBizLogic.h"
-
 using namespace std;
 using namespace cocos2d::network;
-
 void AssetCallback::onSuccess(HttpClient* sender, HttpResponse* response) {
     if (response->isSucceed()) {
         std::vector<char>* dataVector = response->getResponseData();
@@ -24,5 +21,4 @@ void AssetCallback::onSuccess(HttpClient* sender, HttpResponse* response) {
     }
     return;
 }
-
 void AssetCallback::onFaild(HttpClient* sender, HttpResponse* response) { CCLOGERROR("AssetCallback::onFaild"); }

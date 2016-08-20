@@ -7,63 +7,45 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "GoblinAttackState.h"
-
 // behaviour
 #include "BaseOrnamentBehaviour.h"
 #include "BehaviourCollection.h"
-
 // utility
 #include "Degree.h"
-
 // math
 #include "Random.h"
-
 // geography
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
-
 // asset
 #include "AnimatorAsset.h"
 #include "SoundEffectAsset.h"
-
 #include "ServiceGateway.h"
 #include "Parameter.h"
 #include "Response.h"
 #include "Direction.h"
-
 using namespace cocos2d;
-
 GoblinAttackState::GoblinAttackState() { this->damageStrategy = ServiceGateway::getInstance()->request("service://barrier/damage"); }
-
 GoblinAttackState::~GoblinAttackState() {}
-
 void GoblinAttackState::create(Parameter* parameter) {
     this->destroy = false;
-
     this->barrierNode = parameter->get<GeographicNode*>("barrier");
     if (0 != this->barrierNode->parentGeographicId) {
         GeographicGateway* gateway = GeographicGateway::getInstance();
         this->barrierNode = gateway->findByGeographicId(this->barrierNode->parentGeographicId);
     }
-
     this->targetBarrier = BehaviourCollection::getInstance()->findBarrierByAddress(this->barrierNode->address);
     if (NULL == this->targetBarrier) {
         this->destroy = true;
         return;
     }
-
     this->targetBarrierId = this->targetBarrier->getProperty()->getId();
-
     this->changeDirection();
-
     this->frame->reset();
     return;
 }
-
 void GoblinAttackState::update(float delta) {
     if (false != this->destroy) {
         this->owner->getStateMachine()->change("move");
@@ -76,7 +58,6 @@ void GoblinAttackState::update(float delta) {
         this->frame->setFrameTime(delta);
     }
 }
-
 void GoblinAttackState::changeDirection() {
     AnimatorAsset* asset = (AnimatorAsset*)this->owner->getAsset("anime");
     Transform entity = asset->getTransform();
@@ -97,12 +78,10 @@ void GoblinAttackState::changeDirection() {
         this->selectAttackAnimation("under_attack", true);
     }
 }
-
 void GoblinAttackState::selectAttackAnimation(std::string animationName, bool transform) {
     if (false != this->destroy) {
         return;
     }
-
     Parameter parameter;
     parameter.set<int>("barrierId", this->targetBarrierId);
     Response res = this->damageStrategy->get(&parameter);
@@ -111,7 +90,6 @@ void GoblinAttackState::selectAttackAnimation(std::string animationName, bool tr
         res.clear();
         return;
     }
-
     int restHp = res.get<int>("restHp");
     if (restHp <= 0) {
         this->destroy = true;
@@ -119,11 +97,9 @@ void GoblinAttackState::selectAttackAnimation(std::string animationName, bool tr
         return;
     }
     res.clear();
-
     AnimatorAsset* asset = (AnimatorAsset*)this->owner->getAsset("anime");
     asset->play(animationName, false);
     asset->transform(transform);
-
     int threshold = Random::create(10);
     std::string seName = "se3";
     if (0 == threshold % 2) {
@@ -133,7 +109,6 @@ void GoblinAttackState::selectAttackAnimation(std::string animationName, bool tr
     }
     SoundEffectAsset* se = (SoundEffectAsset*)this->owner->getAsset(seName.c_str());
     se->play();
-
     int unitId = this->owner->getProperty()->getId();
     parameter.set<int>("unitId", unitId);
     Notifier::getInstance()->notify(this->targetBarrierId, NotifyMessage::Behaviour_Barrier_Damage, &parameter);

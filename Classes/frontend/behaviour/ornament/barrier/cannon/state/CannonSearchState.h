@@ -7,39 +7,29 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef CannonSearchState_h
 #define CannonSearchState_h
-
 // stl
 #include <vector>
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "CannonBehaviour.h"
 #include "BaseUnitBehaviour.h"
-
 // route
 #include "BaseRouteSearch.h"
-
 // frame
 #include "TimeLine.h"
-
 // asset
 #include "BaseRenderAsset.h"
 #include "AnimatorAsset.h"
-
 class CannonBehaviour;
-
 class CannonSearchState : public FiniteState<CannonBehaviour> {
    public:
     CannonSearchState();
     virtual ~CannonSearchState();
     void create() override;
     void update(float delta) override;
-
    private:
     static int const MAX_FRAME_NUMBER = 35;
     static const int MOST_SHORTEST_DISTANCE = 1000;
@@ -54,5 +44,4 @@ class CannonSearchState : public FiniteState<CannonBehaviour> {
     void search();
     bool calcDegree();
 };
-
 #endif

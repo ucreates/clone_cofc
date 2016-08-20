@@ -7,18 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "MBarrierTable.h"
 #include "FieldSchema.h"
-
 MBarrierTable::MBarrierTable() {
     this->name = "";
     this->type = 0;
     this->hp = 0;
     this->power = 0;
 }
-
 void MBarrierTable::build() {
     this->primaryKey.set("id", this->id);
     this->compareFieldIterator.set("name", new FieldSchema<std::string>(this->name));

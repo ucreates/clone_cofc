@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "OrnamentCommand.h"
-
 OrnamentCommand::OrnamentCommand() {}
-
 OrnamentCommand::~OrnamentCommand() {}
-
 void OrnamentCommand::execute(BaseBehaviour* behaviour, float delta) {
     behaviour->onCollision();
     behaviour->onUpdate(delta);

@@ -7,16 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LogoService_h
 #define LogoService_h
 // service
 #include "BaseService.h"
-
 class LogoService : public BaseService {
    public:
     LogoService();
     virtual ~LogoService();
 };
-
 #endif

@@ -7,11 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseCommand_h
 #define BaseCommand_h
 #include "BaseBehaviour.h"
-
 class BaseCommand {
    public:
     BaseCommand();
@@ -21,5 +19,4 @@ class BaseCommand {
     void initialize(BaseBehaviour* behaviour, cocos2d::Layer* layer, Position position);
     virtual void execute(BaseBehaviour* behaviour, float delta);
 };
-
 #endif

@@ -7,22 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseService_h
 #define BaseService_h
-
 // stl
 #include <map>
-
 // service
 #include "BaseStrategy.h"
-
 class BaseService {
    public:
     BaseService();
     virtual ~BaseService();
     BaseStrategy* create(std::string strategyName);
-
    protected:
     std::map<std::string, BaseStrategy*> strategyMap;
 };

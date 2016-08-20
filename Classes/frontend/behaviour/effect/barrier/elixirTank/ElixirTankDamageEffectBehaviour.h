@@ -7,21 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ElixirTankDamageEffectBehaviour_h
 #define ElixirTankDamageEffectBehaviour_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseBehaviour.h"
-
 class ElixirTankDamageEffectBehaviour : public BaseBehaviour {
    public:
     ElixirTankDamageEffectBehaviour();
     virtual ~ElixirTankDamageEffectBehaviour();
     void onCreate(cocos2d::Layer* layer, Position position) override;
 };
-
 #endif

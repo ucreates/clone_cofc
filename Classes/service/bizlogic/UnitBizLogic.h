@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UnitBizLogic_h
 #define UnitBizLogic_h
-
 // service
 #include "BaseBizLogic.h"
 #include "MUnitTable.h"
 #include "TUnitTable.h"
-
 class UnitBizLogic : public BaseBizLogic {
    public:
     UnitBizLogic();
@@ -29,5 +26,4 @@ class UnitBizLogic : public BaseBizLogic {
     float getHpPercent(int id);
     void clear() override;
 };
-
 #endif

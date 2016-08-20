@@ -7,19 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CircleCollider.h"
 #include "Distance.h"
 #include "ConvertUtility.h"
-
 using namespace cocos2d;
-
 CircleCollider::CircleCollider() : CircleCollider(NULL, NULL) {}
-
 CircleCollider::CircleCollider(BaseBehaviour* behaviour) : CircleCollider(behaviour, NULL) {}
-
 CircleCollider::CircleCollider(GeographicNode* node) : CircleCollider(NULL, node) {}
-
 CircleCollider::CircleCollider(BaseBehaviour* behaviour, GeographicNode* node) {
     this->behaviour = behaviour;
     this->node = node;
@@ -28,19 +22,15 @@ CircleCollider::CircleCollider(BaseBehaviour* behaviour, GeographicNode* node) {
         this->radius = MAX(size.width, size.height);
     }
 }
-
 CircleCollider::~CircleCollider() {}
-
 bool CircleCollider::isBehaviourHit(BaseBehaviour* behaviour) {
     BaseRenderAsset* pbra = (BaseRenderAsset*)behaviour->getAsset("anime");
     Position pos1 = pbra->getTransform().getPosition();
-
     BaseRenderAsset* bra = (BaseRenderAsset*)this->behaviour->getAsset("anime");
     Position pos2 = bra->getTransform().getPosition();
     float distance = Distance::create(pos1.vector2d, pos2.vector2d);
     return (distance <= this->radius);
 }
-
 bool CircleCollider::isNodeHit(BaseBehaviour* behaviour) {
     BaseRenderAsset* pbra = (BaseRenderAsset*)behaviour->getAsset("anime");
     Position pos1 = pbra->getTransform().getPosition();
@@ -48,12 +38,10 @@ bool CircleCollider::isNodeHit(BaseBehaviour* behaviour) {
     float distance = Distance::create(pos1, pos2);
     return (distance <= this->radius);
 }
-
 bool CircleCollider::isNodeHit(float x, float y) {
     float distance = Distance::create(Vec2(x, y), this->node->position);
     return (distance <= this->radius);
 }
-
 Node* CircleCollider::getGizmo() {
     DrawNode* node = DrawNode::create();
     Vec2 cpos;

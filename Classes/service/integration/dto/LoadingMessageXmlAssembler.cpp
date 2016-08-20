@@ -7,24 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // cocos2d
 #include "cocos2d.h"
 #include "external/tinyxml2/tinyxml2.h"
-
 // service
 #include "LoadingMessageXmlAssembler.h"
-
 // utility
 #include "StringUtility.h"
-
 using namespace cocos2d;
 using namespace tinyxml2;
-
 LoadingMessageXmlAssembler::LoadingMessageXmlAssembler(std::string configFilePath) { this->configFilePath = configFilePath; }
-
 LoadingMessageXmlAssembler::~LoadingMessageXmlAssembler() {}
-
 std::vector<std::string> LoadingMessageXmlAssembler::writeToVector() {
     std::vector<std::string> ret;
     XMLDocument doc;
@@ -34,7 +27,6 @@ std::vector<std::string> LoadingMessageXmlAssembler::writeToVector() {
     if (XML_NO_ERROR != pret) {
         return ret;
     }
-
     std::list<std::string> sanitizeTargetList;
     sanitizeTargetList.push_back("\r");
     sanitizeTargetList.push_back("\n");

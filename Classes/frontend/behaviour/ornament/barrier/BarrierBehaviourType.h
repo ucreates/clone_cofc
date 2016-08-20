@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarrierBehaviourType_h
 #define BarrierBehaviourType_h
 enum BarrierBehaviourType {
@@ -21,5 +20,4 @@ enum BarrierBehaviourType {
     GoldStrage = 0x0106,
     ElixirTank = 0x0107,
 };
-
 #endif

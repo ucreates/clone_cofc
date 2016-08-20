@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TRouteTable_h
 #define TRouteTable_h
-
 // geographic
 #include "GeographicNode.h"
-
 // service
 #include "BaseTable.h"
-
 class TRouteTable : public BaseTable {
    public:
     unsigned int startGeographicId;
@@ -25,5 +21,4 @@ class TRouteTable : public BaseTable {
     TRouteTable();
     void build() override;
 };
-
 #endif

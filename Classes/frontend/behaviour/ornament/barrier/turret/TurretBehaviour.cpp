@@ -7,31 +7,23 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "TurretBehaviour.h"
 #include "BehaviourIdGenerator.h"
 #include "TowerArcherBehaviour.h"
-
 // peroperty
 #include "OrnamentProperty.h"
-
 // asset
 #include "AnimatorAsset.h"
 #include "SoundEffectAsset.h"
-
 // notify
 #include "Notifier.h"
-
 // geographic
 #include "GeographicDepth.h"
-
 #include "Parameter.h"
 #include "ServiceGateway.h"
 #include "BarrierBehaviourType.h"
-
 using namespace cocos2d;
-
 TurretBehaviour::TurretBehaviour(GeographicNode* geographicNode) {
     int id = BehaviourIdGenerator::getInstance()->getId();
     this->asset->add("anime", new AnimatorAsset("csb/animation/barrier/turret", id));
@@ -44,9 +36,7 @@ TurretBehaviour::TurretBehaviour(GeographicNode* geographicNode) {
     this->stateMachine->add("touchEnd", new TurretTouchEndState());
     this->stateMachine->stop();
     this->unit = new TowerArcherBehaviour();
-
     Notifier::getInstance()->add(this, this->property);
-
     Parameter parameter;
     parameter.set<int>("barrierId", id);
     parameter.set<int>("barrierType", BarrierBehaviourType::Turret);
@@ -56,68 +46,53 @@ TurretBehaviour::TurretBehaviour(GeographicNode* geographicNode) {
     }
     res.clear();
 }
-
 TurretBehaviour::~TurretBehaviour() {
     Notifier::getInstance()->erase(this->property->getId());
     CC_SAFE_DELETE(this->unit);
 }
-
 void TurretBehaviour::onCreate(Layer* layer) {
     OrnamentProperty* oproperty = (OrnamentProperty*)this->property;
     int depth = this->geographicNode->depth + GeographicDepth::BARRIER_DEPTH_RELATIVE_TO_NODE * oproperty->getAddressScale()->x;
     this->onCreate(layer, depth);
 }
-
 void TurretBehaviour::onCreate(Layer* layer, int depth) {
     Position position = Position(this->geographicNode->position, depth);
     Position unitPosition = position;
-
     OrnamentProperty* property = (OrnamentProperty*)this->property;
     unitPosition.add(Vec2(0.0f, property->getScale()->getAllScale().height), 1);
-
     this->unit->onCreate(layer, unitPosition);
     this->unit->setGeographicNode(this->geographicNode);
-
     this->onCreate(layer, position);
     return;
 }
-
 void TurretBehaviour::onCreate(Layer* layer, Position position) {
     this->layer = layer;
-
     if (NULL != this->geographicNode) {
         GeographicGateway* gateway = GeographicGateway::getInstance();
         std::vector<GeographicNode*> nodeVector = gateway->find2x2ByAddress(this->geographicNode->address);
         this->setGeographicNodeVector(nodeVector);
     }
-
     this->lifeGuage->onCreate(layer, position.zorder);
-
     AnimatorAsset* anime = (AnimatorAsset*)this->getAsset("anime");
     anime->pause();
     anime->transform(position, (OrnamentProperty*)this->property);
     anime->addLayer(layer, position.zorder);
-
     this->stateMachine->play();
     return;
 }
-
 void TurretBehaviour::onUpdate(float delta) {
     this->unit->onUpdate(delta);
     this->lifeGuage->onUpdate(delta);
     this->stateMachine->update(delta);
 }
-
 void TurretBehaviour::onNotify(NotifyMessage notifyMessage, Parameter* parameter) {
     if (NULL == parameter) {
         return;
     }
-
     int barrierId = parameter->get<int>("barrierId");
     if (this->property->getId() != barrierId) {
         return;
     }
-
     if (notifyMessage == NotifyMessage::Behaviour_Barrier_Destroy) {
         this->stateMachine->change("destroy", true);
     } else if (notifyMessage == Behaviour_Barrier_Damage) {

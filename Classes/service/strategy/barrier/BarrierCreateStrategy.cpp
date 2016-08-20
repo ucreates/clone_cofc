@@ -7,14 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarrierCreateStrategy.h"
 #include "BarrierBizLogic.h"
-
 BarrierCreateStrategy::BarrierCreateStrategy() {}
-
 BarrierCreateStrategy::~BarrierCreateStrategy() {}
-
 Response BarrierCreateStrategy::update(Parameter* parameter) {
     int barrierId = parameter->get<int>("barrierId");
     int barrierType = parameter->get<int>("barrierType");

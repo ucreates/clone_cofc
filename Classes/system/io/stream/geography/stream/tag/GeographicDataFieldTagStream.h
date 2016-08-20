@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataFieldTagStream_h
 #define GeographicDataFieldTagStream_h
-
 // stream
 #include "BinaryStream.h"
 #include "GeographicDataBaseTagStream.h"
-
 class GeographicDataFieldTagStream : public GeographicDataBaseTagStream {
    public:
     GeographicDataFieldTagStream();
@@ -22,5 +19,4 @@ class GeographicDataFieldTagStream : public GeographicDataBaseTagStream {
     GeographicDataBaseFormat* read(BinaryStream* stream, GeographicDataRecordHeader* recordHeader) override;
     bool write(std::ofstream* stream, GeographicDataBaseFormat* format) override;
 };
-
 #endif
