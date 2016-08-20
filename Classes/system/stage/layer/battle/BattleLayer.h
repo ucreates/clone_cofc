@@ -7,19 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BattleLayer_h
 #define BattleLayer_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // layer
 #include "BaseLayer.h"
-
 // notifier
 #include "INotify.h"
-
 // state
 #include "BattleFrameState.h"
 #include "BattleZoomState.h"
@@ -29,14 +24,12 @@
 #include "BattleBGMState.h"
 #include "BaseTransitionState.h"
 #include "IFiniteStateMachine.h"
-
 class BattleLayerBuilder;
 class BattleFrameState;
 class BattleZoomState;
 class BattleShakeState;
 class BattleDefaultState;
 class BattleTransitionState;
-
 class BattleLayer : public BaseLayer, public IFiniteStateMachine<BattleLayer>, public INotify {
     friend BattleLayerBuilder;
     friend BattleFrameState;
@@ -45,7 +38,6 @@ class BattleLayer : public BaseLayer, public IFiniteStateMachine<BattleLayer>, p
     friend BattleDefaultState;
     friend BattleTransitionState;
     friend BaseTransitionState<BattleLayer>;
-
    public:
     constexpr static const float FIRST_FIELD_OF_VIEW = 0.3f;
     constexpr static const float DEFAULT_SWIPE_SCALE_RATE = 0.1f;
@@ -61,5 +53,4 @@ class BattleLayer : public BaseLayer, public IFiniteStateMachine<BattleLayer>, p
     void onExit() override;
     CREATE_FUNC(BattleLayer);
 };
-
 #endif

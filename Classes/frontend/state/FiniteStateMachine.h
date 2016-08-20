@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef FiniteStateMachine_h
 #define FiniteStateMachine_h
-
 #include <map>
 #include "FiniteState.h"
 #include "FiniteStateEntity.h"
 #include "Parameter.h"
-
 template <class T>
 class FiniteStateMachine {
    public:
@@ -25,24 +22,18 @@ class FiniteStateMachine {
         this->owner = owner;
         this->hasParameter = false;
     }
-
     inline ~FiniteStateMachine() {
         for (typename std::map<std::string, FiniteState<T>*>::iterator it = this->stateList.begin(); it != this->stateList.end(); ++it) {
             CC_SAFE_DELETE(it->second);
         }
-
         for (typename std::map<std::string, FiniteState<T>*>::iterator it = this->persistenceStateList.begin(); it != this->persistenceStateList.end(); ++it) {
             CC_SAFE_DELETE(it->second);
         }
-
         CC_SAFE_DELETE(this->finiteStateEntity);
         CC_SAFE_DELETE(this->notifyParamter);
     }
-
     inline void change(std::string newStateName) { this->change(newStateName, NULL, false); }
-
     inline void change(std::string newStateName, bool update) { this->change(newStateName, NULL, update); }
-
     inline void change(std::string newStateName, Parameter* parameter, bool update = false) {
         if (NULL != parameter) {
             this->notifyParamter->copy(parameter);
@@ -56,7 +47,6 @@ class FiniteStateMachine {
             this->update();
         }
     }
-
     inline void update(float delta = 0.0f) {
         if (this->finiteStateEntity->isNewState) {
             if (false != this->hasParameter) {
@@ -70,27 +60,22 @@ class FiniteStateMachine {
             }
             this->finiteStateEntity->isNewState = false;
         }
-
         if (NULL != this->finiteStateEntity->state && false == this->finiteStateEntity->state->complete && false == this->finiteStateEntity->state->wait) {
             this->finiteStateEntity->state->update(delta);
         }
-
         for (typename std::map<std::string, FiniteState<T>*>::iterator it = this->persistenceStateList.begin(); it != this->persistenceStateList.end(); it++) {
             if (false == it->second->complete) {
                 it->second->update(delta);
             }
         }
     }
-
     inline FiniteState<T>* get(std::string stateName) {
         if (NULL != this->stateList[stateName]) {
             return this->stateList[stateName];
         }
         return NULL;
     }
-
     inline bool add(std::string stateName, FiniteState<T>* state, bool isFirstState = false) {
-
         if (false == state->persistence) {
             if (NULL == this->stateList[stateName]) {
                 state->setOwner(this->owner);
@@ -106,7 +91,6 @@ class FiniteStateMachine {
         }
         return false;
     }
-
     inline void play() {
         typename std::map<std::string, FiniteState<T>*>::iterator itr = this->stateList.begin();
         while (itr != this->stateList.end()) {
@@ -115,7 +99,6 @@ class FiniteStateMachine {
             state->complete = false;
             ++itr;
         }
-
         itr = this->persistenceStateList.begin();
         while (itr != this->persistenceStateList.end()) {
             FiniteState<T>* state = (FiniteState<T>*)itr->second;
@@ -125,13 +108,11 @@ class FiniteStateMachine {
             ++itr;
         }
     }
-
     inline void pause() {
         if (NULL != this->finiteStateEntity->state && false == this->finiteStateEntity->state->complete && false == this->finiteStateEntity->state->wait) {
             this->finiteStateEntity->state->wait = true;
         }
     }
-
     inline void stop() {
         typename std::map<std::string, FiniteState<T>*>::iterator itr = this->stateList.begin();
         while (itr != this->stateList.end()) {
@@ -139,7 +120,6 @@ class FiniteStateMachine {
             state->complete = true;
             ++itr;
         }
-
         itr = this->persistenceStateList.begin();
         while (itr != this->persistenceStateList.end()) {
             FiniteState<T>* state = (FiniteState<T>*)itr->second;
@@ -147,9 +127,7 @@ class FiniteStateMachine {
             ++itr;
         }
     }
-
     inline FiniteStateEntity<T>* getFiniteStateEntity() { return this->finiteStateEntity; }
-
    private:
     std::map<std::string, FiniteState<T>*> stateList;
     std::map<std::string, FiniteState<T>*> persistenceStateList;

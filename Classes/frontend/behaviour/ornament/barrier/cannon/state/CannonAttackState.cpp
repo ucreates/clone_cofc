@@ -7,35 +7,26 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CannonAttackState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // behaviour
 #include "BehaviourMapper.h"
 #include "Transform.h"
-
 // command
 #include "CommandGateway.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // vfx
 #include "Liner.h"
 #include "Quadratic.h"
-
 // utility
 #include "Distance.h"
 #include "Position.h"
 #include "BehaviourCollection.h"
-
 using namespace cocos2d;
-
 CannonAttackState::CannonAttackState(int ownerId) {
     this->shotFrame = new TimeLine();
     for (int i = 0; i < CannonAttackState::STOCKED_BULLET_NUMBER; i++) {
@@ -43,7 +34,6 @@ CannonAttackState::CannonAttackState(int ownerId) {
     }
     this->stocledBulletCount = 0;
 }
-
 CannonAttackState::~CannonAttackState() {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     for (std::vector<CannonBulletBehaviour*>::iterator at = this->stockedBulletVector.begin(); at != this->stockedBulletVector.end(); at++) {
@@ -51,7 +41,6 @@ CannonAttackState::~CannonAttackState() {
     }
     CC_SAFE_DELETE(this->shotFrame);
 }
-
 void CannonAttackState::create(Parameter* parameter) {
     BaseRenderAsset* asset = (BaseRenderAsset*)this->owner->getAsset("anime");
     Transform transform = asset->getTransform();
@@ -60,15 +49,12 @@ void CannonAttackState::create(Parameter* parameter) {
     float radian = CC_DEGREES_TO_RADIANS(0.0f);
     this->sin = sinf(radian);
     this->cos = cosf(radian);
-
     this->degree = parameter->get<int>("degree");
     this->shotDegree = parameter->get<float>("shotDegree");
-
     this->shotFrame->reset();
     this->frame->reset();
     return;
 }
-
 void CannonAttackState::update(float delta) {
     float currentFrameTime = this->frame->getFrameTime();
     BaseRenderAsset* asset = (BaseRenderAsset*)this->owner->getAsset("anime");
@@ -94,10 +80,8 @@ void CannonAttackState::update(float delta) {
         float dy = this->sin;
         cpos.add(Vec2(dx, dy));
         asset->transform(cpos);
-
         float nextScale = Quadratic::easeIn(currentFrameTime, 1.0f, 1.25f, 0.1f);
         asset->transform(Size(nextScale, nextScale));
-
         this->frame->update(delta, 1);
     }
     return;

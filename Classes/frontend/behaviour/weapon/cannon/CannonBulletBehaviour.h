@@ -7,32 +7,25 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef CannonBulletBehaviour_h
 #define CannonBulletBehaviour_h
-
 // behaviour
 #include "BaseBehaviour.h"
-
 // state
 #include "IFiniteStateMachine.h"
 #include "CannonBulletActiveState.h"
 #include "CannonBulletDestroyState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 // geography
 #include "GeographicNode.h"
-
 class CannonBulletActiveState;
 class CannonBulletDestroyState;
 class CannonBulletBehaviour : public BaseBehaviour, public IFiniteStateMachine<CannonBulletBehaviour>, public INotify {
     friend CannonBulletActiveState;
     friend CannonBulletDestroyState;
-
    public:
     CannonBulletBehaviour(GeographicNode* node, int ownerId, float degree, bool debug = false);
     virtual ~CannonBulletBehaviour();
@@ -40,12 +33,10 @@ class CannonBulletBehaviour : public BaseBehaviour, public IFiniteStateMachine<C
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
     void setProperty(GeographicNode* node, float degree, bool debug = false);
-
    private:
     GeographicNode* start;
     GeographicNode* goal;
     bool debug;
     int degree;
 };
-
 #endif

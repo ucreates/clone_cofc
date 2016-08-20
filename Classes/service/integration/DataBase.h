@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef DataBase_h
 #define DataBase_h
-
 // stl
 #include <map>
-
 // service
 #include "BaseDao.h"
 #include "Dao.h"
-
 class DataBase {
    public:
     ~DataBase();
@@ -28,11 +24,9 @@ class DataBase {
     bool add(Dao<T>* dao);
     void clear();
     static void destroy();
-
    private:
     static DataBase* instance;
     std::map<std::string, BaseDao*> daoMap;
     DataBase();
 };
-
 #endif

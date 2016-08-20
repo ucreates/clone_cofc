@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GoblinBehaviour_h
 #define GoblinBehaviour_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseUnitBehaviour.h"
-
 // state
 #include "IFiniteStateMachine.h"
 #include "GoblinMoveState.h"
@@ -28,18 +24,15 @@
 #include "UnitDeadState.h"
 #include "UnitWinState.h"
 #include "UnitLoseState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 class GoblinMoveState;
 class GoblinAttackState;
 class GoblinWinState;
 class GoblinLoseState;
 class GoblinDeadState;
-
 class GoblinBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<GoblinBehaviour>, public INotify {
     friend UnitMoveState<GoblinBehaviour>;
     friend UnitDeadState<GoblinBehaviour>;
@@ -50,7 +43,6 @@ class GoblinBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<Gob
     friend GoblinWinState;
     friend GoblinLoseState;
     friend GoblinDeadState;
-
    public:
     GoblinBehaviour();
     virtual ~GoblinBehaviour();
@@ -58,5 +50,4 @@ class GoblinBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<Gob
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ArcherMoveState_h
 #define ArcherMoveState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitMoveState.h"
-
 // behaviour
 #include "BaseUnitBehaviour.h"
 #include "ArcherBehaviour.h"
-
 class ArcherBehaviour;
-
 class ArcherMoveState : public FiniteState<ArcherBehaviour>, UnitMoveState<ArcherBehaviour> {
    public:
     ArcherMoveState();
@@ -28,5 +23,4 @@ class ArcherMoveState : public FiniteState<ArcherBehaviour>, UnitMoveState<Arche
     void create() override;
     void update(float delta) override;
 };
-
 #endif

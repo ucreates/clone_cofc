@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LoadingScene_h
 #define LoadingScene_h
-
 #include "cocos2d.h"
 #include "BaseScene.h"
-
 class LoadingScene : public BaseScene {
    public:
     static const int SCENE_ID = 2;
@@ -21,5 +18,4 @@ class LoadingScene : public BaseScene {
     virtual ~LoadingScene();
     cocos2d::Scene* create() override;
 };
-
 #endif

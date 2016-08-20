@@ -7,12 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LogoScene_h
 #define LogoScene_h
 #include "cocos2d.h"
 #include "BaseScene.h"
-
 class LogoScene : public BaseScene {
    public:
     static const int SCENE_ID = 1;
@@ -20,5 +18,4 @@ class LogoScene : public BaseScene {
     virtual ~LogoScene();
     cocos2d::Scene* create() override;
 };
-
 #endif

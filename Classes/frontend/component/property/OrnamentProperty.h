@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef OrnamentProperty_h
 #define OrnamentProperty_h
-
 #include "Scale.h"
 #include "Address.h"
 #include "BaseProperty.h"
-
 class OrnamentProperty : public BaseProperty {
    public:
     OrnamentProperty(std::string name, int id, std::string ornamentType, float xscale, float yscale, float zscale);
@@ -22,11 +19,9 @@ class OrnamentProperty : public BaseProperty {
     Scale* getScale();
     Address* getAddressScale();
     std::string getOrnamentType();
-
    private:
     Scale* scale;
     Address* addressScale;
     std::string ornamentType;
 };
-
 #endif

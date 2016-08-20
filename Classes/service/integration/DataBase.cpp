@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // standard
 #include <cxxabi.h>
-
 // entity
 #include "Value.h"
-
 // service
 #include "DataBase.h"
 #include "Dao.h"
@@ -29,9 +26,7 @@
 #include "MUnitTable.h"
 #include "MBarrierTable.h"
 #include "MResourceTable.h"
-
 DataBase* DataBase::instance = NULL;
-
 DataBase::DataBase() {
     this->add<TLayerTable>(new Dao<TLayerTable>());
     this->add<TDownLoadTable>(new Dao<TDownLoadTable>());
@@ -45,21 +40,18 @@ DataBase::DataBase() {
     this->add<MBarrierTable>(new Dao<MBarrierTable>());
     this->add<MResourceTable>(new Dao<MResourceTable>());
 }
-
 DataBase::~DataBase() {
     for (std::map<std::string, BaseDao*>::iterator it = this->daoMap.begin(); it != this->daoMap.end(); ++it) {
         it->second->clear();
         CC_SAFE_DELETE(it->second);
     }
 }
-
 DataBase* DataBase::getInstance() {
     if (NULL == DataBase::instance) {
         DataBase::instance = new DataBase();
     }
     return DataBase::instance;
 }
-
 template <typename T>
 bool DataBase::add(Dao<T>* dao) {
     T t;
@@ -73,7 +65,6 @@ bool DataBase::add(Dao<T>* dao) {
     std::free(daoName);
     return true;
 }
-
 template <typename T>
 Dao<T>* DataBase::findBy() {
     T t;
@@ -88,16 +79,13 @@ Dao<T>* DataBase::findBy() {
     std::free(daoName);
     return dao;
 }
-
 void DataBase::clear() {
     for (std::map<std::string, BaseDao*>::iterator it = this->daoMap.begin(); it != this->daoMap.end(); ++it) {
         BaseDao* dao = (BaseDao*)it->second;
         dao->clear();
     }
 }
-
 void DataBase::destroy() { CC_SAFE_DELETE(DataBase::instance); }
-
 // add
 template bool DataBase::add<BaseTable>(Dao<BaseTable>* dao);
 template bool DataBase::add<TDownLoadTable>(Dao<TDownLoadTable>* dao);
@@ -108,11 +96,9 @@ template bool DataBase::add<TUnitTable>(Dao<TUnitTable>* dao);
 template bool DataBase::add<TResourceTable>(Dao<TResourceTable>* dao);
 template bool DataBase::add<TRouteTable>(Dao<TRouteTable>* dao);
 template bool DataBase::add<TAssetTable>(Dao<TAssetTable>* dao);
-
 template bool DataBase::add<MUnitTable>(Dao<MUnitTable>* dao);
 template bool DataBase::add<MBarrierTable>(Dao<MBarrierTable>* dao);
 template bool DataBase::add<MResourceTable>(Dao<MResourceTable>* dao);
-
 // find
 template Dao<BaseTable>* DataBase::findBy<BaseTable>();
 template Dao<TDownLoadTable>* DataBase::findBy<TDownLoadTable>();
@@ -123,7 +109,6 @@ template Dao<TUnitTable>* DataBase::findBy<TUnitTable>();
 template Dao<TResourceTable>* DataBase::findBy<TResourceTable>();
 template Dao<TRouteTable>* DataBase::findBy<TRouteTable>();
 template Dao<TAssetTable>* DataBase::findBy<TAssetTable>();
-
 template Dao<MUnitTable>* DataBase::findBy<MUnitTable>();
 template Dao<MBarrierTable>* DataBase::findBy<MBarrierTable>();
 template Dao<MResourceTable>* DataBase::findBy<MResourceTable>();

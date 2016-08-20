@@ -7,24 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "DestroyEffectBehaviour.h"
-
 #include "BehaviourIdGenerator.h"
-
 // peroperty
 #include "EffectProperty.h"
-
 // asset
 #include "ParticleAsset.h"
 #include "SoundEffectAsset.h"
 #include "SoundAssetCollection.h"
-
 // notify
 #include "Notifier.h"
-
 using namespace cocos2d;
-
 DestroyEffectBehaviour::DestroyEffectBehaviour(BaseProperty* property) {
     int id = BehaviourIdGenerator::getInstance()->getId();
     this->asset->add("render1", new ParticleAsset("particle/destruction/wood1.plist"));
@@ -37,9 +30,7 @@ DestroyEffectBehaviour::DestroyEffectBehaviour(BaseProperty* property) {
     Address* scale = ornamentProperty->getAddressScale();
     this->effectScale = DestroyEffectBehaviour::BASIC_SCALE * (float)(scale->x + scale->y + scale->z) / 3.0f;
 }
-
 DestroyEffectBehaviour::~DestroyEffectBehaviour() {}
-
 void DestroyEffectBehaviour::onCreate(Layer* layer, Position position) {
     // asset
     std::string particleList[4] = {"render1", "render2", "render3", "render4"};
@@ -50,9 +41,7 @@ void DestroyEffectBehaviour::onCreate(Layer* layer, Position position) {
         particle->transform(position);
         particle->addLayer(layer, position.zorder);
     }
-
     SoundEffectAsset* se = (SoundEffectAsset*)this->getAsset("se");
     se->play();
-
     this->property->setStatus(BehaviourStatus::COMPLETE);
 }

@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ServiceGateway_h
 #define ServiceGateway_h
-
 // stl
 #include <map>
-
 // service
 #include "BaseService.h"
 #include "BaseStrategy.h"
-
 class ServiceGateway {
    public:
     ~ServiceGateway();
@@ -26,11 +22,9 @@ class ServiceGateway {
     bool add(std::string serviceName, BaseService* service);
     void clear();
     static void destroy();
-
    private:
     static ServiceGateway* instance;
     std::map<std::string, BaseService*> serviceMap;
     ServiceGateway();
 };
-
 #endif

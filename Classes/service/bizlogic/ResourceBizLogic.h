@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ResourceBizLogic_h
 #define ResourceBizLogic_h
-
 // service
 #include "BaseBizLogic.h"
 #include "MResourceTable.h"
 #include "TResourceTable.h"
-
 class ResourceBizLogic : public BaseBizLogic {
    public:
     static const int RESOURCE_EMERALD = 1;
@@ -33,11 +30,9 @@ class ResourceBizLogic : public BaseBizLogic {
     TResourceTable getPlayerResourceInfo();
     MResourceTable getMaxResourceInfo();
     void clear() override;
-
    private:
     static const int RESOURCE_EMERALD_UNIT = 10;
     static const int RESOURCE_ELIXIR_UNIT = 100;
     static const int RESOURCE_GOLD_UNIT = 100;
 };
-
 #endif

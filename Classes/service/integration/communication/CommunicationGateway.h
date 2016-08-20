@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef CommunicationGateway_h
 #define CommunicationGateway_h
-
 // stl
 #include <map>
-
 // cocos2d
 #include "network/HttpClient.h"
 #include "cocos2d.h"
-
 // service
 #include "BaseCallback.h"
-
 class CommunicationGateway {
    public:
     ~CommunicationGateway();
@@ -29,7 +24,6 @@ class CommunicationGateway {
     void response(cocos2d::network::HttpClient* sender, cocos2d::network::HttpResponse* response);
     void setCallback(std::string callbackName);
     static void destroy();
-
    private:
     static const int TIME_OUT = 300;
     BaseCallback* callback;
@@ -37,5 +31,4 @@ class CommunicationGateway {
     static CommunicationGateway* instance;
     CommunicationGateway();
 };
-
 #endif

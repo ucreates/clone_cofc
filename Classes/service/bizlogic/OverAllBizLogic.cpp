@@ -7,13 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "DataBase.h"
 #include "Dao.h"
 #include "OverAllBizLogic.h"
 #include "TOverAllTable.h"
-
 OverAllBizLogic::OverAllBizLogic() {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();
@@ -21,14 +19,12 @@ OverAllBizLogic::OverAllBizLogic() {
         dao->save();
     }
 }
-
 TOverAllTable OverAllBizLogic::getOverAll() {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();
     TOverAllTable oat = dao->findFirst();
     return oat;
 }
-
 void OverAllBizLogic::saveOverAll(int currentOverAll, int toalOverAll) {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();
@@ -37,7 +33,6 @@ void OverAllBizLogic::saveOverAll(int currentOverAll, int toalOverAll) {
     oat.total = toalOverAll;
     dao->update(oat);
 }
-
 bool OverAllBizLogic::isOverAll() {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();
@@ -47,7 +42,6 @@ bool OverAllBizLogic::isOverAll() {
     }
     return false;
 }
-
 bool OverAllBizLogic::AddCurrentOverAll() {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();
@@ -55,7 +49,6 @@ bool OverAllBizLogic::AddCurrentOverAll() {
     oat.current++;
     return dao->update(oat);
 }
-
 bool OverAllBizLogic::updateOverAll(int overAllLevel) {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();
@@ -69,13 +62,11 @@ bool OverAllBizLogic::updateOverAll(int overAllLevel) {
     }
     return dao->update(oat);
 }
-
 float OverAllBizLogic::getCurrentPercent() {
     TOverAllTable oat = this->getOverAll();
     float percentage = (float)oat.current / (float)oat.total * 100.0f;
     return percentage;
 }
-
 void OverAllBizLogic::clear() {
     DataBase* db = DataBase::getInstance();
     Dao<TOverAllTable>* dao = db->findBy<TOverAllTable>();

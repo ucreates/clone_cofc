@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BehaviourIdGenerator.h"
 #include "GrassBehaviour.h"
-
 GrassBehaviour::GrassBehaviour(GeographicNode* geographicNode) {
     int id = BehaviourIdGenerator::getInstance()->getId();
     this->geographicNode = geographicNode;
@@ -18,9 +16,7 @@ GrassBehaviour::GrassBehaviour(GeographicNode* geographicNode) {
     this->stateMachine = new FiniteStateMachine<GrassBehaviour>(this);
     this->stateMachine->add("show", new GrassBehaviourShowState());
 }
-
 GrassBehaviour::~GrassBehaviour() {}
-
 void GrassBehaviour::onCreate() {
     this->stateMachine->change("show", true);
     this->stateMachine->play();

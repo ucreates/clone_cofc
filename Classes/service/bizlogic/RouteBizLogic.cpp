@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "AndExpression.h"
 #include "ConditionExpression.h"
@@ -16,15 +15,11 @@
 #include "FieldSchema.h"
 #include "RouteBizLogic.h"
 #include "TRouteTable.h"
-
 RouteBizLogic::RouteBizLogic() {}
-
 RouteBizLogic::~RouteBizLogic() {}
-
 std::vector<GeographicNode*> RouteBizLogic::getRouteCache(unsigned int startGeographicId, unsigned int goalGeographicId) {
     DataBase* db = DataBase::getInstance();
     Dao<TRouteTable>* dao = db->findBy<TRouteTable>();
-
     FieldSchema<int> field1(startGeographicId);
     FieldSchema<int> field2(goalGeographicId);
     AndExpression expression;
@@ -35,12 +30,10 @@ std::vector<GeographicNode*> RouteBizLogic::getRouteCache(unsigned int startGeog
     if (0 == recordVector.size()) {
         return ret;
     }
-
     TRouteTable record = recordVector.at(0);
     ret = record.routeCacheVector;
     return ret;
 }
-
 bool RouteBizLogic::addRouteCache(unsigned int startGeographicId, unsigned int goalGeographicId, std::vector<GeographicNode*> routeVector) {
     DataBase* db = DataBase::getInstance();
     Dao<TRouteTable>* dao = db->findBy<TRouteTable>();
@@ -50,11 +43,9 @@ bool RouteBizLogic::addRouteCache(unsigned int startGeographicId, unsigned int g
     record.routeCacheVector = routeVector;
     return dao->save(record);
 }
-
 bool RouteBizLogic::removeRouteCache(unsigned int startGeographicId, unsigned int goalGeographicId) {
     DataBase* db = DataBase::getInstance();
     Dao<TRouteTable>* dao = db->findBy<TRouteTable>();
-
     FieldSchema<int> field1(startGeographicId);
     FieldSchema<int> field2(goalGeographicId);
     AndExpression expression;
@@ -67,7 +58,6 @@ bool RouteBizLogic::removeRouteCache(unsigned int startGeographicId, unsigned in
     TRouteTable record = recordVector.at(0);
     return dao->remove(record);
 }
-
 void RouteBizLogic::clear() {
     DataBase* db = DataBase::getInstance();
     Dao<TRouteTable>* dao = db->findBy<TRouteTable>();

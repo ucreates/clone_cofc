@@ -7,31 +7,23 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarbarianMoveState.h"
 #include "BarrierBehaviourType.h"
-
 // geography
 #include "GeographicNode.h"
-
 // animator
 #include "AnimatorAsset.h"
-
 // utility
 #include "Distance.h"
-
 // entity
 #include "Address.h"
 #include "BarrierBehaviourType.h"
-
 BarbarianMoveState::BarbarianMoveState() {
     this->firstSearch = true;
     this->pause = false;
     this->speed = 0.8f;
 }
-
 BarbarianMoveState::~BarbarianMoveState() {}
-
 void BarbarianMoveState::create() {
     this->setUnit(this->owner);
     if (false != this->pause) {
@@ -39,13 +31,11 @@ void BarbarianMoveState::create() {
         this->changeDirection();
         return;
     }
-
     this->asset = (AnimatorAsset*)this->owner->getAsset("anime");
     this->owner->getStateMachine()->pause();
     this->search();
     return;
 }
-
 void BarbarianMoveState::update(float delta) {
     if (false == this->routeVector.empty()) {
         std::vector<GeographicNode*>::iterator it = this->routeVector.begin();

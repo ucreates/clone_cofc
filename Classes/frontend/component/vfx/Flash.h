@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Flash_h
 #define Flash_h
-
 class Flash {
    public:
     static float execute(float time);
     static float execute(float time, float basePercentage);
 };
-
 #endif

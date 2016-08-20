@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BattleUICountState.h"
 #include "ConvertUtility.h"
 #include "UIAsset.h"
 #include "Response.h"
 #include "ServiceGateway.h"
-
 using namespace cocos2d::ui;
-
 BattleUICountState::BattleUICountState() {
     this->lastEnemyGoldCount = 0;
     this->lastEnemyElixirCount = 0;
@@ -29,9 +26,7 @@ BattleUICountState::BattleUICountState() {
     this->lastPlayerGoldCount = 0;
     this->lastPlayerEmeraldCount = 0;
 }
-
 BattleUICountState::~BattleUICountState() {}
-
 void BattleUICountState::create() {
     Response res = ServiceGateway::getInstance()->request("service://resource/info")->get();
     if (ServiceStatus::SUCCESS != res.getStatus()) {
@@ -39,17 +34,14 @@ void BattleUICountState::create() {
         res.clear();
         return;
     }
-
     this->currentEnemyElixirCount = res.get<int>("enemyElixirCount");
     this->currentEnemyGoldCount = res.get<int>("enemyGoldCount");
-
     this->currentPlayerEmeraldRate = res.get<float>("playerEmeraldRate");
     this->currentPlayerElixirRate = res.get<float>("playerElixirRate");
     this->currentPlayerGoldRate = res.get<float>("playerGoldRate");
     this->currentPlayerEmeraldCount = res.get<int>("playerEmeraldCount");
     this->currentPlayerElixirCount = res.get<int>("playerElixirCount");
     this->currentPlayerGoldCount = res.get<int>("playerGoldCount");
-
     UIAsset* asset = (UIAsset*)this->owner->getAsset("battle");
     this->lastPlayerGoldGuage = asset->findByName<LoadingBar*>("playerGoldGuage");
     this->lastPlayerElixirGuage = asset->findByName<LoadingBar*>("playerElixirGuage");
@@ -57,10 +49,8 @@ void BattleUICountState::create() {
     this->currentPlayerElixirCountText = asset->findByName<Text*>("currentPlayerElixirCountText");
     this->currentPlayerGoldCountText = asset->findByName<Text*>("currentPlayerGoldCountText");
     this->currentPlayerEmeraldCountText = asset->findByName<Text*>("currentPlayerEmeraldCountText");
-
     this->enemyElixirCountText = asset->findByName<Text*>("enemyElixirCountText");
     this->enemyGoldCountText = asset->findByName<Text*>("enemyGoldCountText");
-
     this->enemyElixirIcon = asset->findByName<ImageView*>("enemyElixirIcon");
     this->enemyGoldIcon = asset->findByName<ImageView*>("enemyGoldIcon");
     this->playerElixirIcon = asset->findByName<ImageView*>("playerElixirIcon");
@@ -69,7 +59,6 @@ void BattleUICountState::create() {
     res.clear();
     bouncy.initialize();
 }
-
 void BattleUICountState::update(float delta) {
     bool enableCount = false;
     float bound = BattleUICountState::DEFAULT_SCALE + bouncy.execute();
@@ -81,7 +70,6 @@ void BattleUICountState::update(float delta) {
         this->lastPlayerElixirRate = this->currentPlayerElixirRate;
         this->playerElixirIcon->setScale(BattleUICountState::DEFAULT_SCALE, BattleUICountState::DEFAULT_SCALE);
     }
-
     if (this->lastPlayerEmeraldRate < this->currentPlayerEmeraldRate) {
         this->lastPlayerEmeraldRate += 1.0f;
         this->playerEmeraldIcon->setScale(bound, bound);
@@ -90,7 +78,6 @@ void BattleUICountState::update(float delta) {
         this->lastPlayerEmeraldRate = this->currentPlayerEmeraldRate;
         this->playerEmeraldIcon->setScale(BattleUICountState::DEFAULT_SCALE, BattleUICountState::DEFAULT_SCALE);
     }
-
     if (this->lastPlayerGoldRate < this->currentPlayerGoldRate) {
         this->lastPlayerGoldRate += 1.0f;
         this->playerGoldIcon->setScale(bound, bound);
@@ -99,28 +86,24 @@ void BattleUICountState::update(float delta) {
         this->lastPlayerGoldRate = this->currentPlayerGoldRate;
         this->playerGoldIcon->setScale(BattleUICountState::DEFAULT_SCALE, BattleUICountState::DEFAULT_SCALE);
     }
-
     if (this->lastPlayerElixirCount < this->currentPlayerElixirCount) {
         this->lastPlayerElixirCount++;
         enableCount = true;
     } else {
         this->lastPlayerElixirCount = this->currentPlayerElixirCount;
     }
-
     if (this->lastPlayerGoldCount < this->currentPlayerGoldCount) {
         this->lastPlayerGoldCount++;
         enableCount = true;
     } else {
         this->lastPlayerGoldCount = this->currentPlayerGoldCount;
     }
-
     if (this->lastPlayerEmeraldCount < this->currentPlayerEmeraldCount) {
         this->lastPlayerEmeraldCount++;
         enableCount = true;
     } else {
         this->lastPlayerEmeraldCount = this->currentPlayerEmeraldCount;
     }
-
     if (this->lastEnemyGoldCount > this->currentEnemyGoldCount) {
         this->lastEnemyGoldCount--;
         this->enemyGoldIcon->setScale(bound, bound);
@@ -129,7 +112,6 @@ void BattleUICountState::update(float delta) {
         this->lastEnemyGoldCount = this->currentEnemyGoldCount;
         this->enemyGoldIcon->setScale(BattleUICountState::DEFAULT_SCALE, BattleUICountState::DEFAULT_SCALE);
     }
-
     if (this->lastEnemyElixirCount > this->currentEnemyElixirCount) {
         this->lastEnemyElixirCount--;
         this->enemyElixirIcon->setScale(bound, bound);
@@ -138,17 +120,14 @@ void BattleUICountState::update(float delta) {
         this->lastEnemyElixirCount = this->currentEnemyElixirCount;
         this->enemyElixirIcon->setScale(BattleUICountState::DEFAULT_SCALE, BattleUICountState::DEFAULT_SCALE);
     }
-
     this->lastPlayerGoldGuage->setPercent(this->lastPlayerGoldRate);
     this->lastPlayerElixirGuage->setPercent(this->lastPlayerElixirRate);
     this->lastPlayerEmeraldGuage->setPercent(this->lastPlayerEmeraldRate);
     this->currentPlayerElixirCountText->setString(ConvertUtility::toString(this->lastPlayerElixirCount));
     this->currentPlayerGoldCountText->setString(ConvertUtility::toString(this->lastPlayerGoldCount));
     this->currentPlayerEmeraldCountText->setString(ConvertUtility::toString(this->lastPlayerEmeraldCount));
-
     this->enemyElixirCountText->setString(ConvertUtility::toString(this->lastEnemyElixirCount));
     this->enemyGoldCountText->setString(ConvertUtility::toString(this->lastEnemyGoldCount));
-
     if (false == enableCount) {
         this->owner->getStateMachine()->change("battle");
     }

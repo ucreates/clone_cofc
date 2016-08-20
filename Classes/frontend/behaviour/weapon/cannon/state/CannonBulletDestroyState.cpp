@@ -7,16 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CannonBulletDestroyState.h"
-
 // behaviour
 #include "BehaviourStatus.h"
-
 CannonBulletDestroyState::CannonBulletDestroyState() {}
-
 CannonBulletDestroyState::~CannonBulletDestroyState() {}
-
 void CannonBulletDestroyState::create() {
     BaseRenderAsset* asset = (BaseRenderAsset*)this->owner->getAsset("anime");
     asset->hide();

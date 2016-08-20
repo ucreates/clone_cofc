@@ -7,27 +7,20 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef MortarBulletActiveState_h
 #define MortarBulletActiveState_h
-
 // stl
 #include <vector>
-
 // cocos2d
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "MortarBulletBehaviour.h"
-
 // asset
 #include "BaseRenderAsset.h"
 #include "BaseStrategy.h"
-
 class MortarBulletBehaviour;
 class MortarBulletActiveState : public FiniteState<MortarBulletBehaviour> {
    public:
@@ -35,7 +28,6 @@ class MortarBulletActiveState : public FiniteState<MortarBulletBehaviour> {
     virtual ~MortarBulletActiveState();
     void create() override;
     void update(float delta) override;
-
    private:
     constexpr static const float SHOT_HEIGHT = 51.35f;
     constexpr static const float MOVE_SPEED = 150.0f;
@@ -49,5 +41,4 @@ class MortarBulletActiveState : public FiniteState<MortarBulletBehaviour> {
     float moveTime;
     bool enableShot;
 };
-
 #endif

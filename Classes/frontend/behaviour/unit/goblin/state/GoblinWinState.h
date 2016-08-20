@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GoblinWinState_h
 #define GoblinWinState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitWinState.h"
-
 // behaviour
 #include "GoblinBehaviour.h"
-
 class GoblinBehaviour;
 class GoblinWinState : public FiniteState<GoblinBehaviour>, UnitWinState<GoblinBehaviour> {
    public:
@@ -25,5 +21,4 @@ class GoblinWinState : public FiniteState<GoblinBehaviour>, UnitWinState<GoblinB
     virtual ~GoblinWinState();
     void create() override;
 };
-
 #endif

@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TowerTowerArcherBehaviour_h
 #define TowerTowerArcherBehaviour_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseUnitBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "IFiniteStateMachine.h"
@@ -26,17 +22,14 @@
 #include "TowerArcherLoseState.h"
 #include "UnitWinState.h"
 #include "UnitLoseState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 class TowerArcherSearchState;
 class TowerArcherAttackState;
 class TowerArcherWinState;
 class TowerArcherLoseState;
-
 class TowerArcherBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<TowerArcherBehaviour>, public INotify {
     friend UnitLoseState<TowerArcherBehaviour>;
     friend UnitWinState<TowerArcherBehaviour>;
@@ -44,7 +37,6 @@ class TowerArcherBehaviour : public BaseUnitBehaviour, public IFiniteStateMachin
     friend TowerArcherAttackState;
     friend TowerArcherWinState;
     friend TowerArcherLoseState;
-
    public:
     TowerArcherBehaviour();
     virtual ~TowerArcherBehaviour();
@@ -52,5 +44,4 @@ class TowerArcherBehaviour : public BaseUnitBehaviour, public IFiniteStateMachin
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

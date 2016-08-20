@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef WallBreakerLoseState_h
 #define WallBreakerLoseState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitLoseState.h"
-
 // behaviour
 #include "WallBreakerBehaviour.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 class WallBreakerBehaviour;
 class WallBreakerLoseState : public FiniteState<WallBreakerBehaviour>, UnitLoseState<WallBreakerBehaviour> {
    public:
@@ -28,5 +23,4 @@ class WallBreakerLoseState : public FiniteState<WallBreakerBehaviour>, UnitLoseS
     virtual ~WallBreakerLoseState();
     void create() override;
 };
-
 #endif

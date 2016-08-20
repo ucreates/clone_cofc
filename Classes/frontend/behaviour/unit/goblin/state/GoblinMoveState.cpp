@@ -7,32 +7,24 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "GoblinMoveState.h"
 #include "BarrierBehaviourType.h"
-
 // geography
 #include "GeographicNode.h"
-
 // animator
 #include "AnimatorAsset.h"
 #include "BehaviourCollection.h"
 #include "BarrierBehaviourType.h"
-
 // utility
 #include "Distance.h"
-
 // entity
 #include "Address.h"
-
 GoblinMoveState::GoblinMoveState() {
     this->firstSearch = true;
     this->pause = false;
     this->speed = 1.2f;
 }
-
 GoblinMoveState::~GoblinMoveState() {}
-
 void GoblinMoveState::create() {
     this->setUnit(this->owner);
     if (false != this->pause) {
@@ -40,13 +32,11 @@ void GoblinMoveState::create() {
         this->changeDirection();
         return;
     }
-
     this->asset = (AnimatorAsset*)this->owner->getAsset("anime");
     this->owner->getStateMachine()->pause();
     this->search();
     return;
 }
-
 void GoblinMoveState::update(float delta) {
     if (false == this->routeVector.empty()) {
         std::vector<GeographicNode*>::iterator it = this->routeVector.begin();
@@ -71,7 +61,6 @@ void GoblinMoveState::update(float delta) {
     }
     return;
 }
-
 GeographicNode* GoblinMoveState::findGoalNode(GeographicNode* startNode) {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     GeographicNode* node = collection->findBarrierByOrnamentType(startNode, "resource");

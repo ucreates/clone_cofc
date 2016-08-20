@@ -7,32 +7,24 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "GiantMoveState.h"
 #include "BarrierBehaviourType.h"
-
 // geography
 #include "GeographicNode.h"
-
 // animator
 #include "AnimatorAsset.h"
 #include "BehaviourCollection.h"
 #include "BarrierBehaviourType.h"
-
 // utility
 #include "Distance.h"
-
 // entity
 #include "Address.h"
-
 GiantMoveState::GiantMoveState() {
     this->firstSearch = true;
     this->pause = false;
     this->speed = 0.55f;
 }
-
 GiantMoveState::~GiantMoveState() {}
-
 void GiantMoveState::create() {
     this->setUnit(this->owner);
     if (false != this->pause) {
@@ -40,13 +32,11 @@ void GiantMoveState::create() {
         this->changeDirection();
         return;
     }
-
     this->asset = (AnimatorAsset*)this->owner->getAsset("anime");
     this->owner->getStateMachine()->pause();
     this->search();
     return;
 }
-
 void GiantMoveState::update(float delta) {
     if (false == this->routeVector.empty()) {
         std::vector<GeographicNode*>::iterator it = this->routeVector.begin();
@@ -71,7 +61,6 @@ void GiantMoveState::update(float delta) {
     }
     return;
 }
-
 GeographicNode* GiantMoveState::findGoalNode(GeographicNode* startNode) {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     GeographicNode* node = collection->findBarrierByOrnamentType(startNode, "attack");

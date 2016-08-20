@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WeaponCommand.h"
-
 WeaponCommand::WeaponCommand() {}
-
 WeaponCommand::~WeaponCommand() {}
-
 void WeaponCommand::execute(BaseBehaviour* behaviour, float delta) {
     behaviour->onCollision();
     behaviour->onUpdate(delta);

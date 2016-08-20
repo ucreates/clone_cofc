@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GiantBehaviour_h
 #define GiantBehaviour_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseUnitBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "IFiniteStateMachine.h"
@@ -29,12 +25,10 @@
 #include "UnitDeadState.h"
 #include "UnitWinState.h"
 #include "UnitLoseState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 class GiantMoveState;
 class GiantAttackState;
 class GiantWinState;
@@ -50,7 +44,6 @@ class GiantBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<Gian
     friend GiantWinState;
     friend GiantLoseState;
     friend GiantDeadState;
-
    public:
     GiantBehaviour();
     virtual ~GiantBehaviour();
@@ -58,5 +51,4 @@ class GiantBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<Gian
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

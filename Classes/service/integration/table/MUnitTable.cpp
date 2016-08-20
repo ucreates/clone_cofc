@@ -7,18 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "MUnitTable.h"
 #include "FieldSchema.h"
-
 MUnitTable::MUnitTable() {
     this->name = "";
     this->type = 0;
     this->hp = 0;
     this->power = 0;
 }
-
 void MUnitTable::build() {
     this->primaryKey.set("id", this->id);
     this->compareFieldIterator.set("name", new FieldSchema<std::string>(this->name));

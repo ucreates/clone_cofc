@@ -7,18 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AssetCollection_h
 #define AssetCollection_h
-
 #include <map>
 #include <string>
-
 // asset
 #include "BaseAsset.h"
-
 class BaseAsset;
-
 class AssetCollection {
    public:
     AssetCollection();
@@ -27,7 +22,6 @@ class AssetCollection {
     void add(std::string assetName, BaseAsset* asset);
     void erase(std::string assetName);
     std::map<std::string, BaseAsset*>* getAssetMap();
-
    private:
     std::map<std::string, BaseAsset*>* assetMap;
 };

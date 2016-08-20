@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef MUnitTable_h
 #define MUnitTable_h
-
 // service
 #include "BaseTable.h"
-
 class MUnitTable : public BaseTable {
    public:
     int type;
@@ -23,5 +20,4 @@ class MUnitTable : public BaseTable {
     MUnitTable();
     void build() override;
 };
-
 #endif

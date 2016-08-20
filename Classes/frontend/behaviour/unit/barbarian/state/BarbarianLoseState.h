@@ -7,26 +7,19 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarbarianLoseState_h
 #define BarbarianLoseState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitLoseState.h"
-
 // behaviour
 #include "BarbarianBehaviour.h"
-
 // route
 #include "BaseRouteSearch.h"
-
 // frame
 #include "TimeLine.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 class BarbarianBehaviour;
 class BarbarianLoseState : public FiniteState<BarbarianBehaviour>, UnitLoseState<BarbarianBehaviour> {
    public:
@@ -34,5 +27,4 @@ class BarbarianLoseState : public FiniteState<BarbarianBehaviour>, UnitLoseState
     virtual ~BarbarianLoseState();
     void create() override;
 };
-
 #endif

@@ -7,23 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BattleUIBattleState.h"
 #include "ServiceGateway.h"
 #include "Response.h"
 #include "UIAsset.h"
-
 using namespace cocos2d::ui;
-
 BattleUIBattleState::BattleUIBattleState() {}
-
 BattleUIBattleState::~BattleUIBattleState() {}
-
 void BattleUIBattleState::create() {
     UIAsset* asset = (UIAsset*)this->owner->getAsset("battle");
     this->overAllPercentageText = asset->findByName<Text*>("overAllPercentageText");
 }
-
 void BattleUIBattleState::update(float delta) {
     Response res = ServiceGateway::getInstance()->request("service://battle/status")->get();
     if (ServiceStatus::SUCCESS != res.getStatus()) {

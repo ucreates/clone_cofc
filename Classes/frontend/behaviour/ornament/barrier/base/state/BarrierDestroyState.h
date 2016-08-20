@@ -7,19 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarrierDestroyState_h
 #define BarrierDestroyState_h
 #include "TOverAllTable.h"
-
 template <class T>
 class BarrierDestroyState {
    public:
     BarrierDestroyState();
     ~BarrierDestroyState();
-
    protected:
     void notifyOverAll(TOverAllTable overAll);
 };
-
 #endif

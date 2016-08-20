@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataHeader_h
 #define GeographicDataHeader_h
-
 // stream
 #include "GeographicDataBaseFormat.h"
 #include "GeographicDataRecordHeader.h"
-
 class GeographicDataHeader : public GeographicDataBaseFormat {
    public:
     GeographicDataRecordHeader* header;
@@ -24,11 +21,9 @@ class GeographicDataHeader : public GeographicDataBaseFormat {
     GeographicDataHeader();
     virtual ~GeographicDataHeader();
     void build() override;
-
    private:
     static const char M = 0x4d;
     static const char A = 0x41;
     static const char P = 0x50;
 };
-
 #endif

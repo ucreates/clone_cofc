@@ -7,36 +7,26 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "cocos2d.h"
-
 // layer
 #include "BaseLayer.h"
-
 // behaviour
 #include "BehaviourCollection.h"
 #include "BehaviourIdGenerator.h"
 #include "BehaviourMapper.h"
-
 // command
 #include "CommandGateway.h"
-
 // geopgraphy
 #include "GeographicGateway.h"
-
 // notifier
 #include "Notifier.h"
-
 // service
 #include "CommunicationGateway.h"
 #include "DataBase.h"
 #include "ServiceGateway.h"
-
 // sound
 #include "SoundAssetCollection.h"
-
 using namespace cocos2d;
-
 BaseLayer::BaseLayer() {
     this->enableInput = false;
     this->timeLine = new TimeLine();
@@ -44,7 +34,6 @@ BaseLayer::BaseLayer() {
     auto keyboardListener = EventListenerKeyboard::create();
     keyboardListener->onKeyReleased = CC_CALLBACK_2(BaseLayer::onKeyReleased, this);
     this->getEventDispatcher()->addEventListenerWithSceneGraphPriority(keyboardListener, this);
-
     BehaviourIdGenerator::getInstance();
     BehaviourCollection::getInstance();
     BehaviourMapper::getInstance();
@@ -55,7 +44,6 @@ BaseLayer::BaseLayer() {
     ServiceGateway::getInstance();
     DataBase::getInstance();
 }
-
 void BaseLayer::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event) {
     CCLOG("onKeyReleased");
     if (keyCode == EventKeyboard::KeyCode::KEY_BACKSPACE) {
@@ -63,21 +51,18 @@ void BaseLayer::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::
     }
     return;
 }
-
 void BaseLayer::onExitTransitionDidStart() {
     this->transition = true;
     CC_SAFE_DELETE(this->timeLine);
     CC_SAFE_DELETE(this->property);
     Layer::onExitTransitionDidStart();
 }
-
 void BaseLayer::onExit() {
     if (false == this->transition) {
         this->destroy();
     }
     Layer::onExit();
 }
-
 void BaseLayer::destroy() {
     CC_SAFE_DELETE(this->timeLine);
     CC_SAFE_DELETE(this->property);

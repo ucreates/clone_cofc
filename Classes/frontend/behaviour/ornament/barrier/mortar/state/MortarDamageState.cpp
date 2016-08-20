@@ -7,30 +7,22 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "MortarDamageState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 #include "GoldStrageDamageEffectBehaviour.h"
 #include "BehaviourMapper.h"
 #include "ServiceGateway.h"
 #include "Response.h"
 #include "Position.h"
-
 MortarDamageState::MortarDamageState() { this->damageStrategy = ServiceGateway::getInstance()->request("service://barrier/damage"); }
-
 MortarDamageState::~MortarDamageState() {}
-
 void MortarDamageState::create(Parameter* parameter) {
     Response res = this->damageStrategy->update(parameter);
     if (ServiceStatus::SUCCESS != res.getStatus()) {

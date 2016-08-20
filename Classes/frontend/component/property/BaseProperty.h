@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseProperty_h
 #define BaseProperty_h
-
 #include <string>
 #include "BehaviourStatus.h"
-
 class BaseProperty {
    public:
     BaseProperty();
@@ -23,12 +20,10 @@ class BaseProperty {
     int getId();
     BehaviourStatus getStatus();
     void setStatus(BehaviourStatus status);
-
    protected:
     std::string name;
     std::string type;
     int id;
     BehaviourStatus status;
 };
-
 #endif

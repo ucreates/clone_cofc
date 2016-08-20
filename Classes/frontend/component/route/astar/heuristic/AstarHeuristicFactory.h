@@ -7,15 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AstarHeuristicFactory_h
 #define AstarHeuristicFactory_h
-
 #include "BaseAstarHeuristic.h"
-
 class AstarHeuristicFactory {
    public:
     static BaseAstarHeuristic* factoryMethod(int heuristicId);
 };
-
 #endif

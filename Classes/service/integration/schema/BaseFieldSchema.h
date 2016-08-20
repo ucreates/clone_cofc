@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseFieldSchema_h
 #define BaseFieldSchema_h
-
 class BaseFieldSchema {
    public:
     BaseFieldSchema();
@@ -21,5 +19,4 @@ class BaseFieldSchema {
     virtual bool lessThan(BaseFieldSchema* field);
     virtual bool lessThanEqual(BaseFieldSchema* field);
 };
-
 #endif

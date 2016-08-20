@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AnimatorAsset_h
 #define AnimatorAsset_h
-
 #include <string>
 #include "cocos2d.h"
 #include "cocostudio/CocoStudio.h"
 #include "BaseRenderAsset.h"
-
 class AnimatorAsset : public BaseRenderAsset {
    public:
     AnimatorAsset(std::string animationName, int behaviourId);
@@ -28,5 +25,4 @@ class AnimatorAsset : public BaseRenderAsset {
     void stop();
     Transform getTransform() override;
 };
-
 #endif

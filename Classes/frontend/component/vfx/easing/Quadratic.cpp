@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include <math.h>
 #include "Quadratic.h"
-
 float Quadratic::easeIn(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     float diff = end - start;
@@ -19,7 +17,6 @@ float Quadratic::easeIn(float currentTime, float start, float end, float totalTi
     }
     return diff * powf(rate, 2) + start;
 }
-
 float Quadratic::easeOut(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     float diff = end - start;
@@ -28,7 +25,6 @@ float Quadratic::easeOut(float currentTime, float start, float end, float totalT
     }
     return -1.0f * diff * rate * (diff - 2) + start;
 }
-
 float Quadratic::easeInOut(float currentTime, float start, float end, float totalTime) {
     bool switchType = currentTime / totalTime >= 0.5f;
     if (false == switchType) {

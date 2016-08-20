@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LoadingLayerShowState_h
 #define LoadingLayerShowState_h
-
 // layer
 #include "LoadingLayer.h"
-
 // state
 #include "FiniteState.h"
-
 class LoadingLayerShowState : public FiniteState<LoadingLayer> {
    public:
     LoadingLayerShowState();
@@ -24,5 +20,4 @@ class LoadingLayerShowState : public FiniteState<LoadingLayer> {
     void create() override;
     void update(float delta) override;
 };
-
 #endif

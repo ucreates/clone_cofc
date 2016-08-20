@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "UnitDamageStrategy.h"
 #include "BarrierBizLogic.h"
 #include "UnitBizLogic.h"
 #include "TBarrierTable.h"
-
 UnitDamageStrategy::UnitDamageStrategy() {}
-
 UnitDamageStrategy::~UnitDamageStrategy() {}
-
 Response UnitDamageStrategy::get(Parameter* parameter) {
     int unitId = parameter->get<int>("unitId");
     UnitBizLogic unitBizLogic;
@@ -28,15 +24,12 @@ Response UnitDamageStrategy::get(Parameter* parameter) {
     res.set<float>("restHpPercentage", percentage);
     return res;
 }
-
 Response UnitDamageStrategy::update(Parameter* parameter) {
     int unitId = parameter->get<int>("unitId");
     int barrierId = parameter->get<int>("barrierId");
-
     BarrierBizLogic barrierBizLogic;
     TBarrierTable barrier = barrierBizLogic.findByBarrierId(barrierId);
     int damage = barrier.power;
-
     UnitBizLogic unit;
     int restHp = unit.addDamage(unitId, damage);
     Response res;

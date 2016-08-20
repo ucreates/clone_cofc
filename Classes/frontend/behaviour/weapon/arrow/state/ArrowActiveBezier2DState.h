@@ -7,19 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ArrowActiveBezier2DState_h
 #define ArrowActiveBezier2DState_h
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "ArrowBehaviour.h"
-
 // asset
 #include "BaseRenderAsset.h"
-
 class ArrowBehaviour;
 class ArrowActiveBezier2DState : public FiniteState<ArrowBehaviour> {
    public:
@@ -27,7 +22,6 @@ class ArrowActiveBezier2DState : public FiniteState<ArrowBehaviour> {
     virtual ~ArrowActiveBezier2DState();
     void create() override;
     void update(float delta) override;
-
    private:
     constexpr static const float VECTOR_POWER = 50.0f;
     constexpr static const float MOVE_SPEED = 300.0f;
@@ -38,5 +32,4 @@ class ArrowActiveBezier2DState : public FiniteState<ArrowBehaviour> {
     BaseRenderAsset* asset;
     float moveTime;
 };
-
 #endif

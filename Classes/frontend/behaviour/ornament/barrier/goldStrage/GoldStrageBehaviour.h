@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GoldStrageBehaviour_h
 #define GoldStrageBehaviour_h
-
 // behaviour
 #include "BaseBarrierBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "IFiniteStateMachine.h"
@@ -21,15 +18,12 @@
 #include "GoldStrageDamageState.h"
 #include "GoldStrageTouchBeganState.h"
 #include "GoldStrageTouchEndState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 // geography
 #include "GeographicNode.h"
-
 class GoldStrageDestroyState;
 class GoldStrageDamageState;
 class GoldStrageTouchBeganState;
@@ -39,7 +33,6 @@ class GoldStrageBehaviour : public BaseBarrierBehaviour, public IFiniteStateMach
     friend GoldStrageDamageState;
     friend GoldStrageTouchBeganState;
     friend GoldStrageTouchEndState;
-
    public:
     GoldStrageBehaviour(GeographicNode* geographicNode);
     virtual ~GoldStrageBehaviour();
@@ -49,5 +42,4 @@ class GoldStrageBehaviour : public BaseBarrierBehaviour, public IFiniteStateMach
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

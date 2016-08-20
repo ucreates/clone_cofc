@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseAssembler_h
 #define BaseAssembler_h
-
 // service
 #include "BaseTable.h"
-
 template <class T>
 class BaseAssembler {
    public:
@@ -21,5 +18,4 @@ class BaseAssembler {
     virtual ~BaseAssembler();
     virtual std::vector<T> writeToVector();
 };
-
 #endif

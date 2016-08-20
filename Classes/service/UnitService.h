@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UnitService_h
 #define UnitService_h
-
 // service
 #include "BaseService.h"
-
 class UnitService : public BaseService {
    public:
     UnitService();
     virtual ~UnitService();
 };
-
 #endif

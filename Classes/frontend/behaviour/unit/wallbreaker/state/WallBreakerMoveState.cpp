@@ -7,31 +7,23 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WallBreakerMoveState.h"
 #include "BarrierBehaviourType.h"
-
 // geography
 #include "GeographicNode.h"
-
 // animator
 #include "AnimatorAsset.h"
 #include "BehaviourCollection.h"
-
 // utility
 #include "Distance.h"
-
 // entity
 #include "Address.h"
-
 WallBreakerMoveState::WallBreakerMoveState() {
     this->firstSearch = true;
     this->pause = false;
     this->speed = 0.9f;
 }
-
 WallBreakerMoveState::~WallBreakerMoveState() {}
-
 void WallBreakerMoveState::create() {
     this->setUnit(this->owner);
     if (false != this->pause) {
@@ -39,13 +31,11 @@ void WallBreakerMoveState::create() {
         this->changeDirection();
         return;
     }
-
     this->asset = (AnimatorAsset*)this->owner->getAsset("anime");
     this->owner->getStateMachine()->pause();
     this->search();
     return;
 }
-
 void WallBreakerMoveState::update(float delta) {
     if (false == this->routeVector.empty()) {
         std::vector<GeographicNode*>::iterator it = this->routeVector.begin();
@@ -70,7 +60,6 @@ void WallBreakerMoveState::update(float delta) {
     }
     return;
 }
-
 GeographicNode* WallBreakerMoveState::findGoalNode(GeographicNode* startNode) {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     GeographicNode* node = collection->findBarrierByOrnamentType(startNode, "wall");

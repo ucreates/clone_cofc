@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // math
 #include "Figure.h"
-
 int Figure::count(int number, int count) {
     int tmpCount = count;
     int ret = number / 10;

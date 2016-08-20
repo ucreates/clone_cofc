@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseTable_h
 #define BaseTable_h
-
 // service
 #include "KeySchema.h"
 #include "FieldSchemaCollection.h"
-
 class BaseTable {
    public:
     KeySchema primaryKey;

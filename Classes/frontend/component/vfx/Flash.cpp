@@ -7,11 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include <math.h>
 #include "Flash.h"
 #include "Alpha.h"
-
 float Flash::execute(float time) {
     float flash = sinf(time) * Alpha::NOT_ALPHA;
     if (0 > flash) {
@@ -19,7 +17,6 @@ float Flash::execute(float time) {
     }
     return flash;
 }
-
 float Flash::execute(float time, float basePercentage) {
     float flashRate = Alpha::NOT_ALPHA * basePercentage * 0.01f;
     float restRate = Alpha::NOT_ALPHA - flashRate;

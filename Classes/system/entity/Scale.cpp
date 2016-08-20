@@ -7,21 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // entity
 #include "Scale.h"
-
 using namespace cocos2d;
 Scale::Scale() {}
-
 Scale::Scale(Size scale) { this->update(scale); }
-
 Scale::~Scale() {}
-
 Size Scale::getAllScale() { return this->scale; }
-
 Size Scale::getHalfScale() { return this->halfScale; }
-
 void Scale::update(Size scale) {
     this->scale.width = scale.width;
     this->scale.height = scale.height;

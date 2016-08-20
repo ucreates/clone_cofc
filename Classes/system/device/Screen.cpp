@@ -7,15 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // debug
 #include "Macro.h"
-
 // device
 #include "Screen.h"
-
 using namespace cocos2d;
-
 Size Screen::getFullScreenSize(float scale) {
     if (0.0f == scale) {
         return Size::ZERO;
@@ -26,24 +22,20 @@ Size Screen::getFullScreenSize(float scale) {
     windowSize.height *= scale;
     return windowSize;
 }
-
 Size Screen::getHalfScreenSize(float scale) {
     Size windowSize = Screen::getFullScreenSize(scale);
     return Size(windowSize.width * 0.5f, windowSize.height * 0.5f);
 }
-
 Position Screen::getCenterPosition(int zorder) {
     Director* director = Director::getInstance();
     Size windowSize = director->getWinSize();
     return Position(Vec2(windowSize.width * 0.5f, windowSize.height * 0.5f), zorder);
 }
-
 Position Screen::getEdgePosition(int zorder) {
     Director* director = Director::getInstance();
     Size windowSize = director->getWinSize();
     return Position(Vec2(windowSize.width, windowSize.height), zorder);
 }
-
 Size Screen::getNodeScaleByScreenSize(Node* node, bool dump) {
     Size visibleSize = Director::getInstance()->getVisibleSize();
     float wr = node->getContentSize().width / visibleSize.width;

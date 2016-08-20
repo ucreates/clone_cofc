@@ -7,13 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // stream
 #include "GeographicDataSreamFactory.h"
 #include "GeographicDataHeaderStream.h"
 #include "GeographicDataFieldTagStream.h"
 #include "GeographicDataBarrierTagStream.h"
-
 GeographicDataBaseFormatStream* GeographicDataSreamFactory::factoryMethod(unsigned char formatType) {
     GeographicDataBaseFormatStream* stream = NULL;
     switch (formatType) {

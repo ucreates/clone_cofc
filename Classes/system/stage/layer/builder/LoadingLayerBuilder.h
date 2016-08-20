@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LoadingLayerBuilder_h
 #define LoadingLayerBuilder_h
-
 #include "BaseLayerBuilder.h"
-
 class LoadingLayerBuilder : public BaseLayerBuilder {
    public:
     LoadingLayerBuilder();
     ~LoadingLayerBuilder();
     void build() override;
 };
-
 #endif

@@ -7,7 +7,5 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "Address.h"
-
 const Address Address::ZERO = Address(0, 0, 0);

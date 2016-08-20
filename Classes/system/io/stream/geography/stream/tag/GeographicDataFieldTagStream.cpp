@@ -7,22 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // stream
 #include "GeographicDataFieldTagStream.h"
 #include "GeographicDataFieldTag.h"
-
 GeographicDataFieldTagStream::GeographicDataFieldTagStream() {}
-
 GeographicDataFieldTagStream::~GeographicDataFieldTagStream() {}
-
 GeographicDataBaseFormat* GeographicDataFieldTagStream::read(BinaryStream* stream, GeographicDataRecordHeader* recordHeader) {
     GeographicDataFieldTag* tag = new GeographicDataFieldTag();
     tag->header = recordHeader;
     tag->mapTipType = stream->read();
     return tag;
 }
-
 bool GeographicDataFieldTagStream::write(std::ofstream* stream, GeographicDataBaseFormat* format) {
     GeographicDataFieldTag* tag = (GeographicDataFieldTag*)format;
     this->recordHeaderStream.write(stream, tag->header);

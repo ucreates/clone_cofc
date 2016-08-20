@@ -7,28 +7,23 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseUnitBehaviour_h
 #define BaseUnitBehaviour_h
 // notify
 #include "Parameter.h"
-
 // service
 #include "UnitBizLogic.h"
 #include "BeaconEffectBehaviour.h"
 #include "RayEffectBehaviour.h"
 #include "UnitLifeGaugeBehaviour.h"
 #include "ShadowEffectBehaviour.h"
-
 class UnitLifeGaugeBehaviour;
-
 class BaseUnitBehaviour : public BaseBehaviour {
    public:
     UnitLifeGaugeBehaviour* lifeGuage;
     RayEffectBehaviour* ray;
     BeaconEffectBehaviour* beacon;
     ShadowEffectBehaviour* shadow;
-
     BaseUnitBehaviour();
     virtual ~BaseUnitBehaviour();
     void onCreate(cocos2d::Layer* layer, Position position) override;
@@ -37,5 +32,4 @@ class BaseUnitBehaviour : public BaseBehaviour {
     BeaconEffectBehaviour* getBeacon();
     UnitLifeGaugeBehaviour* getLifeGuage();
 };
-
 #endif

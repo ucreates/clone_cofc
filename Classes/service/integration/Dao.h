@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Dao_h
 #define Dao_h
-
 // stl
 #include <vector>
-
 // service
 #include "BaseDao.h"
 #include "BaseExpression.h"
@@ -22,13 +19,11 @@
 #include "LimitExpression.h"
 #include "MultiConditionExpression.h"
 #include "OrderByExpression.h"
-
 template <class T>
 class Dao : public BaseDao {
    public:
     Dao();
     virtual ~Dao();
-
     // find
     T findBy(int id);
     T findBy(int id, int& index);
@@ -40,39 +35,30 @@ class Dao : public BaseDao {
     T findLast();
     T findPrevious();
     T findNext();
-
     // save
     bool save();
     bool save(T record);
-
     // update
     bool update(int id, T record);
     bool update(T record);
-
     // remove
     bool remove(int id);
     bool remove(T record);
-
     // sort
     std::vector<T> orderBy(std::string orderFieldSchemaName, std::vector<T> recordVector, OrderByExpression::OrderType orderType);
-
     // getter
     int count();
     int getId();
-
     // default
     void clear() override;
     void reset() override;
     void reset(int rollbackId);
-
     // status
     bool isEor();
     bool isFor();
-
    private:
     int id;
     int seek;
     std::vector<T> recordVector;
 };
-
 #endif

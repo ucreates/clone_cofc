@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "DataBase.h"
 #include "Dao.h"
 #include "LayerBizLogic.h"
 #include "TLayerTable.h"
-
 using namespace cocos2d;
-
 LayerBizLogic::LayerBizLogic() {}
-
 int LayerBizLogic::getLayerId() {
     DataBase* db = DataBase::getInstance();
     Dao<TLayerTable>* dao = db->findBy<TLayerTable>();
@@ -27,7 +23,6 @@ int LayerBizLogic::getLayerId() {
     TLayerTable table = dao->findBy(1);
     return table.layerId;
 }
-
 void LayerBizLogic::setLayerId(int layerId) {
     DataBase* db = DataBase::getInstance();
     Dao<TLayerTable>* dao = db->findBy<TLayerTable>();
@@ -41,7 +36,6 @@ void LayerBizLogic::setLayerId(int layerId) {
         dao->update(table);
     }
 }
-
 Layer* LayerBizLogic::getLayer() {
     DataBase* db = DataBase::getInstance();
     Dao<TLayerTable>* dao = db->findBy<TLayerTable>();
@@ -51,14 +45,12 @@ Layer* LayerBizLogic::getLayer() {
     TLayerTable table = dao->findBy(1);
     return table.layer;
 }
-
 Layer* LayerBizLogic::getLayer(int layerId) {
     DataBase* db = DataBase::getInstance();
     Dao<TLayerTable>* dao = db->findBy<TLayerTable>();
     if (0 == dao->count()) {
         return NULL;
     }
-
     TLayerTable table;
     std::vector<TLayerTable> recordVector = dao->findAll();
     std::vector<TLayerTable>::iterator it = recordVector.begin();
@@ -71,7 +63,6 @@ Layer* LayerBizLogic::getLayer(int layerId) {
     }
     return NULL;
 }
-
 void LayerBizLogic::setLayer(Layer* layer) {
     DataBase* db = DataBase::getInstance();
     Dao<TLayerTable>* dao = db->findBy<TLayerTable>();
@@ -85,7 +76,6 @@ void LayerBizLogic::setLayer(Layer* layer) {
         dao->update(table);
     }
 }
-
 void LayerBizLogic::setLayer(int layerId, Layer* layer) {
     DataBase* db = DataBase::getInstance();
     Dao<TLayerTable>* dao = db->findBy<TLayerTable>();

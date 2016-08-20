@@ -7,11 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "GeographicDataBaseFormat.h"
-
 GeographicDataBaseFormat::GeographicDataBaseFormat() {}
-
 GeographicDataBaseFormat::~GeographicDataBaseFormat() {}
-
 void GeographicDataBaseFormat::build() { return; }

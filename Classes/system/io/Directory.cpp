@@ -7,24 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // standard
 #include <sys/stat.h>
-
 // cocos2d
 #include "cocos2d.h"
-
 // stl
 #include <vector>
-
 // utility
 #include "StringUtility.h"
-
 // io
 #include "Directory.h"
-
 using namespace cocos2d;
-
 bool Directory::create(std::string dirname) {
     FileUtils* fileUtils = FileUtils::getInstance();
     std::vector<std::string> dirVector = StringUtility::split(dirname, "/");
@@ -43,7 +36,6 @@ bool Directory::create(std::string dirname) {
     }
     return true;
 }
-
 std::string Directory::getDirectoryName(std::string filePath) {
     int dirIndex = filePath.find_last_of("/");
     std::string dirname = filePath.substr(0, dirIndex);

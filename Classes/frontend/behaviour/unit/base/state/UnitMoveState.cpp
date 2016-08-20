@@ -7,9 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "UnitMoveState.h"
-
 #include "ArcherBehaviour.h"
 #include "BarbarianBehaviour.h"
 #include "GiantBehaviour.h"
@@ -18,41 +16,32 @@
 #include "BeaconEffectBehaviour.h"
 #include "BehaviourMapper.h"
 #include "BehaviourCollection.h"
-
 #include "Notifier.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
 #include "GeographicDepth.h"
-
 // utility
 #include "Distance.h"
 #include "Degree.h"
-
 // vfx
 #include "Move.h"
-
 #include "ServiceGateway.h"
 #include "Parameter.h"
 #include "Response.h"
 #include "AstarRouteSearch.h"
 #include "Direction.h"
 using namespace cocos2d;
-
 std::mutex unitMoveMtx;
-
 template <typename T>
 UnitMoveState<T>::UnitMoveState() {
     this->routeSearch = new AstarRouteSearch(NULL, NULL, AstarTwoPointDistanceHeuristic::ASTAR_HEURISTIC_ID);
     this->speed = 1.0f;
 }
-
 template <typename T>
 UnitMoveState<T>::~UnitMoveState() {
     CC_SAFE_DELETE(this->routeSearch);
 }
-
 template <typename T>
 void UnitMoveState<T>::search() {
     this->routeVector.clear();
@@ -69,14 +58,12 @@ void UnitMoveState<T>::search() {
             start = this->routeSearch->getGoalNode();
         }
         goal = this->findGoalNode(start);
-
         if (NULL == goal) {
             this->unit->stateMachine->stop();
             this->changeDirection();
             unitMoveMtx.unlock();
             return;
         }
-
         Parameter parameter;
         parameter.set<int>("startGeographicId", start->geographicId);
         parameter.set<int>("goalGeographicId", goal->geographicId);
@@ -100,10 +87,8 @@ void UnitMoveState<T>::search() {
             this->routeSearch->setStartNode(routeCacheVector.at(0));
             this->routeSearch->setGoalNode(routeCacheVector.at(lastIndex));
         }
-
         this->unit->setGeographicNode(start);
         this->changeDirection();
-
         parameter.set<GeographicNode*>("goalGeographicNode", goal);
         this->unit->getBeacon()->getStateMachine()->change("show", &parameter);
         this->unit->stateMachine->play();
@@ -111,13 +96,11 @@ void UnitMoveState<T>::search() {
     });
     thread.detach();
 }
-
 template <typename T>
 GeographicNode* UnitMoveState<T>::findGoalNode(GeographicNode* startNode) {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     return collection->findBarrierByPosition(startNode, true);
 }
-
 template <typename T>
 bool UnitMoveState<T>::move(GeographicNode* goalNode) {
     bool ret = false;
@@ -135,13 +118,11 @@ bool UnitMoveState<T>::move(GeographicNode* goalNode) {
     }
     return ret;
 }
-
 template <typename T>
 void UnitMoveState<T>::changeDirection() {
     if (0 == this->routeVector.size()) {
         return;
     }
-
     GeographicNode* currentNode = this->unit->getGeographicNode();
     GeographicNode* destinationNode = NULL;
     if (1 < this->routeVector.size()) {
@@ -149,7 +130,6 @@ void UnitMoveState<T>::changeDirection() {
     } else {
         destinationNode = this->routeVector.at(0);
     }
-
     float degree = Degree::create(currentNode->position, destinationNode->position);
     Direction::DIRECT direction = Direction::getDirection(degree);
     if (direction == Direction::DIRECT::HORIZON_RIGHT) {
@@ -172,12 +152,10 @@ void UnitMoveState<T>::changeDirection() {
         asset->transform(true);
     }
 }
-
 template <typename T>
 void UnitMoveState<T>::setUnit(T* unit) {
     this->unit = unit;
 }
-
 template class UnitMoveState<ArcherBehaviour>;
 template class UnitMoveState<BarbarianBehaviour>;
 template class UnitMoveState<GiantBehaviour>;

@@ -7,40 +7,28 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BehaviourMapper.h"
 #include "BehaviourCollection.h"
-
 // command
 #include "CommandGateway.h"
 #include "BaseCommand.h"
-
 // debug
 #include "Macro.h"
-
 // state
 #include "BattleFrameState.h"
-
 // touch
 #include "BaseTouch.h"
-
 using namespace cocos2d;
-
 BattleFrameState::BattleFrameState() { this->persistence = true; }
-
 BattleFrameState::~BattleFrameState() {}
-
 void BattleFrameState::create() {}
-
 void BattleFrameState::update(float delta) {
     Layer* unitLayer = (Layer*)this->owner->getChildByTag(BaseLayer::NODE_LAYER_TAG);
     BehaviourMapper* mapper = BehaviourMapper::getInstance();
     mapper->map(unitLayer);
-
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     std::vector<std::string> behaviourTypeVector = collection->getBehaviourTypeVector();
     for (std::vector<std::string>::iterator it = behaviourTypeVector.begin(); it != behaviourTypeVector.end(); it++) {
@@ -54,7 +42,6 @@ void BattleFrameState::update(float delta) {
                     delete behaviour;
                     behaviour = NULL;
                 }
-
                 bt = behaviourVector->erase(bt);
                 continue;
             }
@@ -63,7 +50,6 @@ void BattleFrameState::update(float delta) {
             bt++;
         }
     }
-
     std::map<std::string, BaseTouch*>::iterator it = this->owner->touchMap.begin();
     while (it != this->owner->touchMap.end()) {
         BaseTouch* touch = (BaseTouch*)it->second;

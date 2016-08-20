@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AndExpression_h
 #define AndExpression_h
-
 // service
 #include "MultiConditionExpression.h"
-
 class AndExpression : public MultiConditionExpression {
    public:
     AndExpression();
     virtual ~AndExpression();
 };
-
 #endif

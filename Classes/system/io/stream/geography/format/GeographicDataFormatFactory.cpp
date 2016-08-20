@@ -7,13 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // stream
 #include "GeographicDataFormatFactory.h"
 #include "GeographicDataHeader.h"
 #include "GeographicDataFieldTag.h"
 #include "GeographicDataBarrierTag.h"
-
 GeographicDataBaseFormat* GeographicDataFormatFactory::factoryMethod(unsigned char formatType, GeographicNode* node) {
     GeographicDataBaseFormat* format = NULL;
     switch (formatType) {
@@ -29,7 +27,6 @@ GeographicDataBaseFormat* GeographicDataFormatFactory::factoryMethod(unsigned ch
         default:
             break;
     }
-
     if (NULL != format) {
         format->build();
     }

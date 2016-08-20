@@ -7,19 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataBaseTag_h
 #define GeographicDataBaseTag_h
-
 // stream
 #include "GeographicDataBaseFormat.h"
 #include "GeographicDataRecordHeader.h"
-
 class GeographicDataBaseTag : public GeographicDataBaseFormat {
    public:
     GeographicDataRecordHeader* header;
     GeographicDataBaseTag();
     virtual ~GeographicDataBaseTag();
 };
-
 #endif

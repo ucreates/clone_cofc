@@ -7,21 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // cocos2d
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
 #include "BGMAsset.h"
-
 using namespace CocosDenshion;
-
 BGMAsset::BGMAsset(std::string assetFileName) {
     this->assetFileName = assetFileName;
     this->isPause = false;
 }
-
 BGMAsset::~BGMAsset() {}
-
 void BGMAsset::play(bool loop) {
     SimpleAudioEngine::getInstance()->setBackgroundMusicVolume(1.0f);
     if (false == this->isPause) {
@@ -32,7 +27,6 @@ void BGMAsset::play(bool loop) {
     }
     return;
 }
-
 void BGMAsset::pause() {
     if (false != SimpleAudioEngine::getInstance()->isBackgroundMusicPlaying()) {
         SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
@@ -40,7 +34,6 @@ void BGMAsset::pause() {
     this->isPause = true;
     return;
 }
-
 void BGMAsset::stop() {
     SimpleAudioEngine::getInstance()->stopBackgroundMusic(true);
     return;

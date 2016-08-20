@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AstarRouteSearch_h
 #define AstarRouteSearch_h
-
 #include <vector>
 #include "GeographicNode.h"
 #include "BaseRouteSearch.h"
@@ -19,7 +17,6 @@
 #include "AstarTwoPointDistanceHeuristic.h"
 #include "RouteEvalCollection.h"
 #include "AddressRangeValidator.h"
-
 class AstarRouteSearch : public BaseRouteSearch {
    public:
     static const int SEARCH_NODE_UNIT_SIZE = 1;
@@ -31,7 +28,6 @@ class AstarRouteSearch : public BaseRouteSearch {
     void changeHeuristic(int heuristicId);
     RouteEvalCollection* getOpenList();
     RouteEvalCollection* getCloseList();
-
    protected:
     BaseAstarHeuristic* heuristic;
     RouteEvalCollection* openList;
@@ -41,5 +37,4 @@ class AstarRouteSearch : public BaseRouteSearch {
     void initialize(GeographicNode* start, GeographicNode* end);
     std::vector<GeographicNode*> getNextNodeVector(GeographicNode* evalNode);
 };
-
 #endif

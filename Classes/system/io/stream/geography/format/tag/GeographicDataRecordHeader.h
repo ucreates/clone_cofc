@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataRecordHeader_h
 #define GeographicDataRecordHeader_h
-
 // stream
 #include "GeographicDataBaseFormat.h"
-
 class GeographicDataRecordHeader : public GeographicDataBaseFormat {
    public:
     unsigned char tagType;
@@ -24,5 +21,4 @@ class GeographicDataRecordHeader : public GeographicDataBaseFormat {
     virtual ~GeographicDataRecordHeader();
     GeographicDataRecordHeader* operator=(GeographicDataRecordHeader* format);
 };
-
 #endif

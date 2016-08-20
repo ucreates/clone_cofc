@@ -7,27 +7,20 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ArcherLoseState_h
 #define ArcherLoseState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitLoseState.h"
-
 // behaviour
 #include "ArcherBehaviour.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 class ArcherBehaviour;
-
 class ArcherLoseState : public FiniteState<ArcherBehaviour>, UnitLoseState<ArcherBehaviour> {
    public:
     ArcherLoseState();
     virtual ~ArcherLoseState();
     void create() override;
 };
-
 #endif

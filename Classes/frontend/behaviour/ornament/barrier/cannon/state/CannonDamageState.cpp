@@ -7,33 +7,24 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CannonDamageState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 #include "BehaviourMapper.h"
 #include "ServiceGateway.h"
 #include "ServiceStatus.h"
 #include "Response.h"
-
 CannonDamageState::CannonDamageState() { this->damageStrategy = ServiceGateway::getInstance()->request("service://barrier/damage"); }
-
 CannonDamageState::~CannonDamageState() {}
-
 void CannonDamageState::create(Parameter* parameter) {
     AnimatorAsset* asset = (AnimatorAsset*)this->owner->getAsset("anime");
     asset->pause(1);
-
     Response res = this->damageStrategy->update(parameter);
     if (ServiceStatus::SUCCESS != res.getStatus()) {
         CCLOGERROR("service faild %s, %s, %d", __FILE__, __FUNCTION__, __LINE__);

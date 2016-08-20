@@ -7,12 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef SoundAssetCollection_h
 #define SoundAssetCollection_h
-
 #include "BaseSoundAsset.h"
-
 class SoundAssetCollection {
    public:
     ~SoundAssetCollection();
@@ -24,12 +21,10 @@ class SoundAssetCollection {
     void stop();
     void clear();
     static void destroy();
-
    private:
     SoundAssetCollection();
     static SoundAssetCollection* instance;
     std::map<std::string, BaseSoundAsset*> soundEffectAssetList;
     std::map<std::string, BaseSoundAsset*> soundBGMAssetList;
 };
-
 #endif

@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseDao_h
 #define BaseDao_h
-
 class BaseDao {
    public:
     BaseDao();
@@ -18,5 +16,4 @@ class BaseDao {
     virtual void clear();
     virtual void reset();
 };
-
 #endif

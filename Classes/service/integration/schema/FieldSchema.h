@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef FieldSchema_h
 #define FieldSchema_h
-
 // service
 #include "BaseFieldSchema.h"
-
 template <typename T>
 class FieldSchema : public BaseFieldSchema {
    public:
@@ -27,9 +24,7 @@ class FieldSchema : public BaseFieldSchema {
     bool moreThanEqual(BaseFieldSchema* field) override;
     bool lessThan(BaseFieldSchema* field) override;
     bool lessThanEqual(BaseFieldSchema* field) override;
-
    private:
     T value;
 };
-
 #endif

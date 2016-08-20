@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "LogoClearStrategy.h"
 #include "RouteBizLogic.h"
@@ -16,11 +15,8 @@
 #include "OverAllBizLogic.h"
 #include "ResourceBizLogic.h"
 #include "UnitBizLogic.h"
-
 LogoClearStrategy::LogoClearStrategy() {}
-
 LogoClearStrategy::~LogoClearStrategy() {}
-
 Response LogoClearStrategy::update(Parameter* parameter) {
     std::list<BaseBizLogic*> list;
     list.push_back(new AssetBizLogic());
@@ -29,7 +25,6 @@ Response LogoClearStrategy::update(Parameter* parameter) {
     list.push_back(new ResourceBizLogic());
     list.push_back(new RouteBizLogic());
     list.push_back(new UnitBizLogic());
-
     for (std::list<BaseBizLogic*>::iterator it = list.begin(); it != list.end(); it++) {
         (*it)->clear();
         CC_SAFE_DELETE((*it));
