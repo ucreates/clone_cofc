@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseTouch_h
 #define BaseTouch_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // stl
 #include <vector>
-
 class BaseTouch {
    public:
     static const int SINGLE_TOUCH_COUNT = 1;
@@ -31,7 +27,6 @@ class BaseTouch {
     void setEnableTouch(bool enable);
     cocos2d::Touch* getPreviousTouch();
     void setPreviousTouch(cocos2d::Touch* touch);
-
    protected:
     cocos2d::Point beganPoint;
     cocos2d::Point endPoint;
@@ -43,5 +38,4 @@ class BaseTouch {
     bool firstTouch;
     void adjustLayer();
 };
-
 #endif

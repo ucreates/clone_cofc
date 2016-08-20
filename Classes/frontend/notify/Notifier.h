@@ -7,16 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Notifier_h
 #define Notifier_h
-
 #include <map>
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
 #include "BaseProperty.h"
-
 class Notifier {
    public:
     static Notifier* getInstance();
@@ -29,7 +26,6 @@ class Notifier {
     void erase(int notifyId);
     void clear();
     std::map<int, INotify*>* getNotifyMap();
-
    private:
     NotifyMessage previousMessage;
     NotifyMessage currentMessage;
@@ -38,5 +34,4 @@ class Notifier {
     Notifier();
     ~Notifier();
 };
-
 #endif

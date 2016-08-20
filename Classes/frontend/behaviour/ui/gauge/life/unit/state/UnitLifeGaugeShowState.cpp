@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "UnitLifeGaugeShowState.h"
 #include "ServiceGateway.h"
 #include "Parameter.h"
 #include "Response.h"
 #include "UIAsset.h"
-
 using namespace cocos2d;
 using namespace cocos2d::ui;
-
 UnitLifeGaugeShowState::UnitLifeGaugeShowState() {}
-
 UnitLifeGaugeShowState::~UnitLifeGaugeShowState() {}
-
 void UnitLifeGaugeShowState::create() {
     int unitId = this->owner->unit->getProperty()->getId();
     Parameter parameter;
@@ -31,25 +26,21 @@ void UnitLifeGaugeShowState::create() {
         res.clear();
         return;
     }
-
     float restHpPercentage = res.get<float>("restHpPercentage");
     UIAsset* asset = (UIAsset*)this->owner->getAsset("anime");
     LoadingBar* unitLife = asset->findByName<LoadingBar*>("unitLife");
     LoadingBar* unitLifeCrisis = asset->findByName<LoadingBar*>("unitLifeCrisis");
     unitLife->setPercent(restHpPercentage);
     unitLifeCrisis->setPercent(restHpPercentage);
-
     if (UnitLifeGaugeShowState::CRISIS_PERCENTAGE > restHpPercentage) {
         unitLife->setVisible(false);
         unitLifeCrisis->setVisible(true);
     }
-
     asset->show();
     this->frame->reset();
     res.clear();
     return;
 }
-
 void UnitLifeGaugeShowState::update(float delta) {
     float time = this->frame->getFrameTime();
     if (time > UnitLifeGaugeShowState::CLOSE_TIME) {

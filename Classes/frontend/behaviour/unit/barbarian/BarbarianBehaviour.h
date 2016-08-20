@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarbarianBehaviour_h
 #define BarbarianBehaviour_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseUnitBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "BarbarianMoveState.h"
@@ -28,19 +24,16 @@
 #include "UnitDeadState.h"
 #include "UnitWinState.h"
 #include "UnitLoseState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
 #include "IFiniteStateMachine.h"
-
 class BarbarianMoveState;
 class BarbarianAttackState;
 class BarbarianWinState;
 class BarbarianLoseState;
 class BarbarianDeadState;
-
 class BarbarianBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<BarbarianBehaviour>, public INotify {
     friend UnitMoveState<BarbarianBehaviour>;
     friend UnitDeadState<BarbarianBehaviour>;
@@ -51,7 +44,6 @@ class BarbarianBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<
     friend BarbarianWinState;
     friend BarbarianLoseState;
     friend BarbarianDeadState;
-
    public:
     BarbarianBehaviour();
     virtual ~BarbarianBehaviour();
@@ -59,5 +51,4 @@ class BarbarianBehaviour : public BaseUnitBehaviour, public IFiniteStateMachine<
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

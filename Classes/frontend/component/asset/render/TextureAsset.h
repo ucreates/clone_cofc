@@ -7,18 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TextureAsset_h
 #define TextureAsset_h
-
 #include <string>
-
 #include "BaseRenderAsset.h"
-
 class TextureAsset : public BaseRenderAsset {
    public:
     TextureAsset(std::string textureFileName);
     virtual ~TextureAsset();
 };
-
 #endif

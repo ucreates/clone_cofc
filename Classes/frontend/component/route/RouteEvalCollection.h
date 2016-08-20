@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef RouteEvalCollection_h
 #define RouteEvalCollection_h
-
 // stl
 #include <vector>
-
 // geography
 #include "GeographicNode.h"
-
 class RouteEvalCollection {
    public:
     RouteEvalCollection();
@@ -29,7 +25,6 @@ class RouteEvalCollection {
     void dump();
     std::vector<GeographicNode*>* getNodeVector();
     RouteEvalCollection* operator=(RouteEvalCollection* value);
-
    private:
     std::vector<GeographicNode*>* nodeVector;
 };

@@ -7,23 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef RectCollider_h
 #define RectCollider_h
 #include "cocos2d.h"
-
 // behaviour
 #include "BaseBehaviour.h"
-
 // geography
 #include "GeographicNode.h"
-
 // collider
 #include "BaseCollider.h"
-
 class BaseBehaviour;
 class GeographicNode;
-
 class RectCollider : public BaseCollider {
    public:
     RectCollider();
@@ -32,10 +26,8 @@ class RectCollider : public BaseCollider {
     RectCollider(BaseBehaviour* behaviour, GeographicNode* node);
     virtual ~RectCollider();
     void addLayer(cocos2d::Layer* layer, int depth);
-
    protected:
     bool isBehaviourHit(BaseBehaviour* behaviour) override;
     bool isNodeHit(BaseBehaviour* behaviour) override;
 };
-
 #endif

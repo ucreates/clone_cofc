@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "GiantLoseState.h"
-
 GiantLoseState::GiantLoseState() {}
-
 GiantLoseState::~GiantLoseState() {}
-
 void GiantLoseState::create() {
     this->changeDirection(this->owner);
     return;

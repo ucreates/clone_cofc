@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDepth_h
 #define GeographicDepth_h
-
 class GeographicDepth {
    public:
     static const int UI_DEPTH = 100000;
@@ -24,5 +22,4 @@ class GeographicDepth {
     static const int EFFECT_DEPTH_RELATIVE_TO_NODE = 1000;
     static int create(int x, int y, int z, int diffHeightX, int diffHeightY);
 };
-
 #endif

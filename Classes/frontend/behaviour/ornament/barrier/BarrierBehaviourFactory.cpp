@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarrierBehaviourFactory.h"
 #include "BaseBarrierBehaviour.h"
 #include "CannonBehaviour.h"
@@ -18,10 +17,8 @@
 #include "GoldStrageBehaviour.h"
 #include "ElixirTankBehaviour.h"
 #include "BarrierBehaviourType.h"
-
 BaseBarrierBehaviour* BarrierBehaviourFactory::factoryMethod(short mapTipType, GeographicNode* node) {
     BaseBarrierBehaviour* barrier = NULL;
-
     switch (mapTipType) {
         case BarrierBehaviourType::WoodFenceH:
             barrier = new WoodFenceHBehaviour(node);

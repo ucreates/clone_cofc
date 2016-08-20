@@ -7,9 +7,7 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WeaponProperty.h"
-
 WeaponProperty::WeaponProperty(std::string name, int id, int ownerId, bool isEnemy) {
     this->name = name;
     this->id = id;
@@ -17,9 +15,6 @@ WeaponProperty::WeaponProperty(std::string name, int id, int ownerId, bool isEne
     this->type = "weapon";
     this->isEnemyWeapon = isEnemy;
 }
-
 WeaponProperty::~WeaponProperty() {}
-
 bool WeaponProperty::isEnemy() { return this->isEnemyWeapon; }
-
 int WeaponProperty::getOwnerId() { return this->ownerId; }

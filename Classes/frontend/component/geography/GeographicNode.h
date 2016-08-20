@@ -7,19 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef geographicNodeStruct_h
 #define geographicNodeStruct_h
-
 #include "cocos2d.h"
 #include "Address.h"
 #include "Scale.h"
-
 // collider
 #include "BaseCollider.h"
-
 class BaseCollider;
-
 class GeographicNode {
    public:
     unsigned int geographicId;
@@ -34,5 +29,4 @@ class GeographicNode {
     ~GeographicNode();
     void dump(cocos2d::Layer* layer, int depth);
 };
-
 #endif

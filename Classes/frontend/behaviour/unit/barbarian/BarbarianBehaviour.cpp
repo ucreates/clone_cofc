@@ -7,33 +7,24 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "BarbarianBehaviour.h"
 #include "BehaviourIdGenerator.h"
 #include "UnitBehaviourType.h"
-
 // peroperty
 #include "UnitProperty.h"
-
 // asset
 #include "AnimatorAsset.h"
 #include "SoundEffectAsset.h"
 #include "SoundAssetCollection.h"
-
 // notify
 #include "Notifier.h"
-
 #include "Random.h"
-
 #include "Parameter.h"
 #include "ServiceGateway.h"
-
 using namespace cocos2d;
-
 BarbarianBehaviour::BarbarianBehaviour() {
     int id = BehaviourIdGenerator::getInstance()->getId();
-
     this->asset->add("anime", new AnimatorAsset("csb/animation/unit/barbarian", id));
     this->asset->add("se1", SoundAssetCollection::getInstance()->getSEAsset("sound/se/barb_deploy_11v2.mp3"));
     this->asset->add("se2", SoundAssetCollection::getInstance()->getSEAsset("sound/se/barb_deploy_11v3.mp3"));
@@ -48,9 +39,7 @@ BarbarianBehaviour::BarbarianBehaviour() {
     this->stateMachine->add("lose", new BarbarianLoseState());
     this->stateMachine->add("dead", new BarbarianDeadState());
     this->stateMachine->stop();
-
     Notifier::getInstance()->add(this, this->property);
-
     Parameter parameter;
     parameter.set<int>("unitId", id);
     parameter.set<int>("unitType", UnitBehaviourType::Barbarian);
@@ -61,23 +50,16 @@ BarbarianBehaviour::BarbarianBehaviour() {
     res.clear();
     return;
 }
-
 BarbarianBehaviour::~BarbarianBehaviour() { Notifier::getInstance()->erase(this->property->getId()); }
-
 void BarbarianBehaviour::onCreate(Layer* layer, Position position) {
-
     BaseUnitBehaviour::onCreate(layer, position);
-
     this->shadow->onCreate(layer, position, Size(1.0f, 1.0f));
-
     AnimatorAsset* anime = (AnimatorAsset*)this->getAsset("anime");
     anime->transform(position);
     anime->transform(Size(0.75f, 0.75f));
     anime->addLayer(layer, position.zorder);
-
     this->stateMachine->change("move");
     this->stateMachine->play();
-
     int threshold = Random::create(10);
     std::string seName = "se1";
     if (0 == threshold % 2) {
@@ -86,12 +68,10 @@ void BarbarianBehaviour::onCreate(Layer* layer, Position position) {
     SoundEffectAsset* se = (SoundEffectAsset*)this->getAsset(seName.c_str());
     se->play();
 }
-
 void BarbarianBehaviour::onUpdate(float delta) {
     BaseUnitBehaviour::onUpdate(delta);
     this->stateMachine->update(delta);
 }
-
 void BarbarianBehaviour::onNotify(NotifyMessage notifyMessage, Parameter* parameter) {
     if (notifyMessage == NotifyMessage::Behaviour_Unit_Move) {
         this->stateMachine->change("move");

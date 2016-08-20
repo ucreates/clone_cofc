@@ -7,25 +7,17 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // state
 #include "BattleZoomState.h"
-
 // vfx
 #include "Exponential.h"
-
 using namespace cocos2d;
-
 BattleZoomState::BattleZoomState() {}
-
 BattleZoomState::~BattleZoomState() {}
-
 void BattleZoomState::create() { this->frame->reset(); }
-
 void BattleZoomState::update(float delta) {
     Layer* unitLayer = (Layer*)this->owner->getChildByTag(BaseLayer::NODE_LAYER_TAG);
     float time = this->frame->getFrameTime();

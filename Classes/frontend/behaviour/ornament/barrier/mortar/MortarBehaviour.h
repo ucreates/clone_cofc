@@ -7,12 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef MortarBehaviour_h
 #define MortarBehaviour_h
 // behaviour
 #include "BaseBarrierBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "IFiniteStateMachine.h"
@@ -22,15 +20,12 @@
 #include "MortarPauseState.h"
 #include "MortarTouchBeganState.h"
 #include "MortarTouchEndState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 // geography
 #include "GeographicNode.h"
-
 class MortarAttackState;
 class MortarDestroyState;
 class MortarDamageState;
@@ -44,7 +39,6 @@ class MortarBehaviour : public BaseBarrierBehaviour, public IFiniteStateMachine<
     friend MortarPauseState;
     friend MortarTouchBeganState;
     friend MortarTouchEndState;
-
    public:
     MortarBehaviour(GeographicNode* geographicNode);
     virtual ~MortarBehaviour();
@@ -54,5 +48,4 @@ class MortarBehaviour : public BaseBarrierBehaviour, public IFiniteStateMachine<
     void onUpdate(float delta = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

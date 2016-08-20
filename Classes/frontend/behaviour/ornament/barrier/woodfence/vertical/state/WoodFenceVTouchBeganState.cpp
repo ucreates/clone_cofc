@@ -7,32 +7,24 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WoodFenceVTouchBeganState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
 #include "GeographicDepth.h"
 #include "BarrierBehaviourType.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // utility
 #include "Degree.h"
 #include "Figure.h"
 #include "Vector2D.h"
 #include "Random.h"
 #include "Alpha.h"
-
 using namespace cocos2d;
-
 WoodFenceVTouchBeganState::WoodFenceVTouchBeganState() {}
-
 WoodFenceVTouchBeganState::~WoodFenceVTouchBeganState() {}
-
 void WoodFenceVTouchBeganState::create(Parameter* parameter) {
     Vec2 pos = parameter->get<Vec2>("touchPosition");
     bool reset = parameter->get<bool>("reset");
@@ -43,9 +35,7 @@ void WoodFenceVTouchBeganState::create(Parameter* parameter) {
     } else {
         node = gateway->findByPosition(pos);
     }
-
     this->owner->clearGeographicNodeVector();
-
     if (NULL != node) {
         pos = node->position;
         Parameter parameter;
@@ -55,7 +45,6 @@ void WoodFenceVTouchBeganState::create(Parameter* parameter) {
         Notifier::getInstance()->notify(NotifyMessage::Route_Search_Test_Viewer_Node);
         Notifier::getInstance()->notify(NotifyMessage::Route_Search_Test_Viewer_Start, &parameter);
         GLubyte alpha = Alpha::HALF_ALPHA;
-
         AnimatorAsset* anime = (AnimatorAsset*)this->owner->getAsset("anime");
         anime->transform(pos, (OrnamentProperty*)this->owner->getProperty());
         anime->transform(GeographicDepth::ORNAMENT_TOUCH_DEPTH);

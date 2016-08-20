@@ -7,19 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ArrowDestoryState_h
 #define ArrowDestoryState_h
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "ArrowBehaviour.h"
-
 // asset
 #include "BaseRenderAsset.h"
-
 class ArrowBehaviour;
 class ArrowDestroyState : public FiniteState<ArrowBehaviour> {
    public:
@@ -27,5 +22,4 @@ class ArrowDestroyState : public FiniteState<ArrowBehaviour> {
     virtual ~ArrowDestroyState();
     void create() override;
 };
-
 #endif

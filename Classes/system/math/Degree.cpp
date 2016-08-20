@@ -7,12 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // math
 #include "Degree.h"
 #include "Radian.h"
 using namespace cocos2d;
-
 float Degree::create(Vec2 start, Vec2 goal, bool plus) {
     float radian = Radian::create(start, goal);
     float degree = CC_RADIANS_TO_DEGREES(radian);
@@ -21,7 +19,6 @@ float Degree::create(Vec2 start, Vec2 goal, bool plus) {
     }
     return degree;
 }
-
 float Degree::create(Position start, Position goal, bool plus) {
     float radian = Radian::create(start, goal);
     float degree = CC_RADIANS_TO_DEGREES(radian);

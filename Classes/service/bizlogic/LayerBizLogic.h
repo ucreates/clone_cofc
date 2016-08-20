@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LayerBizLogic_h
 #define LayerBizLogic_h
 // cocos2d
 #include "cocos2d.h"
-
 // service
 #include "BaseBizLogic.h"
-
 class LayerBizLogic : public BaseBizLogic {
    public:
     LayerBizLogic();
@@ -26,5 +23,4 @@ class LayerBizLogic : public BaseBizLogic {
     void setLayer(cocos2d::Layer* layer);
     void setLayer(int layerId, cocos2d::Layer* layer);
 };
-
 #endif

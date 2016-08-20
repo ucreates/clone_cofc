@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef NotifyMessage_h
 #define NotifyMessage_h
-
 enum NotifyMessage {
     Logo_Scene_Show_State = 0x0000,
     Logo_Scene_Complete_State = 0x0001,

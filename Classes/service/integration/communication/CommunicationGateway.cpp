@@ -7,36 +7,29 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "AssetXmlCallback.h"
 #include "AssetCallback.h"
 #include "CommunicationGateway.h"
-
 using namespace cocos2d::network;
-
 CommunicationGateway* CommunicationGateway::instance = NULL;
-
 CommunicationGateway::CommunicationGateway() {
     this->callback = NULL;
     this->callbackList.insert(std::map<std::string, BaseCallback*>::value_type("assetXml", new AssetXmlCallback()));
     this->callbackList.insert(std::map<std::string, BaseCallback*>::value_type("asset", new AssetCallback()));
 }
-
 CommunicationGateway::~CommunicationGateway() {
     for (std::map<std::string, BaseCallback*>::iterator it = this->callbackList.begin(); it != this->callbackList.end(); it++) {
         CC_SAFE_DELETE(it->second);
     }
     this->callback = NULL;
 }
-
 CommunicationGateway* CommunicationGateway::getInstance() {
     if (NULL == CommunicationGateway::instance) {
         CommunicationGateway::instance = new CommunicationGateway();
     }
     return CommunicationGateway::instance;
 }
-
 void CommunicationGateway::request(std::string url, HttpRequest::Type methodType) {
     HttpRequest* request = new HttpRequest();
     request->setUrl(url.c_str());
@@ -47,7 +40,6 @@ void CommunicationGateway::request(std::string url, HttpRequest::Type methodType
     client->send(request);
     request->release();
 }
-
 void CommunicationGateway::response(HttpClient* sender, HttpResponse* response) {
     if (response->isSucceed()) {
         if (NULL != this->callback) {
@@ -58,10 +50,7 @@ void CommunicationGateway::response(HttpClient* sender, HttpResponse* response) 
             this->callback->onFaild(sender, response);
         }
     }
-
     return;
 }
-
 void CommunicationGateway::destroy() { CC_SAFE_DELETE(CommunicationGateway::instance); }
-
 void CommunicationGateway::setCallback(std::string callbackName) { this->callback = this->callbackList[callbackName]; }

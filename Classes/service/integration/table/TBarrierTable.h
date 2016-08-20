@@ -7,12 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TBarrierTable_h
 #define TBarrierTable_h
 // service
 #include "BaseTable.h"
-
 class TBarrierTable : public BaseTable {
    public:
     int barrierId;
@@ -22,5 +20,4 @@ class TBarrierTable : public BaseTable {
     TBarrierTable();
     void build() override;
 };
-
 #endif

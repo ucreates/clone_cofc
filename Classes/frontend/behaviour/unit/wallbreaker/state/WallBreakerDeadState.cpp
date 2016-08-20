@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WallBreakerDeadState.h"
-
 WallBreakerDeadState::WallBreakerDeadState() {}
-
 WallBreakerDeadState::~WallBreakerDeadState() {}
-
 void WallBreakerDeadState::create() {
     this->dead(this->owner);
     return;

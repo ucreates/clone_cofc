@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UIProperty_h
 #define UIProperty_h
 #include "BaseProperty.h"
-
 class UIProperty : public BaseProperty {
    public:
     UIProperty(std::string name, int id);
     virtual ~UIProperty();
 };
-
 #endif

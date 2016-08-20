@@ -7,12 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataBaseFormat_h
 #define GeographicDataBaseFormat_h
-
 #include "GeographicNode.h"
-
 class GeographicDataBaseFormat {
    public:
     static const char HEADER = 0x00;
@@ -21,9 +18,7 @@ class GeographicDataBaseFormat {
     GeographicDataBaseFormat();
     virtual ~GeographicDataBaseFormat();
     virtual void build();
-
    protected:
     GeographicNode* node;
 };
-
 #endif

@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef MBarrierTable_h
 #define MBarrierTable_h
-
 // service
 #include "BaseTable.h"
-
 class MBarrierTable : public BaseTable {
    public:
     int type;
@@ -23,5 +20,4 @@ class MBarrierTable : public BaseTable {
     MBarrierTable();
     void build() override;
 };
-
 #endif

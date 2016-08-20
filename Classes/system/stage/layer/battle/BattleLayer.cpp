@@ -7,39 +7,29 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "BattleBackGroundBehaviour.h"
 #include "BattleUIBehaviour.h"
-
 // layer
 #include "BattleLayer.h"
 #include "BattleLayerBuilder.h"
-
 // math
 #include "Random.h"
-
 // notifier
 #include "Notifier.h"
-
 // sound
 #include "SoundAssetCollection.h"
-
 // touch
 #include "ContinuousTouch.h"
 #include "PinchTouch.h"
 #include "SwipeTouch.h"
-
 using namespace cocos2d;
-
 bool BattleLayer::init() {
     if (false == Layer::init()) {
         return false;
     }
-
     Layer* unitLayer = Layer::create();
     Layer* uiLayer = Layer::create();
-
     std::string mapList[2] = {"map1.map", "map2.map"};
     int index = Random::create(10);
     std::string mapFileName = "";
@@ -103,18 +93,14 @@ bool BattleLayer::init() {
         ->build();
     return true;
 }
-
 void BattleLayer::update(float delta) { this->stateMachine->update(delta); }
-
 void BattleLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event* event) {
     if (false == this->enableInput) {
         return;
     }
-
     if (BaseTouch::SINGLE_TOUCH_COUNT == touches.size()) {
         this->touchMap["continuous"]->setEnableTouch(true);
         this->touchMap["swipe"]->setEnableTouch(true);
-
         Touch* touch = touches.at(0);
         Vec2 worldTouchPoint = touch->getLocation();
         Layer* unitLayer = (Layer*)this->getChildByTag(BaseLayer::NODE_LAYER_TAG);
@@ -125,10 +111,8 @@ void BattleLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event* even
         touchPointVector.clear();
         touchPointVector.push_back(worldTouchPoint);
         this->touchMap["swipe"]->onBegan(touchPointVector);
-
         this->touchMap["continuous"]->setPreviousTouch(touch);
         this->touchMap["swipe"]->setPreviousTouch(touch);
-
         Touch* previousTouch = this->touchMap["pinch"]->getPreviousTouch();
         if (NULL == previousTouch) {
             this->touchMap["pinch"]->setPreviousTouch(touch);
@@ -159,19 +143,16 @@ void BattleLayer::onTouchesBegan(const std::vector<Touch*>& touches, Event* even
         this->touchMap["pinch"]->onBegan(touchPointVector);
     }
 }
-
 void BattleLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event* event) {
     if (false == this->enableInput) {
         return;
     }
-
     Touch* touch1 = NULL;
     Touch* touch2 = NULL;
     bool doubleTouch = false;
     Touch* curentTouch = touches.at(0);
     if (BaseTouch::SINGLE_TOUCH_COUNT == touches.size()) {
         Touch* previousTouch = this->touchMap["pinch"]->getPreviousTouch();
-
         if (NULL != previousTouch && curentTouch->getID() != previousTouch->getID()) {
             touch1 = previousTouch;
             touch2 = touches.at(0);
@@ -182,18 +163,15 @@ void BattleLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event* even
         touch2 = touches.at(1);
         doubleTouch = true;
     }
-
     if (false == doubleTouch) {
         Touch* previousTouch = this->touchMap["continuous"]->getPreviousTouch();
         if (NULL == previousTouch || curentTouch->getID() != previousTouch->getID()) {
             return;
         }
-
         previousTouch = this->touchMap["swipe"]->getPreviousTouch();
         if (NULL == previousTouch || curentTouch->getID() != previousTouch->getID()) {
             return;
         }
-
         Vec2 worldTouchPoint = curentTouch->getLocation();
         Layer* unitLayer = (Layer*)this->getChildByTag(BaseLayer::NODE_LAYER_TAG);
         Vec2 nodeTouchPoint = unitLayer->convertToNodeSpace(worldTouchPoint);
@@ -212,12 +190,10 @@ void BattleLayer::onTouchesMoved(const std::vector<Touch*>& touches, Event* even
         this->touchMap["pinch"]->onMove(touchPointVector);
     }
 }
-
 void BattleLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event* event) {
     if (false == this->enableInput) {
         return;
     }
-
     if (BaseTouch::SINGLE_TOUCH_COUNT == touches.size()) {
         Touch* touch = touches.at(0);
         Vec2 worldTouchPoint = touch->getLocation();
@@ -239,7 +215,6 @@ void BattleLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event* even
         touchPointVector.push_back(worldTouchPoint2);
         this->touchMap["pinch"]->onEnd(touchPointVector);
     }
-
     std::map<std::string, BaseTouch*>::iterator it = this->touchMap.begin();
     while (it != this->touchMap.end()) {
         BaseTouch* touch = (BaseTouch*)it->second;
@@ -247,7 +222,6 @@ void BattleLayer::onTouchesEnded(const std::vector<Touch*>& touches, Event* even
         it++;
     }
 }
-
 void BattleLayer::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event) {
     if (keyCode == EventKeyboard::KeyCode::KEY_BACKSPACE) {
         CC_SAFE_DELETE(this->stateMachine);
@@ -258,7 +232,6 @@ void BattleLayer::onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d
     }
     return;
 }
-
 void BattleLayer::onNotify(NotifyMessage notifyMessage, Parameter* parameter) {
     if (notifyMessage == NotifyMessage::Battle_Scene_Battle_State || notifyMessage == NotifyMessage::Battle_Scene_Battle_Attack_State || notifyMessage == NotifyMessage::Battle_Scene_Win_State ||
         notifyMessage == NotifyMessage::Battle_Scene_Lose_State) {
@@ -273,7 +246,6 @@ void BattleLayer::onNotify(NotifyMessage notifyMessage, Parameter* parameter) {
         this->stateMachine->change("transition");
     }
 }
-
 void BattleLayer::onExit() {
     CC_SAFE_DELETE(this->stateMachine);
     for (std::map<std::string, BaseTouch*>::iterator it = this->touchMap.begin(); it != this->touchMap.end(); it++) {

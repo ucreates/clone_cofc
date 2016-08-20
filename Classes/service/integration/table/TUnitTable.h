@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TUnitTable_h
 #define TUnitTable_h
-
 // service
 #include "BaseTable.h"
-
 struct TUnitTable : public BaseTable {
    public:
     int unitId;

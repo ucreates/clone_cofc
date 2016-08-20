@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "TowerArcherWinState.h"
-
 TowerArcherWinState::TowerArcherWinState() { this->owner = owner; }
-
 TowerArcherWinState::~TowerArcherWinState() {}
-
 void TowerArcherWinState::create() {
     this->changeDirection(this->owner);
     return;

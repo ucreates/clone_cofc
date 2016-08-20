@@ -7,39 +7,28 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "cocos2d.h"
-
 #include "ArcherBehaviour.h"
 #include "BarbarianBehaviour.h"
 #include "GiantBehaviour.h"
 #include "GoblinBehaviour.h"
 #include "WallBreakerBehaviour.h"
 #include "TowerArcherBehaviour.h"
-
 #include "UnitWinState.h"
-
 // geography
 #include "GeographicNode.h"
-
 // animator
 #include "AnimatorAsset.h"
-
 // utility
 #include "Degree.h"
 #include "Direction.h"
-
 // math
 #include "Random.h"
-
 using namespace cocos2d;
-
 template <typename T>
 UnitWinState<T>::UnitWinState() {}
-
 template <typename T>
 UnitWinState<T>::~UnitWinState() {}
-
 template <typename T>
 void UnitWinState<T>::changeDirection(T* owner) {
     AnimatorAsset* asset = (AnimatorAsset*)owner->getAsset("anime");
@@ -51,9 +40,7 @@ void UnitWinState<T>::changeDirection(T* owner) {
         asset->transform(false);
         return;
     }
-
     float degree = Degree::create(position, node->position);
-
     Direction::DIRECT direction = Direction::getDirection(degree);
     if (direction == Direction::DIRECT::HORIZON_RIGHT) {
         asset->play("side_win");
@@ -76,7 +63,6 @@ void UnitWinState<T>::changeDirection(T* owner) {
     }
     return;
 }
-
 template class UnitWinState<ArcherBehaviour>;
 template class UnitWinState<BarbarianBehaviour>;
 template class UnitWinState<GiantBehaviour>;

@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "BarrierDestroyStrategy.h"
 #include "BarrierBizLogic.h"
 #include "OverAllBizLogic.h"
 #include "ResourceBizLogic.h"
-
 BarrierDestroyStrategy::BarrierDestroyStrategy() {}
-
 BarrierDestroyStrategy::~BarrierDestroyStrategy() {}
-
 Response BarrierDestroyStrategy::update(Parameter* parameter) {
     Response res;
-
     std::string barrierName = parameter->get<std::string>("barrierName");
     OverAllBizLogic overallBizLogic;
     if ("woodFenceH" != barrierName && "woodFenceV" != barrierName) {
@@ -35,7 +30,6 @@ Response BarrierDestroyStrategy::update(Parameter* parameter) {
             }
         }
     }
-
     bool ret = false;
     ResourceBizLogic resourceBizLogic;
     if ("goldStrage" == barrierName) {
@@ -50,15 +44,12 @@ Response BarrierDestroyStrategy::update(Parameter* parameter) {
     } else {
         ret = true;
     }
-
     if (false == ret) {
         res.setStatus(ServiceStatus::FAILD);
         return res;
     }
-
     TOverAllTable record = overallBizLogic.getOverAll();
     res.set<TOverAllTable>("overAll", record);
-
     bool showOverAllStar = false;
     float overAllRate = overallBizLogic.getCurrentPercent();
     if (50.0f < overAllRate && false == record.reachedLevel1) {
@@ -71,16 +62,13 @@ Response BarrierDestroyStrategy::update(Parameter* parameter) {
         ret = overallBizLogic.updateOverAll(3);
         showOverAllStar = true;
     }
-
     if (false == ret) {
         res.setStatus(ServiceStatus::FAILD);
         return res;
     }
-
     res.set<bool>("showOverAllStar", showOverAllStar);
     return res;
 }
-
 Response BarrierDestroyStrategy::clear(Parameter* parameter) {
     Response res;
     BarrierBizLogic barrierBizLogic;

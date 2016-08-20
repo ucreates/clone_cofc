@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "AssetXmlCallback.h"
 #include "AssetXmlAssembler.h"
@@ -16,10 +15,8 @@
 #include "Parameter.h"
 #include "ServiceGateway.h"
 #include "TAssetTable.h"
-
 using namespace cocos2d;
 using namespace cocos2d::network;
-
 void AssetXmlCallback::onSuccess(HttpClient* sender, HttpResponse* response) {
     if (response->isSucceed()) {
         std::vector<char>* dataVector = response->getResponseData();
@@ -36,5 +33,4 @@ void AssetXmlCallback::onSuccess(HttpClient* sender, HttpResponse* response) {
     }
     return;
 }
-
 void AssetXmlCallback::onFaild(HttpClient* sender, HttpResponse* response) { CCLOGERROR("AssetXmlCallback::onFaild"); }

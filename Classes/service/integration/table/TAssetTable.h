@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TAssetTable_h
 #define TAssetTable_h
-
 // service
 #include "BaseTable.h"
-
 struct TAssetTable : public BaseTable {
    public:
     std::string name;
@@ -22,5 +19,4 @@ struct TAssetTable : public BaseTable {
     TAssetTable();
     void build() override;
 };
-
 #endif

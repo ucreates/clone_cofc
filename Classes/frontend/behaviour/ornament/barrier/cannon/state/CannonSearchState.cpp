@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "CannonSearchState.h"
-
 // behaviour
 #include "BehaviourCollection.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // utility
 #include "Distance.h"
 #include "Degree.h"
@@ -28,7 +23,6 @@
 #include "Vector2D.h"
 #include "Random.h"
 #include "Position.h"
-
 CannonSearchState::CannonSearchState() {
     // frame
     this->counterTimeLine = new TimeLine();
@@ -36,9 +30,7 @@ CannonSearchState::CannonSearchState() {
     this->finishSearch = false;
     this->finishCalc = false;
 }
-
 CannonSearchState::~CannonSearchState() { CC_SAFE_DELETE(this->counterTimeLine); }
-
 void CannonSearchState::create() {
     this->finishCalc = false;
     this->finishSearch = false;
@@ -47,7 +39,6 @@ void CannonSearchState::create() {
     this->search();
     return;
 }
-
 void CannonSearchState::update(float delta) {
     if (false == this->finishSearch) {
         return;
@@ -60,7 +51,6 @@ void CannonSearchState::update(float delta) {
             }
         }
     }
-
     if (this->counterTimeLine->getFrame() > this->maxFrameNumber) {
         Parameter parameter;
         int degree = (int)this->lastTargetDegree;
@@ -69,7 +59,6 @@ void CannonSearchState::update(float delta) {
         this->owner->getStateMachine()->change("attack", &parameter);
         return;
     }
-
     int currentFrame = this->frame->getFrame();
     if (currentFrame > CannonSearchState::MAX_FRAME_NUMBER) {
         this->frame->reset();
@@ -83,7 +72,6 @@ void CannonSearchState::update(float delta) {
     this->counterTimeLine->setFrame(1);
     return;
 }
-
 void CannonSearchState::search() {
     std::thread thread = std::thread([this]() {
         Transform ctrfm = this->asset->getTransform();
@@ -108,31 +96,24 @@ void CannonSearchState::search() {
     thread.detach();
     return;
 }
-
 bool CannonSearchState::calcDegree() {
     if (NULL == this->target) {
         return false;
     }
-
     BaseRenderAsset* unitAsset = (BaseRenderAsset*)this->target->getAsset("anime");
     if (NULL == unitAsset) {
         return false;
     }
-
     Transform ttrfm = unitAsset->getTransform();
     Position tpos = ttrfm.getPosition();
-
     Transform entity = this->asset->getTransform();
     Position cpos = entity.getPosition();
-
     // start frame
     float startDegree = this->lastTargetDegree;
     int startFrame = startDegree / 10;
-
     // end frame
     this->lastTargetDegree = Degree::create(cpos, tpos, true);
     int endFrame = this->lastTargetDegree / 10;
-
     // frame count
     float product = Vector2D::product(startDegree, this->lastTargetDegree);
     if (0 <= product) {
@@ -151,7 +132,6 @@ bool CannonSearchState::calcDegree() {
         }
     }
     this->counterTimeLine->reset();
-
     // asset
     this->asset->pause(startFrame);
     this->frame->reset(startFrame, 0.0f);

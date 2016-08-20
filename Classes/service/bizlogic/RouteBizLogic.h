@@ -7,18 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef RouteBizLogic_h
 #define RouteBizLogic_h
 // stl
 #include <vector>
-
 // geographic
 #include "GeographicNode.h"
-
 // service
 #include "BaseBizLogic.h"
-
 class RouteBizLogic : public BaseBizLogic {
    public:
     RouteBizLogic();
@@ -28,5 +24,4 @@ class RouteBizLogic : public BaseBizLogic {
     bool removeRouteCache(unsigned int startGeographicId, unsigned int goalGeographicId);
     void clear() override;
 };
-
 #endif

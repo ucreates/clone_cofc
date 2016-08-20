@@ -7,15 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // device
 #include "Screen.h"
-
 // math
 #include "Range.h"
-
 using namespace cocos2d;
-
 Rect Range::getLayerRange(float layerScale, bool fullScreen) {
     Size size;
     if (false != fullScreen) {

@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // math
 #include "Direction.h"
-
 Direction::DIRECT Direction::getDirection(float degree) {
     if (0 <= degree && degree < 35) {
         return DIRECT::HORIZON_RIGHT;

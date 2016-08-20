@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WallBreakerWinState.h"
-
 WallBreakerWinState::WallBreakerWinState() {}
-
 WallBreakerWinState::~WallBreakerWinState() {}
-
 void WallBreakerWinState::create() {
     this->changeDirection(this->owner);
     return;

@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef PerformanceTimer_h
 #define PerformanceTimer_h
-
 // stl
 #include <vector>
 #include <string>
-
 class PerformanceTimer {
    public:
     PerformanceTimer();
@@ -26,12 +23,10 @@ class PerformanceTimer {
     float getAverageMilliSecond();
     std::string getAverageTimeString();
     void clear();
-
    private:
     float statTime;
     float endTime;
     std::vector<float> secondTimeVector;
     std::vector<float> milliSecondTimeVector;
 };
-
 #endif

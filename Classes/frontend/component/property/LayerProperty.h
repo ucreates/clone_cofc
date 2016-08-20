@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LayerProperty_h
 #define LayerProperty_h
-
 #include "BaseProperty.h"
-
 class LayerProperty : public BaseProperty {
    public:
     LayerProperty(std::string name, int id);
     virtual ~LayerProperty();
 };
-
 #endif

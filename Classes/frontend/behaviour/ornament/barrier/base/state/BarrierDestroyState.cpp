@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarrierDestroyState.h"
 #include "CannonBehaviour.h"
 #include "TurretBehaviour.h"
@@ -18,13 +17,10 @@
 #include "ElixirTankBehaviour.h"
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 template <typename T>
 BarrierDestroyState<T>::BarrierDestroyState() {}
-
 template <typename T>
 BarrierDestroyState<T>::~BarrierDestroyState() {}
-
 template <typename T>
 void BarrierDestroyState<T>::notifyOverAll(TOverAllTable overAll) {
     if (false == overAll.reachedLevel1) {
@@ -35,7 +31,6 @@ void BarrierDestroyState<T>::notifyOverAll(TOverAllTable overAll) {
         Notifier::getInstance()->notify(NotifyMessage::Battle_Scene_OverAll_Level3_State);
     }
 }
-
 template class BarrierDestroyState<CannonBehaviour>;
 template class BarrierDestroyState<TurretBehaviour>;
 template class BarrierDestroyState<WoodFenceVBehaviour>;

@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseBizLogic_h
 #define BaseBizLogic_h
-
 class BaseBizLogic {
    public:
     BaseBizLogic();
     virtual ~BaseBizLogic();
     virtual void clear();
 };
-
 #endif

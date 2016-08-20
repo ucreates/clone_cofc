@@ -7,12 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "BaseExpression.h"
-
 BaseExpression::BaseExpression() {}
-
 BaseExpression::~BaseExpression() {}
-
 std::string BaseExpression::getExpressionType() { return this->expressiontType; }

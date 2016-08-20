@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UnitBehaviourType_h
 #define UnitBehaviourType_h
 enum UnitBehaviourType {

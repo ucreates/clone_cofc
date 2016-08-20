@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseValidator_h
 #define BaseValidator_h
-
 class BaseValidator {
    public:
     BaseValidator();
     ~BaseValidator();
     virtual bool isValid();
 };
-
 #endif

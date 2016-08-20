@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef UnitOfWork_h
 #define UnitOfWork_h
-
 // stl
 #include <vector>
-
 // service
 #include "Dao.h"
-
 template <class T>
 class UnitOfWork {
    public:
@@ -31,7 +27,6 @@ class UnitOfWork {
     bool registerAddRecord(T record);
     bool registerUpdateRecord(T record);
     bool registerRemoveRecord(T record);
-
    private:
     std::vector<T> addRecordVector;
     std::vector<T> updateRecordVector;
@@ -41,5 +36,4 @@ class UnitOfWork {
     int rollbackId;
     bool enableRegister(std::vector<T> recordVector, T record);
 };
-
 #endif

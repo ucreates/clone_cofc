@@ -7,18 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BattleBGMState_h
 #define BattleBGMState_h
-
 // layer
 #include "BattleLayer.h"
-
 // state
 #include "FiniteState.h"
-
 class BattleLayer;
-
 class BattleBGMState : public FiniteState<BattleLayer> {
    public:
     BattleBGMState();
@@ -26,5 +21,4 @@ class BattleBGMState : public FiniteState<BattleLayer> {
     void create(Parameter* parameter) override;
     void update(float delta = 0.0f) override;
 };
-
 #endif

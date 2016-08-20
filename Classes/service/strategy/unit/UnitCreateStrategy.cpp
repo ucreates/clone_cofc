@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "UnitCreateStrategy.h"
 #include "UnitBizLogic.h"
 #include "AssetBizLogic.h"
-
 UnitCreateStrategy::UnitCreateStrategy() {}
-
 UnitCreateStrategy::~UnitCreateStrategy() {}
-
 Response UnitCreateStrategy::update(Parameter* parameter) {
     int unitId = parameter->get<int>("unitId");
     int unitType = parameter->get<int>("unitType");

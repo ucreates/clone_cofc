@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarbarianLoseState.h"
-
 BarbarianLoseState::BarbarianLoseState() {}
-
 BarbarianLoseState::~BarbarianLoseState() {}
-
 void BarbarianLoseState::create() {
     this->changeDirection(this->owner);
     return;

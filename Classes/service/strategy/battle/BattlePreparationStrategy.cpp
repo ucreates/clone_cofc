@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "BattlePreparationStrategy.h"
 #include "OverAllBizLogic.h"
 #include "ResourceBizLogic.h"
-
 BattlePreparationStrategy::BattlePreparationStrategy() {}
-
 BattlePreparationStrategy::~BattlePreparationStrategy() {}
-
 Response BattlePreparationStrategy::get(Parameter* parameter) {
     OverAllBizLogic overAllBizLogic;
     bool isOverAll = overAllBizLogic.isOverAll();
@@ -24,12 +20,10 @@ Response BattlePreparationStrategy::get(Parameter* parameter) {
     res.set<bool>("isOverAll", isOverAll);
     return res;
 }
-
 Response BattlePreparationStrategy::update(Parameter* parameter) {
     int barrierCount = parameter->get<int>("barrierCount");
     OverAllBizLogic overAllBizLogic;
     overAllBizLogic.saveOverAll(0.0f, barrierCount);
-
     ResourceBizLogic resourceBizLogic;
     resourceBizLogic.create();
     TResourceTable record = resourceBizLogic.getPlayerResourceInfo();
@@ -39,7 +33,6 @@ Response BattlePreparationStrategy::update(Parameter* parameter) {
     unitResourceMap.insert(std::map<std::string, int>::value_type("giant", record.giant));
     unitResourceMap.insert(std::map<std::string, int>::value_type("goblin", record.goblin));
     unitResourceMap.insert(std::map<std::string, int>::value_type("wallbreaker", record.wallbreaker));
-
     Response res;
     res.set<std::map<std::string, int>>("unitResourceMap", unitResourceMap);
     return res;

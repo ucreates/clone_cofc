@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef Transform_h
 #define Transform_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // entity
 #include "Position.h"
 #include "Scale.h"
-
 class Transform {
    public:
     Transform();
@@ -31,7 +27,6 @@ class Transform {
     GLubyte getAlpha();
     Scale getContentsScale();
     Transform* operator=(Transform& entity);
-
    private:
     Position position;
     cocos2d::Size scale;
@@ -39,5 +34,4 @@ class Transform {
     float rotate;
     GLubyte alpha;
 };
-
 #endif

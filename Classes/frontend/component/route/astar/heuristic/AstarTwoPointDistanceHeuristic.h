@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef AstarTwoPointDistanceHeuristic_h
 #define AstarTwoPointDistanceHeuristic_h
-
 #include "BaseAstarHeuristic.h"
 #include "GeographicNode.h"
-
 class AstarTwoPointDistanceHeuristic : public BaseAstarHeuristic {
    public:
     static const int ASTAR_HEURISTIC_ID = 2;
@@ -21,5 +18,4 @@ class AstarTwoPointDistanceHeuristic : public BaseAstarHeuristic {
     virtual ~AstarTwoPointDistanceHeuristic();
     int getEstimateDistance() override;
 };
-
 #endif

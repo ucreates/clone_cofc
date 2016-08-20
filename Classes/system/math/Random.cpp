@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // standard
 #include <stdlib.h>
-
 // math
 #include "Random.h"
-
 int Random::create(int number, bool forArray) {
     int ret = (rand() % number + 1);
     if (false != forArray) {
@@ -24,12 +21,10 @@ int Random::create(int number, bool forArray) {
     }
     return ret;
 }
-
 int Random::create(int min, int max, bool forArray) {
     if (max <= min) {
         return 0;
     }
-
     int num = max - min;
     int ret = Random::create(num, forArray);
     ret = ret + min;

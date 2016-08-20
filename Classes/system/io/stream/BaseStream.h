@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseStream_h
 #define BaseStream_h
-
 // stl
 #include <string>
 #include <vector>
-
 class BaseStream {
    public:
     BaseStream();
@@ -23,11 +20,9 @@ class BaseStream {
     virtual bool write(std::string filePath, std::vector<char>* dataVector);
     virtual bool isValid();
     bool isEOF();
-
    protected:
     int seek;
     int fileSize;
     bool eof;
 };
-
 #endif

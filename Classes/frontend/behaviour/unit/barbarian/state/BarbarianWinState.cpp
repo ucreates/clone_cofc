@@ -7,13 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "BarbarianWinState.h"
-
 BarbarianWinState::BarbarianWinState() {}
-
 BarbarianWinState::~BarbarianWinState() {}
-
 void BarbarianWinState::create() {
     this->changeDirection(this->owner);
     return;

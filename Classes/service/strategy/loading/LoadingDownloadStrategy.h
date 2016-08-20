@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LoadingDownloadStrategy_h
 #define LoadingDownloadStrategy_h
-
 // service
 #include "BaseStrategy.h"
-
 class LoadingDownloadStrategy : public BaseStrategy {
    public:
     LoadingDownloadStrategy();
@@ -22,5 +19,4 @@ class LoadingDownloadStrategy : public BaseStrategy {
     Response request(Parameter* parameter = NULL) override;
     Response update(Parameter* parameter = NULL) override;
 };
-
 #endif

@@ -7,30 +7,22 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseRenderAsset_h
 #define BaseRenderAsset_h
-
 // stl
 #include <string>
-
 // asset
 #include "BaseAsset.h"
-
 // behaviour
 #include "Transform.h"
 #include "OrnamentProperty.h"
-
 // geography
 #include "GeographicNode.h"
-
 class GeographicNode;
-
 class BaseRenderAsset : public BaseAsset {
    public:
     BaseRenderAsset();
     virtual ~BaseRenderAsset();
-
     cocos2d::Node* getNode();
     virtual void transform(int zorder);
     virtual void transform(GeographicNode* node);
@@ -52,10 +44,8 @@ class BaseRenderAsset : public BaseAsset {
     virtual void show();
     virtual void hide();
     virtual Transform getTransform();
-
    protected:
     std::string relativePath;
     cocos2d::Node* node;
 };
-
 #endif

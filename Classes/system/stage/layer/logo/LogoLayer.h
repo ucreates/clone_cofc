@@ -7,26 +7,19 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LogoLayer_h
 #define LogoLayer_h
-
 // layer
 #include "BaseLayer.h"
-
 // notify
 #include "INotify.h"
-
 // state
 #include "IFiniteStateMachine.h"
 #include "BaseTransitionState.h"
-
 class LogoLayerBuilder;
-
 class LogoLayer : public BaseLayer, public IFiniteStateMachine<LogoLayer>, public INotify {
     friend LogoLayerBuilder;
     friend BaseTransitionState<LogoLayer>;
-
    public:
     static const int LAYER_ID = 1;
     bool init() override;
@@ -36,5 +29,4 @@ class LogoLayer : public BaseLayer, public IFiniteStateMachine<LogoLayer>, publi
     void onExit() override;
     CREATE_FUNC(LogoLayer);
 };
-
 #endif

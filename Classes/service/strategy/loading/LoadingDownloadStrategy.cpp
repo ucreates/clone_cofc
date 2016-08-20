@@ -7,16 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "LoadingDownloadStrategy.h"
 #include "AssetBizLogic.h"
 #include "TAssetTable.h"
-
 LoadingDownloadStrategy::LoadingDownloadStrategy() {}
-
 LoadingDownloadStrategy::~LoadingDownloadStrategy() {}
-
 Response LoadingDownloadStrategy::get(Parameter* parameter) {
     Response res;
     AssetBizLogic assetBizLogic;
@@ -28,18 +24,14 @@ Response LoadingDownloadStrategy::get(Parameter* parameter) {
     if (percentage < 0.0f) {
         res.setStatus(ServiceStatus::FAILD);
     }
-
     std::string message = assetBizLogic.getDownloadMessage();
-
     res.set<float>("downloadPercentage", percentage);
     res.set<bool>("emitDownload", emitDownload);
     res.set<std::string>("message", message);
     return res;
 }
-
 Response LoadingDownloadStrategy::request(Parameter* parameter) {
     AssetBizLogic assetBizLogic;
-
     bool emitDownload = parameter->get<bool>("emitDownload");
     assetBizLogic.setEmitDownloadAsset(emitDownload);
     if (false != emitDownload) {
@@ -48,7 +40,6 @@ Response LoadingDownloadStrategy::request(Parameter* parameter) {
     Response res;
     return res;
 }
-
 Response LoadingDownloadStrategy::update(Parameter* parameter) {
     std::vector<TAssetTable> requestAssetVector = parameter->get<std::vector<TAssetTable>>("requestAssetVector");
     int totalAssetCount = (int)requestAssetVector.size();

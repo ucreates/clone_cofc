@@ -7,30 +7,21 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "ElixirTankDamageEffectBehaviour.h"
-
 #include "BehaviourIdGenerator.h"
-
 // peroperty
 #include "EffectProperty.h"
-
 // asset
 #include "ParticleAsset.h"
-
 // notify
 #include "Notifier.h"
-
 using namespace cocos2d;
-
 ElixirTankDamageEffectBehaviour::ElixirTankDamageEffectBehaviour() {
     int id = BehaviourIdGenerator::getInstance()->getId();
     this->asset->add("anime", new ParticleAsset("particle/elixir/elixir.plist"));
     this->property = new EffectProperty("elixirTankDamage", id);
 }
-
 ElixirTankDamageEffectBehaviour::~ElixirTankDamageEffectBehaviour() {}
-
 void ElixirTankDamageEffectBehaviour::onCreate(Layer* layer, Position position) {
     // asset
     ParticleAsset* particle = (ParticleAsset*)this->getAsset("anime");

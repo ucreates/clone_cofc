@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef ServiceStatus_h
 #define ServiceStatus_h
-
 enum ServiceStatus {
     FAILD = 0x0000,
     SUCCESS = 0x0001,
 };
-
 #endif

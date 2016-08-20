@@ -7,19 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef DijkstraRouteSearch_h
 #define DijkstraRouteSearch_h
-
 #include <vector>
 #include "GeographicNode.h"
-
 // route
 #include "BaseRouteSearch.h"
 #include "RouteLink.h"
 #include "RouteCollection.h"
 #include "RouteEvalCollection.h"
-
 class DijkstraRouteSearch : public BaseRouteSearch {
    public:
     static const int ROUTE_SEARCH_ALGORITHM_ID = 3;
@@ -33,7 +29,6 @@ class DijkstraRouteSearch : public BaseRouteSearch {
     bool addNodeLink(RouteLink* link);
     RouteEvalCollection* getRouteEvalCollection();
     std::vector<RouteLink*>* getNodeLinkVector();
-
    protected:
     std::vector<RouteLink*>* linkVector;
     RouteCollection* shortestRoute;

@@ -7,17 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "TAssetTable.h"
 #include "FieldSchema.h"
-
 TAssetTable::TAssetTable() {
     this->name = "";
     this->type = "";
     this->path = "";
 }
-
 void TAssetTable::build() {
     this->primaryKey.set("id", this->id);
     this->compareFieldIterator.set("name", new FieldSchema<std::string>(this->name));

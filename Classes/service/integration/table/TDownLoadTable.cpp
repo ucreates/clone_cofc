@@ -7,18 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "TDownLoadTable.h"
 #include "FieldSchema.h"
-
 TDownLoadTable::TDownLoadTable() {
     this->emitDownLoad = false;
     this->isAssetCache = false;
     this->current = 0;
     this->total = 0;
 }
-
 void TDownLoadTable::build() {
     this->primaryKey.set("id", this->id);
     this->compareFieldIterator.set("emitDownLoad", new FieldSchema<bool>(this->emitDownLoad));

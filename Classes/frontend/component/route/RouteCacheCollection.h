@@ -7,22 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef RouteCacheCollection_h
 #define RouteCacheCollection_h
-
 // stl
 #include <vector>
-
 // cocos2d
 #include "cocos2d.h"
-
 // geographic
 #include "GeographicNode.h"
-
 // route
 #include "RouteCollection.h"
-
 class RouteCacheCollection {
    public:
     RouteCacheCollection();
@@ -33,9 +27,7 @@ class RouteCacheCollection {
     void erase(GeographicNode* evalNode);
     bool isEmpty();
     void clear();
-
    private:
     std::vector<RouteCollection>* routeCacheVector;
 };
-
 #endif

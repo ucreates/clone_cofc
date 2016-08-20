@@ -7,23 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // behaviour
 #include "BehaviourCollection.h"
-
 // command
 #include "CommandGateway.h"
 #include "BaseCommand.h"
-
 // state
 #include "LogoLayerShowState.h"
-
 LogoLayerShowState::LogoLayerShowState() {}
-
 LogoLayerShowState::~LogoLayerShowState() {}
-
 void LogoLayerShowState::create() { return; }
-
 void LogoLayerShowState::update(float delta) {
     BehaviourCollection* collection = BehaviourCollection::getInstance();
     std::vector<BaseBehaviour*>* behaviourVector = collection->getBehaviourVector("ui");

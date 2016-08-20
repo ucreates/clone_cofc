@@ -7,28 +7,20 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "WoodFenceHDamageState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 #include "BehaviourMapper.h"
 #include "ServiceGateway.h"
 #include "Response.h"
-
 WoodFenceHDamageState::WoodFenceHDamageState() { this->damageStrategy = ServiceGateway::getInstance()->request("service://barrier/damage"); }
-
 WoodFenceHDamageState::~WoodFenceHDamageState() {}
-
 void WoodFenceHDamageState::create(Parameter* parameter) {
     Response res = this->damageStrategy->update(parameter);
     if (ServiceStatus::SUCCESS != res.getStatus()) {

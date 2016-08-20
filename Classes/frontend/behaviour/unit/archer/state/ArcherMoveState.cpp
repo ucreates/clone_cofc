@@ -7,32 +7,24 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "ArcherMoveState.h"
-
 // geography
 #include "GeographicNode.h"
-
 // animator
 #include "AnimatorAsset.h"
-
 // utility
 #include "Distance.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
 #include "BarrierBehaviourType.h"
 #include "BehaviourCollection.h"
-
 ArcherMoveState::ArcherMoveState() {
     this->firstSearch = true;
     this->pause = false;
     this->speed = 1.0f;
 }
-
 ArcherMoveState::~ArcherMoveState() {}
-
 void ArcherMoveState::create() {
     this->setUnit(this->owner);
     if (false != this->pause) {
@@ -40,19 +32,16 @@ void ArcherMoveState::create() {
         this->changeDirection();
         return;
     }
-
     this->asset = (AnimatorAsset*)this->owner->getAsset("anime");
     this->owner->getStateMachine()->pause();
     this->search();
     return;
 }
-
 void ArcherMoveState::update(float delta) {
     GeographicNode* targetNode = NULL;
     if (false == this->routeVector.empty()) {
         std::vector<GeographicNode*>::iterator it = this->routeVector.begin();
         GeographicNode* moveDestNode = (*it);
-
         if (NULL == targetNode) {
             for (std::vector<GeographicNode*>::iterator mt = this->routeVector.begin(); mt != this->routeVector.end(); mt++) {
                 GeographicNode* node = (*mt);
@@ -62,7 +51,6 @@ void ArcherMoveState::update(float delta) {
                 }
             }
         }
-
         if (NULL != targetNode) {
             GeographicNode* currentNode = this->owner->getGeographicNode();
             float distance = Distance::create(currentNode->address, targetNode->address);

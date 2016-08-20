@@ -7,11 +7,9 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // service
 #include "TOverAllTable.h"
 #include "FieldSchema.h"
-
 TOverAllTable::TOverAllTable() {
     this->current = 0;
     this->total = 0;
@@ -19,7 +17,6 @@ TOverAllTable::TOverAllTable() {
     this->reachedLevel2 = false;
     this->reachedLevel3 = false;
 }
-
 void TOverAllTable::build() {
     this->primaryKey.set("id", this->id);
     this->compareFieldIterator.set("layer", new FieldSchema<int>(this->current));

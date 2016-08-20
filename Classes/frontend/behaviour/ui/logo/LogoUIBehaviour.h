@@ -7,7 +7,6 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef LogoUIBehaviour_h
 #define LogoUIBehaviour_h
 #include "cocos2d.h"
@@ -16,12 +15,9 @@
 #include "IFiniteStateMachine.h"
 #include "LogoUIShowState.h"
 #include "INotify.h"
-
 class LogoUIShowState;
-
 class LogoUIBehaviour : public BaseBehaviour, public IFiniteStateMachine<LogoUIBehaviour>, public INotify {
     friend LogoUIShowState;
-
    public:
     LogoUIBehaviour();
     virtual ~LogoUIBehaviour();
@@ -30,5 +26,4 @@ class LogoUIBehaviour : public BaseBehaviour, public IFiniteStateMachine<LogoUIB
     void onUpdate(float time = 0.0f) override;
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
 };
-
 #endif

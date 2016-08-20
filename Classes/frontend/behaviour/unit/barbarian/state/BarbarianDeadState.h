@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BarbarianDeadState_h
 #define BarbarianDeadState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitDeadState.h"
-
 // behaviour
 #include "BarbarianBehaviour.h"
-
 class BarbarianBehaviour;
 class BarbarianDeadState : public FiniteState<BarbarianBehaviour>, UnitDeadState<BarbarianBehaviour> {
    public:
@@ -25,5 +21,4 @@ class BarbarianDeadState : public FiniteState<BarbarianBehaviour>, UnitDeadState
     virtual ~BarbarianDeadState();
     void create() override;
 };
-
 #endif

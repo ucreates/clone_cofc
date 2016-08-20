@@ -7,39 +7,29 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include "ElixirTankDestroyState.h"
-
 // geography
 #include "GeographicGateway.h"
 #include "GeographicNode.h"
-
 // notify
 #include "Notifier.h"
 #include "NotifyMessage.h"
-
 #include "DestroyEffectBehaviour.h"
 #include "BehaviourMapper.h"
 #include "BarrierBehaviourType.h"
-
 #include "SoundEffectAsset.h"
 #include "ServiceGateway.h"
 #include "Position.h"
-
 ElixirTankDestroyState::ElixirTankDestroyState() { this->destroyStrategy = ServiceGateway::getInstance()->request("service://barrier/destroy"); }
-
 ElixirTankDestroyState::~ElixirTankDestroyState() {}
-
 void ElixirTankDestroyState::create() {
     this->complete = true;
     BaseRenderAsset* asset = (BaseRenderAsset*)this->owner->getAsset("anime");
     asset->hide();
-
     Transform transform = asset->getTransform();
     Position pos = transform.getPosition();
     DestroyEffectBehaviour effect(this->owner->property);
     effect.onCreate(this->owner->getLayer(), pos);
-
     GeographicNode* node = this->owner->getGeographicNode();
     GeographicGateway* gateway = GeographicGateway::getInstance();
     std::vector<GeographicNode*> nodeVector = gateway->find4x4ByAddress(node->address);
@@ -47,7 +37,6 @@ void ElixirTankDestroyState::create() {
         node = nodeVector.at(i);
         node->type = BarrierBehaviourType::None;
     }
-
     int id = this->owner->getProperty()->getId();
     std::string barrierName = this->owner->getProperty()->getName();
     Parameter parameter;
@@ -59,7 +48,6 @@ void ElixirTankDestroyState::create() {
         res.clear();
         return;
     }
-
     Notifier::getInstance()->notify(NotifyMessage::Battle_Scene_Score_Update_State);
     bool showOverAllStar = res.get<bool>("showOverAllStar");
     if (false != showOverAllStar) {

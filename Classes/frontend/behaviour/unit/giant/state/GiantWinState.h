@@ -7,20 +7,15 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GiantWinState_h
 #define GiantWinState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitWinState.h"
-
 // behaviour
 #include "GiantBehaviour.h"
-
 // asset
 #include "AnimatorAsset.h"
-
 class GiantBehaviour;
 class GiantWinState : public FiniteState<GiantBehaviour>, UnitWinState<GiantBehaviour> {
    public:
@@ -28,5 +23,4 @@ class GiantWinState : public FiniteState<GiantBehaviour>, UnitWinState<GiantBeha
     virtual ~GiantWinState();
     void create() override;
 };
-
 #endif

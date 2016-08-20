@@ -7,14 +7,11 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef TurretBehaviour_h
 #define TurretBehaviour_h
-
 // behaviour
 #include "BaseBarrierBehaviour.h"
 #include "BaseBehaviour.h"
-
 // state
 #include "FiniteStateMachine.h"
 #include "IFiniteStateMachine.h"
@@ -22,26 +19,21 @@
 #include "TurretDamageState.h"
 #include "TurretTouchBeganState.h"
 #include "TurretTouchEndState.h"
-
 // notify
 #include "INotify.h"
 #include "Parameter.h"
 #include "NotifyMessage.h"
-
 // geography
 #include "GeographicNode.h"
-
 class TurretDestroyState;
 class TurretDamageState;
 class TurretTouchBeganState;
 class TurretTouchEndState;
-
 class TurretBehaviour : public BaseBarrierBehaviour, public IFiniteStateMachine<TurretBehaviour>, public INotify {
     friend TurretDestroyState;
     friend TurretDamageState;
     friend TurretTouchBeganState;
     friend TurretTouchEndState;
-
    public:
     TurretBehaviour(GeographicNode* geographicNode);
     virtual ~TurretBehaviour();
@@ -52,5 +44,4 @@ class TurretBehaviour : public BaseBarrierBehaviour, public IFiniteStateMachine<
     void onNotify(NotifyMessage notifyMessage, Parameter* parameter = NULL) override;
     BaseBehaviour* unit;
 };
-
 #endif

@@ -7,13 +7,10 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicSlope_h
 #define GeographicSlope_h
-
 #include "cocos2d.h"
 #include "Slope.h"
-
 class GeographicSlope {
    public:
     //マップ(1ユニット単位)の1辺の角度:36.9
@@ -23,5 +20,4 @@ class GeographicSlope {
     GeographicSlope(float coldegree, float rowdegree);
     void update(float coldegree, float rowdegree);
 };
-
 #endif

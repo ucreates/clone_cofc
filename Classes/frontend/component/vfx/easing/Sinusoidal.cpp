@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #include <math.h>
 #include "Sinusoidal.h"
-
 float Sinusoidal::easeIn(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     if (1.0f <= rate) {
@@ -19,7 +17,6 @@ float Sinusoidal::easeIn(float currentTime, float start, float end, float totalT
     float diff = end - start;
     return -1.0f * diff * cosf(rate * (M_PI * 0.5f)) + diff + start;
 }
-
 float Sinusoidal::easeOut(float currentTime, float start, float end, float totalTime) {
     float rate = currentTime / totalTime;
     if (1.0f <= rate) {
@@ -28,7 +25,6 @@ float Sinusoidal::easeOut(float currentTime, float start, float end, float total
     float diff = end - start;
     return diff * sinf(rate * (M_PI * 0.5f)) + start;
 }
-
 float Sinusoidal::easeInOut(float currentTime, float start, float end, float totalTime) {
     bool switchType = currentTime / totalTime >= 0.5f;
     if (false == switchType) {

@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 // layer
 #include "LayerFactory.h"
 #include "BattleLayer.h"
 #include "LogoLayer.h"
 #include "LoadingLayer.h"
-
 using namespace cocos2d;
-
 Layer* LayerFactory::factoryMethod(int layerId) {
     Layer* layer = NULL;
     switch (layerId) {

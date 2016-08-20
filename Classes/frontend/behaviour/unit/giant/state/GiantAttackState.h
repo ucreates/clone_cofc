@@ -7,21 +7,16 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GiantAttackState_h
 #define GiantAttackState_h
-
 // cocos2d
 #include "cocos2d.h"
-
 // state
 #include "FiniteState.h"
-
 // behaviour
 #include "GiantBehaviour.h"
 #include "BaseOrnamentBehaviour.h"
 #include "BaseStrategy.h"
-
 class GiantBehaviour;
 class GiantAttackState : public FiniteState<GiantBehaviour> {
    public:
@@ -29,7 +24,6 @@ class GiantAttackState : public FiniteState<GiantBehaviour> {
     virtual ~GiantAttackState();
     void create(Parameter* parameter) override;
     void update(float delta = 0.0f) override;
-
    private:
     const int ENABLE_ATTACK_DISTANCE = 1;
     constexpr static const float WAIT_TIME = 1.0f;
@@ -42,5 +36,4 @@ class GiantAttackState : public FiniteState<GiantBehaviour> {
     void changeDirection();
     void selectAttackAnimation(std::string animationNamem, bool transform);
 };
-
 #endif

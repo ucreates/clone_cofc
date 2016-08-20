@@ -7,15 +7,12 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef RouteCollection_h
 #define RouteCollection_h
-
 #include <vector>
 #include "GeographicNode.h"
 #include "GeographicGateway.h"
 #include "AddressRangeValidator.h"
-
 class RouteCollection {
    public:
     RouteCollection();
@@ -25,7 +22,6 @@ class RouteCollection {
     void setNodeVector(std::vector<GeographicNode*> routePointVector);
     int getDistance();
     void setDistance(int distance);
-
    private:
     std::vector<GeographicNode*> nodeVector;
     int distance;

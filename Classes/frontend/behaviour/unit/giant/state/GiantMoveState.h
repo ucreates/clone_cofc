@@ -7,17 +7,13 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GiantMoveState_h
 #define GiantMoveState_h
-
 // state
 #include "FiniteState.h"
 #include "UnitMoveState.h"
-
 // behaviour
 #include "GiantBehaviour.h"
-
 class GiantBehaviour;
 class GiantMoveState : public FiniteState<GiantBehaviour>, UnitMoveState<GiantBehaviour> {
    public:
@@ -25,9 +21,7 @@ class GiantMoveState : public FiniteState<GiantBehaviour>, UnitMoveState<GiantBe
     virtual ~GiantMoveState();
     void create() override;
     void update(float delta) override;
-
    protected:
     GeographicNode* findGoalNode(GeographicNode* startNode) override;
 };
-
 #endif

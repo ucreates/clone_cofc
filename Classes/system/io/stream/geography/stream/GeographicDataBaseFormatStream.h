@@ -7,17 +7,14 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef GeographicDataBaseFormatStream_h
 #define GeographicDataBaseFormatStream_h
-
 // stream
 #include <iostream>
 #include <fstream>
 #include "BinaryStream.h"
 #include "GeographicDataBaseFormat.h"
 #include "GeographicDataRecordHeader.h"
-
 class GeographicDataBaseFormatStream {
    public:
     GeographicDataBaseFormatStream();
@@ -26,5 +23,4 @@ class GeographicDataBaseFormatStream {
     virtual GeographicDataBaseFormat* read(BinaryStream* stream);
     virtual bool write(std::ofstream* stream, GeographicDataBaseFormat* format);
 };
-
 #endif

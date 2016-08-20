@@ -7,10 +7,8 @@
 // If such findings are accepted at any time.
 // We hope the tips and helpful in developing.
 //======================================================================
-
 #ifndef BaseTransitionState_h
 #define BaseTransitionState_h
-
 template <class T>
 class BaseTransitionState {
    public:
@@ -18,5 +16,4 @@ class BaseTransitionState {
     virtual ~BaseTransitionState();
     void transition(T* owner, int sceneId);
 };
-
 #endif
