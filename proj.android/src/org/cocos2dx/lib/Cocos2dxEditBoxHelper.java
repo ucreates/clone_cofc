@@ -1,19 +1,15 @@
 /****************************************************************************
 Copyright (c) 2010-2012 cocos2d-x.org
 Copyright (c) 2013-2015 Chukong Technologies Inc.
-
 http://www.cocos2d-x.org
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -23,7 +19,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
  ****************************************************************************/
 package org.cocos2dx.lib;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -41,50 +36,36 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-
-
 public class Cocos2dxEditBoxHelper {
     private static final String TAG = Cocos2dxEditBoxHelper.class.getSimpleName();
     private static Cocos2dxActivity mCocos2dxActivity;
     private static ResizeLayout mFrameLayout;
-
     private static SparseArray<Cocos2dxEditBox> mEditBoxArray;
     private static int mViewTag = 0;
-
     //Call native methods
     private static native void editBoxEditingDidBegin(int index);
-    public static void __editBoxEditingDidBegin(int index){
+    public static void __editBoxEditingDidBegin(int index) {
         editBoxEditingDidBegin(index);
     }
-
     private static native void editBoxEditingChanged(int index, String text);
-    public static void __editBoxEditingChanged(int index, String text){
+    public static void __editBoxEditingChanged(int index, String text) {
         editBoxEditingChanged(index, text);
     }
-
     private static native void editBoxEditingDidEnd(int index, String text);
-    public static void __editBoxEditingDidEnd(int index, String text){
+    public static void __editBoxEditingDidEnd(int index, String text) {
         editBoxEditingDidEnd(index, text);
     }
-
-
     public Cocos2dxEditBoxHelper(ResizeLayout layout) {
         Cocos2dxEditBoxHelper.mFrameLayout = layout;
-
         Cocos2dxEditBoxHelper.mCocos2dxActivity = (Cocos2dxActivity) Cocos2dxActivity.getContext();
         Cocos2dxEditBoxHelper.mEditBoxArray = new SparseArray<Cocos2dxEditBox>();
     }
-
-    public static int convertToSP(float point){
+    public static int convertToSP(float point) {
         Resources r = mCocos2dxActivity.getResources();
-
         int convertedValue = (int)TypedValue.applyDimension(
-                TypedValue.COMPLEX_UNIT_SP, point, r.getDisplayMetrics());
-
+                                 TypedValue.COMPLEX_UNIT_SP, point, r.getDisplayMetrics());
         return  convertedValue;
-
     }
-
     public static int createEditBox(final int left, final int top, final int width, final int height, final float scaleX) {
         final int index = mViewTag;
         mCocos2dxActivity.runOnUiThread(new Runnable() {
@@ -110,32 +91,24 @@ public class Cocos2dxEditBoxHelper {
                 int paddingTop = paddingBottom;
                 int paddingLeft = (int)(5 * scaleX / density);
                 paddingLeft = convertToSP(paddingLeft);
-
-                editBox.setPadding(paddingLeft,paddingTop, 0, paddingBottom);
-
-
+                editBox.setPadding(paddingLeft, paddingTop, 0, paddingBottom);
                 FrameLayout.LayoutParams lParams = new FrameLayout.LayoutParams(
-                        FrameLayout.LayoutParams.WRAP_CONTENT,
-                        FrameLayout.LayoutParams.WRAP_CONTENT);
-
+                    FrameLayout.LayoutParams.WRAP_CONTENT,
+                    FrameLayout.LayoutParams.WRAP_CONTENT);
                 lParams.leftMargin = left;
                 lParams.topMargin = top;
                 lParams.width = width;
                 lParams.height = height;
                 lParams.gravity = Gravity.TOP | Gravity.LEFT;
-
                 mFrameLayout.addView(editBox, lParams);
-
                 editBox.addTextChangedListener(new TextWatcher() {
                     @Override
                     public void beforeTextChanged(CharSequence s, int start, int count, int after) {
                     }
-
                     @Override
                     public void onTextChanged(final CharSequence s, int start, int before, int count) {
                         //The optimization can't be turn on due to unknown keyboard hide in some custom keyboard
 //                        mFrameLayout.setEnableForceDoLayout(false);
-
                         mCocos2dxActivity.runOnGLThread(new Runnable() {
                             @Override
                             public void run() {
@@ -143,16 +116,11 @@ public class Cocos2dxEditBoxHelper {
                             }
                         });
                     }
-
                     @Override
                     public void afterTextChanged(Editable s) {
-
                     }
                 });
-
-
                 editBox.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-
                     @Override
                     public void onFocusChange(View v, boolean hasFocus) {
                         if (hasFocus) {
@@ -179,7 +147,6 @@ public class Cocos2dxEditBoxHelper {
                         }
                     }
                 });
-
                 editBox.setOnKeyListener(new View.OnKeyListener() {
                     public boolean onKey(View v, int keyCode, KeyEvent event) {
                         // If the event is a key-down event on the "enter" button
@@ -195,8 +162,6 @@ public class Cocos2dxEditBoxHelper {
                         return false;
                     }
                 });
-
-
                 editBox.setOnEditorActionListener(new TextView.OnEditorActionListener() {
                     @Override
                     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
@@ -207,13 +172,11 @@ public class Cocos2dxEditBoxHelper {
                         return false;
                     }
                 });
-
                 mEditBoxArray.put(index, editBox);
             }
         });
         return mViewTag++;
     }
-
     public static void removeEditBox(final int index) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -227,8 +190,7 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
-    public static void setFont(final int index, final String fontName, final float fontSize){
+    public static void setFont(final int index, final String fontName, final float fontSize) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -237,23 +199,22 @@ public class Cocos2dxEditBoxHelper {
                     Typeface tf;
                     if (!fontName.isEmpty()) {
                         tf  =  Typeface.create(fontName, Typeface.NORMAL);
-                    }else{
+                    } else {
                         tf = Typeface.DEFAULT;
                     }
                     //TODO: The font size is not the same across all the anroid devices...
-                    if (fontSize >= 0){
+                    if (fontSize >= 0) {
                         float density =  mCocos2dxActivity.getResources().getDisplayMetrics().density;
 //                        Log.e("XXX", "density is " + density);
                         editBox.setTextSize(TypedValue.COMPLEX_UNIT_SP,
-                                fontSize / density );
+                                            fontSize / density);
                     }
                     editBox.setTypeface(tf);
                 }
             }
         });
     }
-
-    public static void setFontColor(final int index, final int red, final int green, final int blue, final int alpha){
+    public static void setFontColor(final int index, final int red, final int green, final int blue, final int alpha) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -264,8 +225,7 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
-    public static void setPlaceHolderText(final int index, final String text){
+    public static void setPlaceHolderText(final int index, final String text) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -276,8 +236,7 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
-    public static void setPlaceHolderTextColor(final int index, final int red, final int green, final int blue, final int alpha){
+    public static void setPlaceHolderTextColor(final int index, final int red, final int green, final int blue, final int alpha) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -288,7 +247,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
     public static void setMaxLength(final int index, final int maxLength) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -300,7 +258,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
     public static void setVisible(final int index, final boolean visible) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -311,7 +268,7 @@ public class Cocos2dxEditBoxHelper {
                     if (visible) {
                         editBox.requestFocus();
                         Cocos2dxEditBoxHelper.openKeyboard(index);
-                    }else{
+                    } else {
                         mCocos2dxActivity.getGLSurfaceView().requestFocus();
                         Cocos2dxEditBoxHelper.closeKeyboard(index);
                     }
@@ -319,9 +276,7 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
-
-    public static void setText(final int index, final String text){
+    public static void setText(final int index, final String text) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -332,7 +287,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
     public static void setReturnType(final int index, final int returnType) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -344,7 +298,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
     public static void setInputMode(final int index, final int inputMode) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -356,7 +309,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
     public static void setInputFlag(final int index, final int inputFlag) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -368,8 +320,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
-
     public static void setEditBoxViewRect(final int index, final int left, final int top, final int maxWidth, final int maxHeight) {
         mCocos2dxActivity.runOnUiThread(new Runnable() {
             @Override
@@ -381,9 +331,6 @@ public class Cocos2dxEditBoxHelper {
             }
         });
     }
-
-
-
     public static void openKeyboard(int index) {
         final InputMethodManager imm = (InputMethodManager) mCocos2dxActivity.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         Cocos2dxEditBox editBox = mEditBoxArray.get(index);
@@ -392,7 +339,6 @@ public class Cocos2dxEditBoxHelper {
             mCocos2dxActivity.getGLSurfaceView().setSoftKeyboardShown(true);
         }
     }
-
     public static void closeKeyboard(int index) {
         final InputMethodManager imm = (InputMethodManager) mCocos2dxActivity.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
         Cocos2dxEditBox editBox = mEditBoxArray.get(index);

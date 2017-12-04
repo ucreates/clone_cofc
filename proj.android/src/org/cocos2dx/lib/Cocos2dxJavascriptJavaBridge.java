@@ -19,9 +19,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
 package org.cocos2dx.lib;
-
 public class Cocos2dxJavascriptJavaBridge {
     public static native int evalString(String value);
 }
